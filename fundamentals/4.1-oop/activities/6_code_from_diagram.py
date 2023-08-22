@@ -1,7 +1,9 @@
 # Challenge #1: Discussion
+import datetime
 #
 # Can you explain in your own words how the Employee and Position class code
 # below corresponds to the diagram in "solution_diagrams"?
+
 
 class Employee:
     def __init__(self, name, boss):
@@ -49,7 +51,6 @@ joanna.print_info()
 peter.print_info()
 
 
-
 # Challenge #2: Implementation
 # Now, write code to correspond to each of the other diagrams you find in
 # "solution_diagrams" in real code.
@@ -61,3 +62,55 @@ peter.print_info()
 # - Feel free to "stub" out the methods (leave them unfinished) by just
 #   including the keyword "pass" as a placeholder in lieu of real code.
 
+# GitHub!!
+class User():
+    def __init__(self) -> None:
+        self.repos = [*Repo]
+        pass
+
+    def add_repo(self):
+        date = datetime.datetime.today()
+        new_repo = Repo(self, date)
+        self.repos.append(new_repo)
+
+
+class Repo():
+    def __init__(self, owner, date, name) -> None:
+        self.name = name
+        self.init_date = date
+        self.owner = owner
+        self.code_base = {}
+        pass
+
+    def update_repo(commit):
+        self.code_base[commit.tag]
+
+
+class Commit():
+    def __init__(self, repo, branch, changes) -> None:
+        self.date = datetime.datetime.now()
+        self.repo[branch].update_branch(changes)
+        pass
+
+
+class Pull_Request():
+    def __init__(self, repo, branch) -> None:
+        self.pull_approved = False
+        pass
+
+    def approve_pull(self):
+        self.pull_approved = True
+        pass
+
+
+class Branch():
+    def __init__(self, repo) -> None:
+        self.repo = repo
+        pass
+
+    def update_branch(changes):
+        # write to update code in this branch
+        pass
+
+# woof, went deep on Github, not doing Netflix :)
+# strikes me that there are so many ways of doing this, even within a Python pattern

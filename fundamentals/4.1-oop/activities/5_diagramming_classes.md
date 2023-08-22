@@ -17,6 +17,7 @@ application Dia), diagram the following:
 * Netflix (think about: movies, TV series, users, who watched what,
   preferences)
 
+# DONE --> see pdf in activities
 
 -----
 

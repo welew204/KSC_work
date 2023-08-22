@@ -1,0 +1,62 @@
+Follow our Pipenv getting started guide:
+
+https://github.com/kickstartcoding/pipenv-getting-started
+
+Summary is included below:
+
+-----
+
+1. Install pipenv
+
+Linux users, run the following command:
+
+    sudo apt-get install python3-pip -y && sudo pip3 install pipenv
+
+macOS users, run the following command:
+
+    brew install pipenv
+
+
+2. In a terminal, create a new directory for this activity. You can
+place it anywhere. Change into the directory for the subsequent steps.
+This will be a "pipenv project directory".
+
+
+3. Create a Pipfile along with a new pipenv "virtualenv" as follows:
+
+    pipenv --python 3
+
+
+4. Activate the "virtualenv" so that you can start installing PyPI
+packages:
+
+    pipenv shell
+
+
+5. Now that you are "in" your new shell, install a package. As an
+example, you can use is "silly". Once you have activated the virtualenv,
+you can install it with:
+
+    pipenv install silly
+
+
+6. Try using silly.  Test it out with the following in a Python file:
+
+    import silly
+    print(silly.thing())
+    print(silly.paragraph())
+
+
+7. Try out all the features of silly! Read more about the silly package
+at: https://github.com/classam/silly
+
+
+Bonus Challenge:
+
+1. Look through PyPI for another package
+
+2. Try installing it with pipenv
+
+3. Read its documentation and see if you can get it working
+
+

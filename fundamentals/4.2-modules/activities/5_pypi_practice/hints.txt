@@ -1,0 +1,68 @@
+Here are some hints for getting packages running. Ultimately, running
+packages is a matter of dealing with all manner of inconsistencies,
+stemming from the fact that PyPI packages vary wildly in quality. So,
+some of them have really good documentation, meaning you can easily
+integrate them into your project, or others may have more challenging or
+sparse documentation, meaning you'll have to do a bit more work (and a
+lot of head-scratching!) to figure out how they work.
+
+In this activity we try a couple random packages for practice. The hints
+below might be helpful if you get stuck trying to fix the documentation
+provided.
+
+
+
+
+
+Challenge #2:
+----------------
+
+- If you are having trouble finding the "docs" (documentation) for this
+  package, they can be found here:
+    - <https://robpol86.github.io/terminaltables/>
+
+- This project is older -- it was first "abandoned" by its original
+  developer, and then "adopted" by another developer.
+
+- The usage notes on this project is slightly off, and for an older
+  version of python!
+
+- Still having trouble getting the project working? Try replacing the
+  broken print example with this instead, which will work with Python 3:
+
+    print(table.table)
+
+
+
+When added with the example code:
+
+
+    from terminaltables import AsciiTable
+    table_data = [
+        ['Heading1', 'Heading2'],
+        ['row1 column1', 'row1 column2'],
+        ['row2 column1', 'row2 column2'],
+        ['row3 column1', 'row3 column2'],
+    ]
+    table = AsciiTable(table_data)
+    print(table.table)
+
+
+
+
+Challenge #3:
+----------------
+
+- If you are having trouble finding the "docs" (documentation) for this
+  package, they can be found here:
+    - <https://python-docx.readthedocs.io/en/latest/>
+
+- Having an issue with the line that creates an image? Consider deleting
+  that line that references images:
+
+
+    # This causes an error if no image exists with this name
+    document.add_picture('monty-truth.png', width=Inches(1.25))
+
+
+
