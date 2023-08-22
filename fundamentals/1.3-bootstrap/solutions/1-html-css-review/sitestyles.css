@@ -1,0 +1,63 @@
+body {
+    /*background: gray;*/
+    background: lightgreen; /* Challenge 2 */
+}
+
+p {
+    font-size: 14px;
+    color: darkblue;
+}
+
+h1 {
+    background-color: orangered;
+    color: white;
+    font-family: sans-serif; /* use a "sans-serif" font */
+    padding: 10px; /* give it some space around the text */
+    font-weight: normal;  /* make it not bold */
+
+    font-family: Monoton; /* Challenge 6 */
+}
+
+.infobox {
+    /* Challenge 4 */
+    background: darkblue;
+    color: white;
+    padding: 20px;
+
+    /* Bonus 1 */
+    float: right;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+/* Challenge 5 */
+.fancy-text {
+    background: linear-gradient(to bottom, #a9e4f7 0%, #0fb4e7 100%);
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    line-height: 1.1em;
+    letter-spacing: 1px;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 20px;
+}
+
+/* Bonus 2 */
+
+#bonus_error {
+    color: white;
+    font-size: 32pt;
+    background: linear-gradient(to bottom, darkred 0%, orangered 100%);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    font-weight: bolder;
+    font-family: sans-serif;
+}
+
+/* Bonus 3 */
+p::before {
+    content: '🐕';
+}

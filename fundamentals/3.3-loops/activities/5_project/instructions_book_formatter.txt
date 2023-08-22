@@ -1,0 +1,31 @@
+BOOK STATIC SITE GENERATOR
+
+Create a static site generator that inputs a book's text from Project
+Gutenberg, and generates a chapter-by-chapter HTML version of that text.
+An example of the text is provided ("great_expectations.txt")
+
+- Role 1: Pure front-end role! Pick this if you want more practice with
+  HTML and CSS. Using HTML, CSS, Bootstrap, etc, design a nice looking
+  page to display text. Keep in mind time limits and limitations of the
+  application.
+    - Collaboration hint: Think of ways to begin work on this before
+      your teammates are finished, such as for now just using hard-coded
+      text to test it.
+
+- Role 2: Input "parser". Parsing is taking an input file (string) and
+  transforming it into data structures such as lists or dicts. Write a
+  code that inputs text from a file, "parses" it into appropriate data
+  types (for example, you might consider using a "list" of strings to
+  store the paragraphs).
+    - Collaboration hint: Before you combine your work with your
+      teammates work, just print the data structure to the terminal to
+      double check the data is getting passed correctly.
+
+- Role 3: Output templating. Templating is combining data in variables
+  with strings to generate HTML and CSS, essentially "prettifying" the
+  data. Your goal is to write code that takes the data from Role 2, and
+  the HTML from Role 1, and transforms it into assembled HTML pages.
+    - Collaboration hint: Think of ways you can work on this before the
+      others are done. For example, write code that loops through test
+      data, and outputs "h2" and "p" tags as needed.
+

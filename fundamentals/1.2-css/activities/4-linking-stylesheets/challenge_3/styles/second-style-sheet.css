@@ -1,0 +1,8 @@
+.para2 {
+    color: darkgreen;
+}
+
+.para2:before {
+    content: "✅";
+    color: lightgreen;
+}

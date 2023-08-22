@@ -1,0 +1,26 @@
+/* Undesirable styles on para1 and para2 */
+.para1,
+.para2 {
+    color: red;
+}
+
+.para1:before,
+.para2:before {
+    content: "🇽";
+    color: darkred;
+}
+
+/* Desirable style on para3 */
+.para3 {
+    color: darkgreen;
+}
+
+.para3:before {
+    content: "✅";
+    color: lightgreen;
+}
+
+/* set up google font, also! */
+.bonus-with-font {
+    font-family: "Sacramento";
+}

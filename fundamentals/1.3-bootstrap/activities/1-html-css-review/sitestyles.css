@@ -1,0 +1,43 @@
+body {
+    background: lightgreen;
+
+}
+
+p {
+    font-size: 14px;
+    color: darkblue;
+}
+
+h1 {
+    background-color: orangered;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Tilt Prism', cursive;
+    padding: 10px; /* give it some space around the text */
+    font-weight: normal;  /* make it not bold */
+}
+
+div.infobox {
+    background: darkblue;
+    color: white;
+    padding: 30px;
+    float: right;
+    width: 70px;
+}
+
+.fancy-text {
+    background: linear-gradient(to bottom, #a9e4f7 0%, #0fb4e7 100%);
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    line-height: 1.1em;
+    letter-spacing: 1px;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 20px;
+}
+
+p::before {
+    content: '¶';
+
+}

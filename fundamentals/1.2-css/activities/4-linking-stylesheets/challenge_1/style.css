@@ -1,0 +1,13 @@
+li {
+    font-size: 32pt;
+    color: #EC9747;
+    font-weight: bold;
+    border: 2px solid #A15745;
+    padding: 5px;
+    margin: 5px;
+}
+
+ul {
+    background-color: #4a3483;
+}
+

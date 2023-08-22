@@ -1,0 +1,25 @@
+h1 {
+    color: darkred;
+    font-family: "Lobster", cursive;
+}
+
+p {
+    color: darkgray;
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 10px;
+}
+
+div.right-floating-box {
+    float: right;
+    background: darkred;
+    padding: 5px;
+    width: 100px;
+    margin: 20px;
+}
+
+div.right-floating-box p {
+    color: white;
+}
+

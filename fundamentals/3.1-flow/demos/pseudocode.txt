@@ -1,0 +1,41 @@
+Pseudocode for making a PB&J sandwich
+
+1. Gather material
+    - Two sliced pieces of bread
+    - 1 jar of peanut butter
+    - 1 jar of grape jelly
+    - 2 spreading knives
+2. Take one slice of bread and place on plate
+3. Open jar of peanut butter
+4. Insert spreading knife into peanut butter jar
+5. Stir spreading knife
+6. Remove spreading knife from peanut butter jar
+7. Spread peanut butter on slice of bread on plate
+8. Repeat steps 2-7, except with grape jelly jar, and with the other
+spreading knife, and another piece of bread
+9. Combine pieces of bread such that the two spreads are in the center,
+forming a sandwich
+10. Eat sandwich!
+
+
+
+Pseudocode for rock paper scissors
+
+Player A selects rock, paper or scissors
+Player B selects rock, paper or scissors
+
+if they both select the same thing,
+    then report that it's a tie
+if A selects paper and B selects rock,
+    then say that A wins
+if B selects paper and A selects rock,
+    then say that B wins
+if A selects scissors and B selects rock,
+    then say that B wins
+if B selects scissors and A selects rock,
+    then say that A wins
+if A selects scissors and B selects paper,
+    then say that A wins
+if B selects scissors and A selects paper,
+    then say that B wins
+

@@ -1,0 +1,125 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>HTML Review</title>
+    <meta charset="utf-8" />
+
+    <!--
+            Challenge 1:
+            This page already has div's with classes that show a grid
+            arrangement using Bootstrap. However, it does not include the
+            actual bootstrap CSS, so it still looks plain.
+
+            Look up Bootstrap CDN on Google, and then look up a "<link>" tag
+            that includes the CSS file for bootstrap. This will cause the grid
+            arrangement for this page "come alive" or be activated.
+        -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+        crossorigin="anonymous">
+    <!--
+            Challenge 2:
+            Write the HTML to add another row, just like the top row.  Instead
+            of paragraphs and images, instead look up some bootstrap elements
+            and add them to the page. Add (at least) one of each of the
+            following:
+
+            1. Button
+            2. Alert
+            3. Card
+            # DONE
+        -->
+
+    <!--
+            Challenge 3:
+            Create a brand new class, then add it to several existing p tags.
+            Make it have a different color and font size.  Give it extra
+            margin.
+
+            HINT: Remember to create a new class, we need to write
+            "<style></style>" tags at the top to include the CSS.
+        -->
+    <link rel="stylesheet" href="style_1.css" />
+
+    <!--
+            Bonus Challenge:
+            Move your CSS to a separate file, and link it here.
+            DONE
+        -->
+
+    <!--
+            Advanced Bonus Challenge:
+            Used fixed positioning to make a "modal". Look up online what a
+            modal looks like - it's one of those annoying pop-ups that stays in
+            the center. If you still have time, see if you can make the
+            backdrop that stays in-front of all the other content.
+
+            HINT: Make a div position: fixed, and be in the center no matter
+            how you resize.
+        -->
+
+</head>
+
+<body>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields
+        below.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="https://i.imgur.com/VEslUBl.png" />
+            </div>
+            <div class="col">
+                <p class="fun-house">Shiba Inu. It is similar to the Akita.</p>
+            </div>
+
+            <div class="col">
+                <img class="img-fluid" src="https://i.imgur.com/iCCNZZF.jpg" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p class="fun-house">Inu is the Japanese word for dog.</p>
+            </div>
+
+            <div class="col">
+                <img class="img-fluid" src="https://i.imgur.com/XiznnoN.jpg" />
+            </div>
+
+            <div class="col">
+                <button class="button-primary">Touch Me</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="https://i.imgur.com/VEslUBl.png" />
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card
+                            title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <img class="img-fluid" src="https://i.imgur.com/iCCNZZF.jpg" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

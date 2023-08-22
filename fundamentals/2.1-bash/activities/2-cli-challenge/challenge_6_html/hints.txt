@@ -1,0 +1,39 @@
+To create an empty file on either Linux or macOS:
+
+    touch my_file.html
+
+
+To open a file in your browser from the terminal (in this case, named
+my_file.html):
+
+Linux:
+    xdg-open my_file.html
+
+macOS:
+    open my_file.html
+
+
+
+
+To open a file in your text-editor:
+
+If you are using Text Editor (gedit) on Linux:
+    gedit my_file.html
+
+If you are using VS Code:
+    code my_file.html
+
+
+
+
+If the above commands are giving you trouble, consider just opening the
+current directory in finder or the file browser, and then opening the
+individual files the "normal" (graphical) way:
+
+Linux:
+    xdg-open .
+
+macOS:
+    open .
+
+

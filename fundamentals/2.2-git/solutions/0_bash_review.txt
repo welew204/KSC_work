@@ -1,0 +1,63 @@
+BASH/ZSH HINTS
+
+cd
+Change current working directory (e.g. navigate to another directory)
+Example:
+    cd name_of_directory
+
+ls
+List files in the current working directory
+Example:
+    ls
+
+pwd
+Print current working directory
+Example:
+    pwd
+
+cp
+Copy a file to a new location and/or new name
+Example
+    cp name_of_file new_location/
+
+cp -r
+Copy a directory
+Example:
+    cp name_of_dir new_copy_of_dir
+
+mv
+Move and/or rename a file or directory
+Example:
+    cp old_name new_name
+
+rm
+Remove a file
+Example:
+    rm old_file.jpg
+
+rm -r
+Remove a directory, recursively removing stuff in it also
+Example:
+    rm -r some_directory/
+
+mkdir
+Create a new directory
+Example:
+    mkdir my_new_dir
+
+rmdir
+Remove an empty directory
+Example:
+    rmdir old_directory
+
+
+touch
+Create a new empty file
+Example:
+    touch my_new_file.html
+
+echo
+Say something back
+Example:
+    echo "Hello world!"
+

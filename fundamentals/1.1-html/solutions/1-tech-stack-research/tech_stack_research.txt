@@ -1,0 +1,53 @@
+Instacart
+---------
+
+(From StackShare)
+
+- About:
+    - Groceries delivered from the stores you love in one hour.
+
+- Stack:
+    - Languages: Python, Ruby, Objective-C
+    - Databases: Postgres, Redis
+    - Frameworks: React.js, Rails, Numpy
+
+
+
+
+
+
+Tableau Software
+----------------
+
+(From Hacker News Who's Hiring)
+
+- About:
+    - We are the Natural Language Processing Team in Tableau Software
+      that built the Ask Data feature. Our mission is to make Tableau
+      platform as a preferred way business users explore their data.
+
+- Stack:
+    - Languages: Golang, JavaScript (TypeScript), C++
+    - Databases: Postgres, ElasticSearch
+
+
+
+
+
+
+FizzBuzz Cloud Technologies
+---------------------------
+
+(Made up "Unicorn")
+
+- About:
+    - We transform mission-critical infomediaries to synthesize
+      leading-edge e-business, leveraging the cloud paradigm to monetize
+      web-enabled action-items.
+
+- Stack:
+    - Languages: Python, JavaScript
+    - Frameworks: Django, React.js
+    - Database: PostgreSQL
+
+

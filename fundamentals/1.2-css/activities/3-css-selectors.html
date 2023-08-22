@@ -1,0 +1,82 @@
+<!--
+    Replace all the "CHANGE_ME" placeholders to valid selectors to
+    appropriately match up the style with the paragraphs.
+
+    - Hint: Don't use Dev Tools, that was only for the previous activity.
+
+    - Hint: You should ONLY change the text "CHANGE_ME" and nothing else, these
+      are placeholders for "CSS selectors" that will target the elements below.
+      For example, you need to make the first paragraph that says "I should be
+      red." somehow red by changing the first CHANGE_ME.
+-->
+<style>
+    .red-text {
+        color: red;
+    }
+
+    .big-text {
+        font-size: 24px;
+        font-weight: normal;
+    }
+
+    .error-box {
+        background: red;
+        color: white;
+    }
+
+    .img-box {
+        width: 200px;
+        border: black solid 10px
+    }
+
+    .img-box img {
+        width: 200px;
+    }
+
+    h1.big-text {
+        font-size: 40pt;
+    }
+
+    .wrapper-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+
+    .wrapper-div div {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background: green;
+        color: white;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    CHANGE_ME {
+        font-style: italic;
+    }
+</style>
+
+
+<p class="red-text">I should be red.</p>
+
+<p class="big-text">I should be big.</p>
+
+<div class="error-box">I should be red with white text</div>
+<div class="img-box">
+    <p>All these images should be 200px wide:</p>
+    <img src="https://i.imgur.com/ycenbV2.jpg" />
+    <img src="https://i.imgur.com/uouXo16.png" />
+
+</div>
+
+<h1 class="big-text">I should be bigger than a normal big-text...</h1>
+
+<!-- Bonus! Remember containment... -->
+<div class="wrapper-div">
+    <div>I should be square and green and stack to the left</div>
+    <div>Me too</div>
+    <div>Me three -- also <span>this text should be italic</span></div>
+</div>

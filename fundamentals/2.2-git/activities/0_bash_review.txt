@@ -1,0 +1,30 @@
+Discuss with someone next to you:
+
+- In your own words, what do each of the following commands do?
+
+- How might you use them?
+
+cd: 'change directory' move into a specified directory
+
+ls: 'list' what's inside the directory
+
+pwd: 'print working directory' gives filepath of wherever you currently are in the filespace
+
+cp: 'copy' a file or directory
+
+cp -r: 'copy' (a directory) recurssively, aka all the things inside it, maintaining structure
+
+mv: 'move' or rename a file or directory
+
+rm: 'remove' a file or directory
+
+rm -r: 'remove' a directory recurssively
+
+mkdir: 'make directory' aka create a new folder
+
+rmdir: remove an *empty* directory
+
+touch: create a new file and name it
+
+echo: print the specified thing-y
+

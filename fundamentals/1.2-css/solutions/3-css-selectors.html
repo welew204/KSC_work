@@ -1,0 +1,61 @@
+<!--
+    Replace all the "CHANGE_ME" placeholders to valid selectors to
+    appropriately match up the style with the paragraphs.
+-->
+<style>
+    .red-text {
+        color: red;
+    }
+
+    .big-text {
+        font-size: 16pt;
+        font-weight: normal;
+    }
+
+    #error_box {
+        background: red;
+        color: white;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    h1.big-text {
+        font-size: 24pt;
+    }
+
+    .wrapper-div div {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background: green;
+        color: white;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .wrapper-div span {
+        font-style: italic;
+    }
+</style>
+
+
+<p class="red-text">I should be red.</p>
+
+<p class="big-text">I should be big.</p>
+
+<div id="error_box">I should be red with white text</div>
+
+<p>All these images should be 200px wide:</p>
+<img src="https://i.imgur.com/ycenbV2.jpg" />
+<img src="https://i.imgur.com/uouXo16.png" />
+
+<h1 class="big-text">I should be bigger than a normal big-text...</h1>
+
+<!-- Bonus! Remember containment... -->
+<div class="wrapper-div">
+    <div>I should be square and green and stack to the left</div>
+    <div>Me too</div>
+    <div>Me three -- also <span>this text should be italic</span></div>
+</div>
