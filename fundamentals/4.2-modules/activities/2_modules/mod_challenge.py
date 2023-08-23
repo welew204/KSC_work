@@ -1,4 +1,13 @@
 # REMINDER: Only do one challenge at a time! Save and test after every one.
+import brokenmod.submodule
+from anotherlib import func2
+import anotherlib
+from library import greeter
+import mymod
+from mod import file1
+from mod.deeper import file2
+
+print('tester')
 
 print('Challenge 1 -------------')
 # Challenge 1:
@@ -6,10 +15,7 @@ print('Challenge 1 -------------')
 # 2. Modify it so that it prints the "lyrics" variable from the library module
 
 
-#import library
-#print()
-
-
+# print(library.lyrics)
 
 
 print('Challenge 2 -------------')
@@ -17,8 +23,7 @@ print('Challenge 2 -------------')
 # 1. Import the library.py file
 # 2. Invoke the greeter function from library.py.
 # Extra: Write an "from import" style statement to import the greeter directly.
-
-
+greeter()
 
 print('Challenge 3 -------------')
 # Challenge 3:
@@ -30,22 +35,15 @@ print('Challenge 3 -------------')
 #    statement  saying "myfunc getting invoked".
 # 4. In this file: Invoke myfunc
 
-
-
-
-
+mymod.myfunc()
 
 
 print('Challenge 4 -------------')
 # Challenge 4:
 # Uncomment the following code. Fix the typos so that it runs func1 and func2.
 
-#import anotherlib.py
-#from anotherlib import.func2
-#anotherlib.py.func1()
-#func2()
-
-
+anotherlib.func1()
+func2()
 
 
 print('Challenge 5 -------------')
@@ -54,20 +52,11 @@ print('Challenge 5 -------------')
 # 'file2'? Add code here to import those files
 
 
-
-
-
-
-
 print('-------------')
 # Bonus Challenge:
 # Uncomment the following code. Can you figure out why it doesn't work?
-#import brokenmod
-#brokenmod.submodule
 
 
 # Advanced Bonus Challenge: (no solution)
 # Take the game you made in the previous exercise. Refactor it so that
 # functions are in separate files that get imported as necessary.
-
-
