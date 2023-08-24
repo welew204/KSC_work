@@ -1,0 +1,27 @@
+[
+    {
+        "title": "The Shawshank Redemption",
+        "summary": "Two imprisoned men bond over a number of years.",
+        "length": 142
+    },
+    {
+        "title": "WALL-E",
+        "summary": "In the 29th century, Earth is a garbage-strewn wasteland home only to a robot.",
+        "length": 97
+    },
+    {
+        "title": "Pan's Labyrinth",
+        "summary": "In 1944 Francoist Spain, Ofelia travels to meet her new stepfather.",
+        "length": 119
+    },
+    {
+        "title": "The Godfather: Part II",
+        "summary":"The early life and career of Vito Corleone in 1920s.",
+        "length": 202
+    },
+    {
+        "title": "The Room",
+        "summary": "Johnny is a successful banker, and future-husband of Lisa.",
+        "length": 99
+    }
+]

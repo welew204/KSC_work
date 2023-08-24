@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- A pleasant CSS stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head>
+<body>
+    <h1>{{ book_title|title }}</h1>
+
+    <h2>By {{ author }}</h2>
+
+    <hr />
+
+    <h5>{{ chapters|length }} Chapters</h5>
+
+    <h3>Table of Contents</h3>
+    <ol>
+        {% for chapter, contents in chapters %}
+            <li><a href="#{{ chapter|urlencode }}">{{ chapter }}</a></li>
+        {% endfor %}
+    </ol>
+
+    {% for chapter, contents in chapters %}
+        <h2 id="{{ chapter|urlencode }}">{{ chapter }}</h2>
+        {% for paragraph in contents %}
+            {% if loop.first %}
+                <blockquote>{{ paragraph }}</blockquote>
+            {% else %}
+                <p>{{ paragraph }}</p>
+            {% endif %}
+        {% endfor %}
+
+        {% if not loop.last %}
+            <hr />
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
