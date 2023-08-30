@@ -1,0 +1,41 @@
+1. Use curl -v to a GET request to google.com:
+    curl -v google.com
+
+2. Try using curl on other sites, compare and contrast the results.
+Discuss with the person next to you, see if you can formulate in your
+own words what is going on, what is being sent as a request, and what is
+getting received as response.
+
+3. Now, as before, open up any website using Google Dev tools, and go to
+the networking tab. Browse around some, and, as before, see the
+"requests" pop up. Right click on one of the requests and select "Copy"
+and then select "Copy as cURL command" (or something similar).
+
+4. The curl commands that Google Chrome generates are monstrous. Paste
+it in, and then discuss with your partner what you think it does.
+
+5. Add a '-v' at the end before you run it to see EVEN MORE information
+about what it is doing. It will be A LOT of info, so see if you can
+read through the gibberish and find relevant information within the
+code.
+
+
+Bonus Challenges:
+
+1. For fun, try cURLing the following locations:
+    http://wttr.in/Oakland
+    http://wttr.in/Moon
+
+2. Install an alternative cURL equivalent:
+    - (GUI) Advanced REST Client is a popular GUI tool for testing HTTP
+      requests:
+        - <https://install.advancedrestclient.com/install>
+    - (GUI) Postman and Insomnia are both a bit older and probably more
+      popular, but also more complicated:
+        - <https://www.getpostman.com/>
+        - <https://insomnia.rest/>
+    - (CLI) httpie is a CLI tool to replace cURL, with an improved and
+      hopefully more user-friendly interface and syntax-highlighted
+      terminal output: <https://github.com/httpie/httpiea>
+
+
