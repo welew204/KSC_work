@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<!--
+	This is the terminal output from launching the Solution of 3_django_apis
+	It results in a fully-functional "Giggle" application running on Heroku.
+	
+	To view, open this file in your browser, or visit: https://output.jsbin.com/vetomif/
+-->
+
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<pre>michaelb@pat:~/tmp/3_django_apis$ ls
+instructions.md  manage.py  Procfile  <font color="#729FCF"><b>static</b></font>  <font color="#729FCF"><b>templates</b></font>  urls.py  views.py
+michaelb@pat:~/tmp/3_django_apis$ pipenv --python 3
+<b>Creating a virtualenv for this project…</b>
+<b>Using</b> <font color="#EF2929"><b>/usr/bin/python3</b></font> <font color="#4E9A06">(3.6.9)</font> <b>to create virtualenv…</b>
+⠋<font color="#3465A4">Already using interpreter /usr/bin/python3</font>
+<font color="#3465A4">Using base prefix &apos;/usr&apos;</font>
+<font color="#3465A4">New python executable in /home/michaelb/.virtualenvs/3_django_apis-DNI4X3gy/bin/python3</font>
+<font color="#3465A4">Also creating executable in /home/michaelb/.virtualenvs/3_django_apis-DNI4X3gy/bin/python</font>
+<font color="#3465A4">Installing setuptools, pip, wheel...done.</font>
+
+Virtualenv location: <font color="#4E9A06">/home/michaelb/.virtualenvs/3_django_apis-DNI4X3gy</font>
+<b>Creating a Pipfile for this project…</b>
+michaelb@pat:~/tmp/3_django_apis$ pipenv shell
+<b>Spawning environment shell (</b><font color="#CC0000">/bin/bash</font>). Use <b>&apos;exit&apos;</b> to leave.
+. /home/michaelb/.virtualenvs/3_django_apis-DNI4X3gy/bin/activate
+michaelb@pat:~/tmp/3_django_apis$ . /home/michaelb/.virtualenvs/3_django_apis-DNI4X3gy/bin/activate
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ pipenv install django
+<b>Installing </b><font color="#8AE234"><b>django</b></font>…
+<font color="#3465A4">Collecting django</font>
+<font color="#3465A4">  Using cached Django-3.2.3-py3-none-any.whl (7.9 MB)</font>
+<font color="#3465A4">Collecting asgiref&lt;4,&gt;=3.3.2</font>
+<font color="#3465A4">  Using cached asgiref-3.3.4-py3-none-any.whl (22 kB)</font>
+<font color="#3465A4">Collecting sqlparse&gt;=0.2.2</font>
+<font color="#3465A4">  Using cached sqlparse-0.4.1-py3-none-any.whl (42 kB)</font>
+<font color="#3465A4">Collecting pytz</font>
+<font color="#3465A4">  Using cached pytz-2021.1-py2.py3-none-any.whl (510 kB)</font>
+<font color="#3465A4">Collecting typing-extensions</font>
+<font color="#3465A4">  Using cached typing_extensions-3.10.0.0-py3-none-any.whl (26 kB)</font>
+<font color="#3465A4">Installing collected packages: typing-extensions, sqlparse, pytz, asgiref, django</font>
+<font color="#3465A4">Successfully installed asgiref-3.3.4 django-3.2.3 pytz-2021.1 sqlparse-0.4.1 typing-extensions-3.10.0.0</font>
+
+<b>Adding</b> <font color="#8AE234"><b>django</b></font> <b>to Pipfile&apos;s</b> <font color="#EF2929"><b>[packages]</b></font><b>…</b>
+<b>Pipfile.lock not found, creating…</b>
+Locking <font color="#CC0000">[dev-packages]</font> dependencies…
+Locking <font color="#CC0000">[packages]</font> dependencies…
+<b>Updated Pipfile.lock (85c883)!</b>
+<b>Installing dependencies from Pipfile.lock (85c883)…</b>
+  🐍   <font color="#8AE234"><b>▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉</b></font> 5/5 — <font color="#2E3436">00:00:01</font>
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ pipenv install requests
+<b>Installing </b><font color="#8AE234"><b>requests</b></font>…
+<font color="#3465A4">Collecting requests</font>
+<font color="#3465A4">  Using cached requests-2.25.1-py2.py3-none-any.whl (61 kB)</font>
+<font color="#3465A4">Collecting urllib3&lt;1.27,&gt;=1.21.1</font>
+<font color="#3465A4">  Using cached urllib3-1.26.4-py2.py3-none-any.whl (153 kB)</font>
+<font color="#3465A4">Collecting certifi&gt;=2017.4.17</font>
+<font color="#3465A4">  Using cached certifi-2020.12.5-py2.py3-none-any.whl (147 kB)</font>
+<font color="#3465A4">Collecting chardet&lt;5,&gt;=3.0.2</font>
+<font color="#3465A4">  Using cached chardet-4.0.0-py2.py3-none-any.whl (178 kB)</font>
+<font color="#3465A4">Collecting idna&lt;3,&gt;=2.5</font>
+<font color="#3465A4">  Using cached idna-2.10-py2.py3-none-any.whl (58 kB)</font>
+<font color="#3465A4">Installing collected packages: urllib3, idna, chardet, certifi, requests</font>
+<font color="#3465A4">Successfully installed certifi-2020.12.5 chardet-4.0.0 idna-2.10 requests-2.25.1 urllib3-1.26.4</font>
+
+<b>Adding</b> <font color="#8AE234"><b>requests</b></font> <b>to Pipfile&apos;s</b> <font color="#EF2929"><b>[packages]</b></font><b>…</b>
+<font color="#EF2929"><b>Pipfile.lock (85c883) out of date, updating to (47b8e1)…</b></font>
+Locking <font color="#CC0000">[dev-packages]</font> dependencies…
+Locking <font color="#CC0000">[packages]</font> dependencies…
+<b>Updated Pipfile.lock (47b8e1)!</b>
+<b>Installing dependencies from Pipfile.lock (47b8e1)…</b>
+  🐍   <font color="#8AE234"><b>▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉</b></font> 10/10 — <font color="#2E3436">00:00:02</font>
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git status
+fatal: not a git repository (or any of the parent directories): .git
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ ls
+instructions.md  Pipfile       Procfile  <font color="#729FCF"><b>templates</b></font>  views.py
+manage.py        Pipfile.lock  <font color="#729FCF"><b>static</b></font>    urls.py
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git init
+Initialized empty Git repository in /home/michaelb/tmp/3_django_apis/.git/
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git add -A
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git commit -am &apos;ready to launch!&apos;
+[master (root-commit) cfdf515] ready to launch!
+ 12 files changed, 621 insertions(+)
+ create mode 100644 Pipfile
+ create mode 100644 Pipfile.lock
+ create mode 100644 Procfile
+ create mode 100644 instructions.md
+ create mode 100644 manage.py
+ create mode 100644 static/giggle_logo.png
+ create mode 100644 static/giggle_news.png
+ create mode 100644 templates/homepage.html
+ create mode 100644 templates/news.html
+ create mode 100644 templates/search_results.html
+ create mode 100644 urls.py
+ create mode 100644 views.py
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git log
+<font color="#C4A000">commit cfdf515d2b248b46acffa3df7d1de1b96631fdfc (</font><font color="#34E2E2"><b>HEAD -&gt; </b></font><font color="#8AE234"><b>master</b></font><font color="#C4A000">)</font>
+Author: Michael Bethencourt &lt;michaelpb@gmail.com&gt;
+Date:   Tue May 18 16:44:16 2021 -0700
+
+    ready to launch!
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ heroku create
+Creating app... done, <font color="#8787D7">⬢ desolate-sea-19480</font>
+<font color="#06989A">https://desolate-sea-19480.herokuapp.com/</font> | <font color="#4E9A06">https://git.heroku.com/desolate-sea-19480.git</font>
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git remote -v
+heroku	https://git.heroku.com/desolate-sea-19480.git (fetch)
+heroku	https://git.heroku.com/desolate-sea-19480.git (push)
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add &lt;name&gt; &lt;url&gt;
+
+and then push using the remote name
+
+    git push &lt;name&gt;
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git push heroku master
+Counting objects: 16, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (16/16), 39.51 KiB | 4.94 MiB/s, done.
+Total 16 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----&gt; Building on the Heroku-20 stack
+remote: -----&gt; Determining which buildpack to use for this app
+remote: -----&gt; Python app detected
+remote: -----&gt; Using Python version specified in Pipfile.lock
+remote: cp: cannot stat &apos;/tmp/build_79c2e631/requirements.txt&apos;: No such file or directory
+remote: -----&gt; Installing python-3.6.13
+remote: -----&gt; Installing pip 20.2.4, setuptools 47.1.1 and wheel 0.36.2
+remote: -----&gt; Installing dependencies with Pipenv 2020.11.15
+remote:        Installing dependencies from Pipfile.lock (47b8e1)...
+remote: -----&gt; Installing SQLite3
+remote: -----&gt; $ python manage.py collectstatic --noinput
+remote:        Traceback (most recent call last):
+remote:          File &quot;manage.py&quot;, line 24, in &lt;module&gt;
+remote:            execute_from_command_line(sys.argv)
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py&quot;, line 419, in execute_from_command_line
+remote:            utility.execute()
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py&quot;, line 413, in execute
+remote:            self.fetch_command(subcommand).run_from_argv(self.argv)
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/core/management/base.py&quot;, line 354, in run_from_argv
+remote:            self.execute(*args, **cmd_options)
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/core/management/base.py&quot;, line 398, in execute
+remote:            output = self.handle(*args, **options)
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py&quot;, line 187, in handle
+remote:            collected = self.collect()
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py&quot;, line 114, in collect
+remote:            handler(path, prefixed_path, storage)
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py&quot;, line 338, in copy_file
+remote:            if not self.delete_file(path, prefixed_path, source_storage):
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py&quot;, line 248, in delete_file
+remote:            if self.storage.exists(prefixed_path):
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/core/files/storage.py&quot;, line 318, in exists
+remote:            return os.path.exists(self.path(name))
+remote:          File &quot;/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/storage.py&quot;, line 38, in path
+remote:            raise ImproperlyConfigured(&quot;You&apos;re using the staticfiles app &quot;
+remote:        django.core.exceptions.ImproperlyConfigured: You&apos;re using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
+remote: 
+remote:  !     Error while running &apos;$ python manage.py collectstatic --noinput&apos;.
+remote:        See traceback above for details.
+remote: 
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote: 
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote: 
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to desolate-sea-19480.
+remote: 
+To https://git.heroku.com/desolate-sea-19480.git
+ ! [remote rejected] master -&gt; master (pre-receive hook declined)
+error: failed to push some refs to &apos;https://git.heroku.com/desolate-sea-19480.git&apos;
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ heroku config:set DISABLE_COLLECTSTATIC=1
+ <font color="#C4A000">›</font>   Warning: heroku update available from <font color="#8AE234">7.52.0</font> to <font color="#8AE234">7.54.0</font>.
+Setting <font color="#4E9A06">DISABLE_COLLECTSTATIC</font> and restarting <font color="#8787D7">⬢ desolate-sea-19480</font>... done, <font color="#729FCF"><b>v3</b></font>
+<font color="#4E9A06">DISABLE_COLLECTSTATIC</font>: 1
+(3_django_apis-DNI4X3gy) michaelb@pat:~/tmp/3_django_apis$ git push heroku master
+Counting objects: 16, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (16/16), 39.51 KiB | 9.88 MiB/s, done.
+Total 16 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----&gt; Building on the Heroku-20 stack
+remote: -----&gt; Determining which buildpack to use for this app
+remote: -----&gt; Python app detected
+remote: -----&gt; Using Python version specified in Pipfile.lock
+remote: cp: cannot stat &apos;/tmp/build_8d3712a6/requirements.txt&apos;: No such file or directory
+remote: -----&gt; Installing python-3.6.13
+remote: -----&gt; Installing pip 20.2.4, setuptools 47.1.1 and wheel 0.36.2
+remote: -----&gt; Installing dependencies with Pipenv 2020.11.15
+remote:        Installing dependencies from Pipfile.lock (47b8e1)...
+remote: -----&gt; Installing SQLite3
+remote: -----&gt; Discovering process types
+remote:        Procfile declares types -&gt; web
+remote: 
+remote: -----&gt; Compressing...
+remote:        Done: 69.2M
+remote: -----&gt; Launching...
+remote:        Released v6
+remote:        https://desolate-sea-19480.herokuapp.com/ deployed to Heroku
+remote: 
+remote:  !
+remote:  ! ## Warning - The same version of this code has already been built: cfdf515d2b248b46acffa3df7d1de1b96631fdfc
+remote:  !
+remote:  ! We have detected that you have triggered a build from source code with version cfdf515d2b248b46acffa3df7d1de1b96631fdfc
+remote:  ! at least twice. One common cause of this behavior is attempting to deploy code from a different branch.
+remote:  !
+remote:  ! If you are developing on a branch and deploying via git you must run:
+remote:  !
+remote:  !     git push heroku &lt;branchname&gt;:main
+remote:  !
+remote:  ! This article goes into details on the behavior:
+remote:  !   https://devcenter.heroku.com/articles/duplicate-build-version
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/desolate-sea-19480.git
+ * [new branch]      master -&gt; master
+</pre>
+
+
+</pre>
+<script src="https://static.jsbin.com/js/render/edit.js?4.1.8"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"https://static.jsbin.com","root":"https://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

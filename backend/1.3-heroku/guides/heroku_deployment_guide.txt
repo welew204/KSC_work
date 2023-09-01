@@ -1,0 +1,4 @@
+The Heroku Getting Started Guide is located at the URL below:
+
+https://github.com/kickstartcoding/heroku-getting-started
+
