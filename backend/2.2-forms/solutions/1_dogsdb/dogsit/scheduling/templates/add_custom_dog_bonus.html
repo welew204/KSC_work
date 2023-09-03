@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Add doggo appointment: Bonus</h3>
+<form action="." method="POST">
+    {% csrf_token %}
+    <input name="dogname" placeholder="The Dog's Name" />
+    <input name="age" placeholder="Age" />
+    <input name="time" placeholder="Appt Time" />
+    <input name="date" placeholder="Appt Date" />
+    <button>Submit</button>
+</form>
+
+<h2><a href="/">Back to the homepage</a></h2>
+{% endblock content %}

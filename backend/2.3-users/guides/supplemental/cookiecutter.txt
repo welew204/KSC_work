@@ -1,0 +1,202 @@
+Cookiecutter is a "scaffolding" tool, or in other words, another way to
+get started with coding projects. While it was originally written with
+Python/Django projects in mind, it can be used for other coding
+projects.
+
+It is not necessary to use cookiecutter for every project you make with
+Django. In fact it is overkill for tiny projects: It takes quite a few
+steps to set it up, and will generate many more files than the Django
+installations we have been using so far. However, for bigger projects,
+such as your final projects, it is worth to put the time in, because it
+gives you an awesome starting point for your project.
+
+Notably, this is what it will get you:
+* Django Debug Toolbar installed and configured during development --
+  great for debugging Django templates, ORM, and everything else.
+
+* A "starter" site made with Bootstrap 4, notably including a full
+  sign-up system with email confirmation, a log-in form, and more
+  niceties that 90% of sites need, like password reset.
+
+* Distinct settings between local (testing) and production (launching to
+  the world).
+
+* Postgres, Procfile, and various configuration settings set up so you
+  can launch on Heroku.
+
+* Practice with using a more "industry standard" Django set-up. In the
+  opinion of the instructors, this cookie-cutter that represents the
+  cutting-edge of Django best-practices for real-life, large Django
+  projects.
+
+
+### Install Cookie Cutter
+
+For GNU/Linux
+
+    sudo pip3 install cookiecutter
+
+For macOS
+
+    pip3 install cookiecutter
+
+
+### Creating a new Django project
+
+Now, navigate to the directory where you want to start off your new
+Django project, and run the following command:
+
+    cookiecutter https://github.com/pydanny/cookiecutter-django
+
+### Answering all the questions
+
+Cookiecutter asks you many questions to get your project set up.
+Hitting the Enter or Return key will go with the default suggestion.
+Here are the suggested answers for all the questions:
+
+project_name:
+    - (Whatever you want to call it)
+project_slug:
+    - <Hit Enter>
+    - (Or, type in the single word version of the name)
+description:
+    - (One sentence description of your project)
+author_name:
+    - (Your name)
+domain_name:
+    - (Add a future domain name, if applicable)
+email:
+    - (Your email address)
+version:
+    - <Hit Enter>
+open_source_license:
+    - (Either select an open source license, or type 5 for not open
+      source)
+timezone:
+    - America/Los_Angeles
+    - (That's the code for PST. Or hit enter for UTC)
+windows:
+    - <Hit Enter>
+use_pycharm:
+    - <Hit Enter>
+use_docker:
+    - <Hit Enter>
+postgres_version:
+    - <Hit Enter>
+js_task_runner:
+    - <Hit Enter>
+custom_bootstrap_compilation:
+    - <Hit Enter>
+use_compressor:
+    - <Hit Enter>
+use_celery:
+    - <Hit Enter>
+use_mailhog:
+    - <Hit Enter>
+use_sentry:
+    - <Hit Enter>
+
+use_whitenoise:
+    - yes
+
+use_heroku:
+    - yes
+    - (This will set up your project for Heroku)
+
+use_travisci:
+    - <Hit Enter>
+
+keep_local_envs_in_vcs:
+    - <Hit Enter>
+
+debug:
+    - <Hit Enter>
+
+
+
+
+
+### Doing the Pipenv stuff
+
+Now, ensure you are out of any other Pipenv environment, and type in:
+
+    pipenv shell
+
+
+Finally, confirm you are in the right Pipenv environment (should have
+project_name in parenthesis next to your prompt), then run the following
+to install dependencies:
+    pipenv install -r requirements/production.txt
+    pipenv install -r requirements/local.txt --dev
+
+
+
+### Change to using SQLite for Development
+
+By default, the Django set-up assumes we will be using Postgres during
+development too. This is less convenient. Let's switch local development
+to use SQLite.
+
+Open "config/settings/base.py" with your favorite text editor.  Examine
+lines 37-43: This should be the "DATABASES section. Replace the given
+DATABASES configuration with the one below:
+
+    import os
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(str(ROOT_DIR), 'db.sqlite3'),
+        }
+    }
+
+
+Now, when working on the app locally, it will use SQLite (a light, easy
+database for development), but when we deploy to Heroku, it will use
+Postgres (a real "heavy-weight" database).
+
+
+
+
+
+### Clean up some unnecessary files
+
+Django cookiecutter generated a few extra files we don't need. Let's
+clean these up with the following commands:
+
+    rm requirements.txt
+    rm merge_production_dotenvs_in_dotenv.py
+
+
+
+
+
+### Launch the site
+
+Do the migration:
+    python manage.py migrate
+
+Run the server:
+    python manage.py runserver
+
+
+
+
+### Adding your own stuff
+
+Use manage.py or django-admin to start a new app:
+    python manage.py startapp
+
+Then, add to config/settings/base.py to the LOCAL_APPS list where it
+says "Your stuff: custom apps go here". This is just as before, except
+note that with the cookiecutter version, we separate our custom apps
+from the built-in Django ones, and the third party ones we install.
+
+
+
+
+### Launching to Heroku
+
+The default production.py configuration tends to be overkill for what we
+are doing. Consider replacing it with included production.py, which will
+disable many included features to make it easier to launch to heroku.
+

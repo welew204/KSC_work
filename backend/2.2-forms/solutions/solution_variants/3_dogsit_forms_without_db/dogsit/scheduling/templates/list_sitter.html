@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Register as a dog sitter</h2>
+<p>Do you actually give a sit? Be a sitter!</p>
+<form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Register as Sitter</button>
+</form>
+
+{% endblock content %}

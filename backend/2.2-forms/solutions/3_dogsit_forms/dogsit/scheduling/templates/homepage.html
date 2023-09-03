@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Dog appointments</h3>
+{# Advanced challengge 2: Using groups we can separate the grouped vs non-grouped dogs #}
+{% regroup dogs by booked as booked_dogs %}
+{% for dogs in booked_dogs %}
+    {% if dogs.grouper %}
+        <h3>Booked dogs</h3>
+    {% else %}
+        <h3>Unbooked dogs</h3>
+    {% endif %}
+    {% for dog in dogs.list %}
+        <hr />
+        <p><strong>name:</strong> {{ dog.name }}</p>
+        <p><strong>age:</strong> {{ dog.age }}</p>
+        <p><strong>time:</strong> {{ dog.time }}</p>
+        <p><strong>date:</strong> {{ dog.date }}</p>
+        {% if dog.booked %}
+            <p><strong>booked by:</strong> {{ dog.booked_by }}</p>
+        {% else %}
+            <form method="POST" action="/book/">
+                {% csrf_token %}
+                {{ booking_form.as_p }}
+                <input type="hidden" name="id" value="{{ dog.id }}" />
+                <button class="btn btn-primary">Book</button>
+            </form>
+        {% endif %}
+        <p>(id #: {{ dog.id }})</p>
+    {% endfor %}
+{% endfor %}
+
+<h3>Sitters available</h3>
+{% for sitter in sitters %}
+    <hr />
+    <h4>{{ sitter.first_name }} {{ sitter.last_name }}</h4>
+    <p><strong>name:</strong> {{ sitter.first_name }} {{ sitter.last_name }}</p>
+    <p><strong>phone:</strong> {{ sitter.phone }}</p>
+    <p><strong>address:</strong> {{ sitter.address }}</p>
+    <p>(id #: {{ sitter.id }})</p>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h2>Dogs</h2>
+        {# Advanced challengge 2: Using groups we can separate the grouped vs non-grouped dogs #}
+        {% regroup dogs by booked as booked_dogs %}
+        {% for dogs in booked_dogs %}
+            {% if dogs.grouper %}
+                <h3>Booked dogs</h3>
+            {% else %}
+                <h3>Unbooked dogs</h3>
+            {% endif %}
+            {% for dog in dogs.list %}
+                <hr />
+                <div class="row">
+                    <div class="col-4">
+                        {# Show the dog image #}
+                        <img width="150" src="{{ dog.picture }}" class="img-fluid" />
+                    </div>
+                    <div class="col-4">
+                        <p>Dog: {{ dog.id }}</p>
+                        {# Loop through properties of the dog, talking about each #}
+                        {% for key, value in dog.items %}
+                            <p><strong>{{ key }}:</strong> {{ value }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="col-4">
+                        {# <a href="/book/?dog={{ forloop.counter0 }}" class="btn btn-primary">Book</a> #}
+
+                        {# Advanced challenge 1: We can reuse the form in the loop to ask the same question repeatedly for each dog #}
+                        {# Replacing this link with the form: #}
+                        <form method="POST" action="/book/?dog={{ dog.id }}">
+                            {% csrf_token %}
+                            {{ booking_form.as_p }}
+                            <button class="btn btn-primary">Book</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <div class="col">
+        <h2>Sitters</h2>
+        {% for sitter in sitters %}
+            <hr />
+            <div class="row">
+                <div class="col">
+                    {# Show the sitter image #}
+                    <img width="150" src="{{ sitter.picture }}" class="img-fluid" />
+                </div>
+                <div class="col">
+                    {# Loop through properties of the sitter, display each #}
+                    {% for key, value in sitter.items %}
+                        <p><strong>{{ key }}:</strong> {{ value }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

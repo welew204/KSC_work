@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Add Sitter</h3>
+
+<!-- Challenge #6 -->
+{% if error_message %}
+    <p>ERROR: {{ error_message }}</p>
+{% endif %}
+
+<form action="." method="POST">
+    {% csrf_token %}
+    <input name="firstname" placeholder="Your First Name" />
+    <input name="lastname" placeholder="Your Last Name" />
+    <input name="email" placeholder="Your Email" />
+    <input name="phone" placeholder="Your Phone Number" />
+    <input name="address" placeholder="Street Address" />
+    <button>Submit</button>
+</form>
+
+<h2><a href="/">Back to the homepage</a></h2>
+{% endblock content %}

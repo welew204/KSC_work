@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Register as a dog sitter</h2>
+<p>Do you actually give a sit? Be a sitter!</p>
+<form action="." method="POST">
+    {% csrf_token %}
+    <p>First Name: <input name="first_name" /></p>
+    <p>Last Name: <input name="last_name" /></p>
+    <p>Phone: <input name="phone" /></p>
+    <p>Address: <textarea name="address"></textarea></p>
+    <p>Age: <input name="age" type="number" /></p>
+    <button>Register as Sitter</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Doge Sitting Appointments</h2>
+
+<p><a href="/add-dog/">Add a dog</a></p>
+<p><a href="/add-sitter/">Add a sitter</a></p>
+
+<h3>Dog appointments</h3>
+{% for dog in dogs %}
+    <hr />
+    <p><strong>name:</strong> {{ dog.name }}</p>
+    <p><strong>age:</strong> {{ dog.age }}</p>
+    <p><strong>time:</strong> {{ dog.time }}</p>
+    <p><strong>date:</strong> {{ dog.date }}</p>
+    <p>(id #: {{ dog.id }})</p>
+{% endfor %}
+
+
+<h3>Sitters available</h3>
+{% for sitter in sitters %}
+    <hr />
+    <h4>{{ sitter.first_name }} {{ sitter.last_name }}</h4>
+    <p><strong>name:</strong> {{ sitter.first_name }} {{ sitter.last_name }}</p>
+    <p><strong>phone:</strong> {{ sitter.phone }}</p>
+    <p><strong>address:</strong> {{ sitter.address }}</p>
+    <p>(id #: {{ sitter.id }})</p>
+{% endfor %}
+
+{% endblock content %}

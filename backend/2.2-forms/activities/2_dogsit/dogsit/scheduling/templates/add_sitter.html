@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Add Sitter</h3>
+<form action="." method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+<h2><a href="/">Back to the homepage</a></h2>
+{% endblock content %}

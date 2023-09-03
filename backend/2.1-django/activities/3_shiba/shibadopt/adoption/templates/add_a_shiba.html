@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Shiba Adoption</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>ShibAdopt</h1>
+        <p>Welcome to our site. This is a site for adopting shibas.</p>
+
+        <ol>
+            <li><a href="/">Back Home</a></li>
+            <li><a href="/adoption/">Adopt a Shiba</a></li>
+        </ol>
+
+        <h2>Contact us to adopt a shiba!</h2>
+
+        <form method="GET">
+            <label name="name">Name: </label>
+            <input name="name" />
+            <label name="age">Age: </label>
+            <input name="age" />
+            <button>Add to list</button>
+        </form>
+        <form method="GET">
+
+            <button href="/add_a_shiba" name="reverse">Reverse the List
+            </button>
+        </form>
+
+        <h2>Shibas up for adoption:</h2>
+        {% for shiba in all_shibas %}
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="{{ shiba.image_src }}" />
+            </div>
+            <div class="col">
+                <h3>Shiba name: {{ shiba.name }}</h3>
+                <h4>Shiba age: {{ shiba.age }}</h4>
+                <h4>Shiba id: {{ shiba.id_number }}</h4>
+                <p>Wow, such shiba, much bork!</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>

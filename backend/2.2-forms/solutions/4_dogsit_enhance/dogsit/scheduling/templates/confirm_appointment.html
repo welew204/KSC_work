@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <h1>Book for {{ dog.name }}</h1>
+    <div class="row">
+        <div class="col-2">
+            {# Show the dog image #}
+            <img width="150" src="{{ dog.picture }}" class="img-fluid" />
+        </div>
+        <div class="col-4">
+            <p>Dog: {{ forloop.counter0 }}</p>
+            {# Loop through properties of the dog, talking about each #}
+            {% for key, value in dog.items %}
+                <p><strong>{{ key }}:</strong> {{ value }}</p>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <select name="sitter">
+                    {% for sitter in sitters %}
+                        <option value="{{ sitter.first_name }} {{ sitter.last_name }}">
+                            {{ sitter.first_name }} {{ sitter.last_name }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <button>Book this dog sitting appointment</button>
+            </form>
+
+            {% for sitter in sitters %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

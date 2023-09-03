@@ -1,0 +1,62 @@
+<!-- Check out instructions.md to start -->
+
+<!-- ..................................................................... -->
+<!-- Challenge 2 Snippet -->
+<div class="row">
+    <div class="col-md-7">
+        <h1 class="display-4">Book list</h1>
+        {% for book in book_list %}
+
+            {# Loop through each book in list, showing each using Bootstrap's "Media" Component #}
+            <div class="d-flex justify-content-between mb-5 border rounded shadow">
+                <div>
+                    {% if book.cover_url %}
+                        <img src="{{ book.cover_url }}" alt="Book cover" />
+                    {% else %}
+                        {# Default cover icon #}
+                        <img src="https://i.imgur.com/dMlC0dn.png" alt="Book icon" />
+                    {% endif %}
+                </div>
+                <div class="ms-3">
+                    <h5>{{ book.title }}</h5>
+                    <p>{{ book.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-5">
+        <div class="card border rounded">
+            <div class="card-body">
+                <form class="d-grid" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-lg btn-primary">Add Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ..................................................................... -->
+
+
+
+<!-- ..................................................................... -->
+<!-- Bonus Challenges Snippets -->
+
+<!-- 1. Bootstrap Forms -->
+{% load django_bootstrap5 %}
+{% bootstrap_form form %}
+
+
+<!-- 2. Multiline descriptions -->
+<!-- https://docs.djangoproject.com/en/3.0/ref/templates/language/#filters -->
+<p>{{ book.description|escape|linebreaks }}</p>
+
+<!-- 3. Delete button -->
+<form class="flex-grow-1" method="POST" action="/delete-book/">
+    <!-- HINT: Put this as the last element in the "media" component -->
+    {% csrf_token %}
+    <input type="hidden" name="book_id" value="{{ book.id }}" />
+    <button class="btn btn-outline-danger btn-sm rounded-0 float-end">X</button>
+</form>
+<!-- ..................................................................... -->

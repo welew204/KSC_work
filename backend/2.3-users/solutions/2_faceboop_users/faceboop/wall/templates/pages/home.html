@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Faceboop Home{% endblock %}
+{% block nav_home_class %}active{% endblock %}
+
+{% block content %}
+<h2>Welcome to The Faceboop</h2>
+<br />
+<br />
+
+<div class="row">
+    {% for user in users %}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">{{ user.first_name }} {{ user.last_name }}</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item list"><strong>Username</strong> {{ user.username }}</li>
+                        <li class="list-group-item list"><strong>Email</strong> {{ user.email }}</li>
+                        <li class="list-group-item list"><strong>Joined</strong> {{ user.date_joined }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+<h2>Register a user</h2>
+<form class="" action="." method="POST">
+    <div class="card-body">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success btn-lg">Register!</button>
+    </div>
+</form>
+
+{% endblock content %}

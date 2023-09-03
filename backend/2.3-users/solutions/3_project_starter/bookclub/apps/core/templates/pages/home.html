@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Book Club - Home
+{% endblock title %}
+
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-7">
+        <h1 class="display-4">Book list</h1>
+
+        {% for book in book_list %}
+            <div class="d-flex justify-content-between mb-5 border rounded shadow">
+                <div>
+                    {% if book.cover_url %}
+                        <img src="{{ book.cover_url }}" alt="Book icon" />
+                    {% else %}
+                        <img src="https://i.imgur.com/dMlC0dn.png" alt="Book icon" />
+                    {% endif %}
+                </div>
+
+                <div class="ms-3">
+                    <h5>{{ book.title }}</h5>
+                    <p>{{ book.description|escape|linebreaks }}</p>
+                </div>
+                <form class="flex-grow-1" method="POST" action="/delete-book/">
+                    {% csrf_token %}
+                    <input type="hidden" name="book_id" value="{{ book.id }}" />
+                    <button class="btn btn-outline-danger btn-sm rounded-0 float-end">X</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-5">
+        <div class="card border rounded">
+            <div class="card-body">
+                <form class="d-grid" method="POST">
+                    {% csrf_token %}
+                    {% load django_bootstrap5 %} {# Adding Bootstrap 5 form support #}
+                    {% bootstrap_form form %}
+                    <button class="btn btn-lg btn-primary">Add Book</button>
+                    {# NOTE: If we didn't want to do bootstrap 5, we could do {{ form.as_p }} #}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+

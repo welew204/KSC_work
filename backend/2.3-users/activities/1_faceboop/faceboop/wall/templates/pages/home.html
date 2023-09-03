@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Faceboop Home{% endblock %}
+{% block nav_home_class %}active{% endblock %}
+
+{% block content %}
+<h2>Welcome to The Faceboop</h2>
+<br />
+<br />
+
+<h3>Our Fan Pages</h3>
+<div class="row">
+    {% for fan_page in fan_pages %}
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="{{ fan_page.image }}" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-title">{{ fan_page.name }}</h3>
+                    <p class="card-text"></p>
+
+                    <ul class="list-group">
+                        <li class="list-group-item list"><strong>Email</strong> {{ fan_page.email }}</li>
+                        <li class="list-group-item list"><strong>Joined</strong> {{ fan_page.date_joined }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

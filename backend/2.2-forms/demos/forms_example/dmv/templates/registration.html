@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Springfield DMV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Springfield DMV</h1>
+    <img style="height: 200px" src="https://i.imgur.com/e0TsMa5.jpg" />
+
+    <div class="row">
+        <div class="col">
+            <h2>Register</h2>
+            <form action="/" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="col">
+            <h2>Recent registrations</h2>
+            {% for registration in registrations %}
+                <hr />
+                <h5>
+                    {{ registration.first_name }}
+                    {{ registration.middle_name }}
+                    {{ registration.last_name }}
+                </h5>
+                <p>Date: <strong>{{registration.visit_date }}</strong></p>
+                <p>Visit code: <tt>{{registration.reason_for_visit }}</tt></p>
+                <p>Email: {{registration.email }}</p>
+                <p>
+                    Street Address:<br />
+                    <pre>{{registration.street_address }}</pre>
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

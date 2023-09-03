@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Adopt a shiba</h3>
+{% if was_adopted %}
+    <h2>Aww you adopted the doggo!</h2>
+    <p>Doggo adopted: {{ shiba.name }}</p>
+{% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Enter the id_number of the Shiba you want to adopt:
+    <input name="number" type="number" />
+    </p>
+    <button>Adopt and remove</button>
+</form>
+{% endblock content %}

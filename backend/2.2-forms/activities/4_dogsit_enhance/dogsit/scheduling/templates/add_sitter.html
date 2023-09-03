@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Add Dog Sitter</h2>
+
+{% if error_message %}
+<div class="alert alert-danger">
+    <strong>You're in deep sit!</strong> {{ error }}
+</div>
+{% endif %}
+
+<!-- <form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Submit</button>
+</form> -->
+{% load django_bootstrap5 %}
+
+<form method="POST" class="form mb-5">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="Submit" %}
+</form>
+
+
+{% endblock content %}

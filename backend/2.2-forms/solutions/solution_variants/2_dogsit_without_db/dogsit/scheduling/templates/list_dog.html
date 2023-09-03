@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Add Dog Sitting Appointment</h2>
+
+{% if error %}
+    <div class="alert alert-danger">
+        <strong>You're in deep sit!</strong> {{ error }}
+    </div>
+{% endif %}
+
+<form action="." method="POST">
+    {% csrf_token %}
+    <p>Name: <input name="name" /></p>
+    <p>Breed: <input name="breed" /></p>
+    <p>Special notes: <textarea name="notes"></textarea></p>
+    <p>Date: <input name="date" /></p>
+    <p>Start time: <input name="start_time" /></p>
+    <p>Duration: <input name="duration" type="number" /></p>
+    <p>Age: <input name="age" type="number" /></p>
+    <button>Add dog sitting appointment</button>
+</form>
+
+{% endblock content %}

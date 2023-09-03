@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Adopt a shiba!</h2>
+
+<form action="." method="POST">
+    {% csrf_token %}
+    <p>Enter the id_number of the Shiba you want to adopt:
+        <input name="number" type="number" />
+    </p>
+    <button>Adopt and remove</button>
+</form>
+{% endblock content %}

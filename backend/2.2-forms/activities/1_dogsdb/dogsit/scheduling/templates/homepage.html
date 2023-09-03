@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Doge Sitting Appointments</h2>
+
+<p><a href="/add-dog/">Click here for the "add dog" page</a></p>
+<p><a href="/add-bad-dog/">Click here to add a "bad dog" to the appontments</a></p>
+<p><a href="/add-custom-dog/">Click here to add a your own dog to the appontments</a></p>
+
+{% for dog in dogs %}
+<hr />
+<div class="row">
+    <div class="col">
+        <!-- later we could add stuff here -->
+    </div>
+    <div class="col">
+        <p><strong>name:</strong> {{ dog.name }}</p>
+        <p><strong>age:</strong> {{ dog.age }}</p>
+        <p><strong>time:</strong> {{ dog.time }}</p>
+        <p><strong>date:</strong> {{ dog.date }}</p>
+        <p>(id #: {{ dog.id }})</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

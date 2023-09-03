@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<h2>Add Dog Sitting Appointment</h2>
+
+{# BONUS CHALLENGE #2 #}
+
+{{ form.media }}            {# Adds required JS and CSS #}
+
+<form action="." method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    {% bootstrap_button "Add dog sitting appointment" button_type="submit" button_class="btn btn-primary" %}
+</form>
+
+{% endblock content %}

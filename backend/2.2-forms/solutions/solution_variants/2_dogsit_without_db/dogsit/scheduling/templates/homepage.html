@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h2>Dogs</h2>
+        {% for dog in dogs %}
+            <hr />
+            <div class="row">
+                <div class="col-4">
+                    {# Show the dog image #}
+                    <img width="150" src="{{ dog.picture }}" class="img-fluid" />
+                </div>
+                <div class="col-4">
+                    <p>Dog: {{ forloop.counter0 }}</p>
+                    {# Loop through properties of the dog, talking about each #}
+                    {% for key, value in dog.items %}
+                        <p><strong>{{ key }}:</strong> {{ value }}</p>
+                    {% endfor %}
+                </div>
+                <div class="col-4">
+                    <a href="/book/?dog={{ forloop.counter0 }}" class="btn btn-primary">Book</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="col">
+        <h2>Sitters</h2>
+        {% for sitter in sitters %}
+            <hr />
+            <div class="row">
+                <div class="col">
+                    {# Show the sitter image #}
+                    <img width="150" src="{{ sitter.picture }}" class="img-fluid" />
+                </div>
+                <div class="col">
+                    {# Loop through properties of the sitter, display each #}
+                    {% for key, value in sitter.items %}
+                        <p><strong>{{ key }}:</strong> {{ value }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
