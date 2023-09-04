@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django import forms
 from django.contrib import messages
 from django.contrib.auth.models import User
+from .models import WallPost
 
 
 class PostForm(forms.Form):
@@ -48,7 +49,7 @@ def homepage(request):
 
 
 def feed(request):
-
+    posts = WallPost.objects.all()
     if request.method == 'POST':
 
         # Create a form instance and populate it with data from the request
@@ -58,9 +59,11 @@ def feed(request):
             # Challenge 4: TODO this should make WallPost objects instead
             username = request.user.username
             text = form.cleaned_data['text']
-            print('The username', username)
-            print('The text', text)
-            print('TODO: Need to actually post this message')
+            WallPost.objects.create(
+                username=username,
+                text=text
+            )
+
             return redirect('/feed/')
 
     else:
@@ -69,11 +72,11 @@ def feed(request):
 
     # Challenge 5: TODO have this fetch the posts from the database
     context = {
+        'posts': posts,
         'form': form,
     }
 
     return render(request, 'pages/feed.html', context)
-
 
 
 def search(request):
