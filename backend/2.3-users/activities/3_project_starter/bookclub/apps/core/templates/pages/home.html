@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Site - Home
+{% endblock title %}
+
+
+{% block content %}
+{% load django_bootstrap5 %}
+<div class="row">
+  <div class="col-md-7">
+    <h1 class="display-4">Book list</h1>
+    {% for book in book_list %}
+
+    {# Loop through each book in list, showing each using Bootstrap's "Media" Component #}
+    <div class="d-flex justify-content-between mb-5 border rounded shadow">
+      <div>
+        {% if book.cover_url %}
+        <img src="{{ book.cover_url }}" alt="Book cover" />
+        {% else %}
+        {# Default cover icon #}
+        <img src="https://i.imgur.com/dMlC0dn.png" alt="Book icon" />
+        {% endif %}
+      </div>
+      <div class="ms-3">
+        <h5>{{ book.title }}</h5>
+        <p>{{ book.description }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="col-md-5">
+    <div class="card border rounded">
+      <div class="card-body">
+        <form action="." class="" method="POST">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+
+          <button class="btn btn-lg btn-primary">Add Book</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>More stuff. {{ example_context_variable }}.</p>
+
+{% endblock content %}

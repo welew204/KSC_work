@@ -155,6 +155,7 @@ used more-or-less verbatim -- you just need to figure out where the code goes!
     - Kickstart Coding Django Project Starter comes with django-bootstrap5
       pre-installed. Let's use that make our Add Book form look nicer by using
       Bootstrap-styled forms.
+      # DONE
 
 2.  Multiline descriptions
     - Try creating a book with a description that has line-breaks, e.g. spans

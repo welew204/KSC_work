@@ -29,14 +29,16 @@ Challenge 2:
 Discuss the following aspects of the Django project:
 
 1. "faceboop" vs "wall", which is the Django project, which is the Django app?
+>> "faceboop" is the project, "wall" is the app
 
 2. Examine faceboop/urls.py. Note the "name=" parameter. Now, examine the
 "wall/templates/base.html", see the code {% url "home" %} and {% url "feed" %}.
 Can you guess what it might be doing?
+>> that passes in urls from the url page to the template, based on the 'name' param
 
 3. Can you figure out how the different navbar items highlight conditionally
 based on what link you click on?
-
+>> the class definition in the template is getting passed in some {% %} info (??)
 
 
 Challenge 3:
