@@ -6,6 +6,7 @@ from django.contrib import auth
 
 from .models import WallPost
 
+
 class PostForm(forms.Form):
     text = forms.CharField(widget=forms.Textarea)
 
@@ -60,9 +61,9 @@ def all_users(request):
     return render(request, 'pages/user_list.html', context)
 
 
-
 def user_feed(request, username):
     user = User.objects.get(username=username)
+    print("user feed getting hit")
 
     if request.method == 'POST':
 
@@ -72,8 +73,13 @@ def user_feed(request, username):
         if form.is_valid():
             # Create a new WallPost object populated with the data we are
             # giving it from the cleaned_data form
+            post = form.cleaned_data['text']
+            WallPost.objects.create(
+                username=user.username,
+                text=post
+            )
 
-            ##### TODO CREATE -- use the current username
+            # TODO CREATE -- use the current username
 
             # HINT 1: To create a new wall post, do something like this:
             # WallPost.objects.create(
@@ -85,7 +91,7 @@ def user_feed(request, username):
             # something. Probably something from a form, and one other
             # source...
 
-            # HINT 3: 
+            # HINT 3:
             # text = form.cleaned_data['text']
             # print(text)
             # username = request.user.username
@@ -98,10 +104,11 @@ def user_feed(request, username):
         # if a GET we'll create a blank form
         form = PostForm()
 
-    #### TODO READ
+    # TODO READ
     # We need to get all the posts for this user's username
-    # HINT: 
+    # HINT:
     # posts = ...SOMETHING GOES HERE, using .filter and/or .all...
+    posts = WallPost.objects.filter(username=user.username)
 
     context = {
         'first_name': user.first_name,
@@ -109,34 +116,33 @@ def user_feed(request, username):
         'email': user.email,
         'username': username,
         'form': form,
-        #'posts': posts,
+        'posts': posts,
     }
     return render(request, 'pages/feed.html', context)
 
 
-
-
 def delete_post(request, post_id):
     print('Getting delete request for post with ID:', post_id)
-    #### TODO DELETE
+    # TODO DELETE
     # Fetch the right WallPost with the post_id, then delete it.
+    WallPost.objects.get(id=post_id).delete()
 
     # HINT: Look at your cheatsheet, and the demo activity.
 
     # Cool trick to redirect to the previous page
     return redirect(request.META.get('HTTP_REFERER', '/'))
-
-
 
 
 def update_post(request, post_id):
     new_text = request.POST['text']
     print('Getting delete request for post with ID:', post_id)
     print('Should change text to:', new_text)
-    #### TODO UPDATE
+    # TODO UPDATE
+    target_post = WallPost.objects.get(id=post_id)
+    target_post.text = new_text
+    target_post.save()
     # Load post and then update with new_text
     # HINT: Look at your cheatsheet, and the demo activity.
 
     # Cool trick to redirect to the previous page
     return redirect(request.META.get('HTTP_REFERER', '/'))
-

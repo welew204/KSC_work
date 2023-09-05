@@ -9,9 +9,6 @@
 <br />
 <br />
 
-
-
-
 <div class="row">
     <div class="col-sm-4">
         <h2>Profile</h2>
@@ -30,24 +27,26 @@
         </form>
         <div class="row">
             {% for post in posts %}
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-text">{{ post.text }}</h2>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-text">{{ post.text }}</h2>
 
-                            <hr />
-                            <h5>Update</h5>
-                            <form action="/update-post/{{ post.id }}/" method="POST">
-                                {% csrf_token %}
-                                <p>Update text: <textarea name="text"></textarea>
-                                <button class="btn btn-info">Update</button></p>
-                            </form>
-                            <p><a class="btn btn-danger" href="/delete-post/{{ post.id }}/">Delete</a></p>
-                        </div>
+                        <hr />
+                        <h5>Update</h5>
+                        <form action="/update-post/{{ post.id }}/" method="POST">
+                            {% csrf_token %}
+                            <p>Update text: <textarea name="text"></textarea>
+                                <button class="btn btn-info">Update</button>
+                            </p>
+                        </form>
+                        <p><a class="btn btn-danger"
+                                href="/delete-post/{{ post.id }}/">Delete</a></p>
                     </div>
                 </div>
+            </div>
             {% empty %}
-                <h3>No posts to show.</h3>
+            <h3>No posts to show.</h3>
             {% endfor %}
         </div>
     </div>

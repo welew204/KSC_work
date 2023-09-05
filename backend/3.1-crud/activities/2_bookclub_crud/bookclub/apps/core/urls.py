@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.core import views
+from apps.core import views, bonus_activity_views
 
 urlpatterns = [
     # CRUD views for Books
@@ -17,8 +17,10 @@ urlpatterns = [
     path('reading-list/list-delete/<list_id>/', views.reading_list_delete),
 
     # Bonus Activity Views -- ignore until you get to it
-    path('reading-list/<list_id>/', views.reading_list_details),
+    path('reading-list/<list_id>/', bonus_activity_views.reading_list_details),
     path('reading-list/<list_id>/book-create/', views.reading_list_create_book),
-    path('reading-list/<list_id>/book-update/<book_id>/', views.reading_list_update_book),
-    path('reading-list/<list_id>/book-delete/<book_id>/', views.reading_list_delete_book),
+    path('reading-list/<list_id>/book-update/<book_id>/',
+         views.reading_list_update_book),
+    path('reading-list/<list_id>/book-delete/<book_id>/',
+         views.reading_list_delete_book),
 ]

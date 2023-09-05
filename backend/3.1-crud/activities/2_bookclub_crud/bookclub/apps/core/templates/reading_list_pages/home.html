@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Book Club - Reading Lists
+Book Club - Reading Lists
 {% endblock title %}
 
 {% block content %}
@@ -12,16 +12,19 @@
 </a>
 
 {% for rl in all_reading_lists %}
-    <div class="d-flex justify-content-between mb-5 border rounded shadow">
+<div class="d-flex justify-content-between mb-5 border rounded shadow">
+    <a href="/reading-list/{{ rl.id }}">
         <div class="ms-3">
             <h5>{{ rl.name }} <span class="badge bg-info">{{ rl.topic }}</span></h5>
         </div>
-        <div class="btn-group btn-group-sm">
-            <a href="/reading-list/list-update/{{ rl.id }}/" class="btn btn-outline-primary"> ✏️  </a>
-            <a href="/reading-list/list-delete/{{ rl.id }}/" class="btn btn-outline-danger"> 🗑️ </a>
-        </div>
+    </a>
+    <div class="btn-group btn-group-sm">
+        <a href="/reading-list/list-update/{{ rl.id }}/" class="btn btn-outline-primary">
+            ✏️ </a>
+        <a href="/reading-list/list-delete/{{ rl.id }}/" class="btn btn-outline-danger">
+            🗑️ </a>
     </div>
+</div>
 {% endfor %}
 
 {% endblock content %}
-

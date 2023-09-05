@@ -13,6 +13,7 @@
 ## Completed spec
 
 - Post new posts with any username of your choice
+### FINISHED read, create for this activity -WB
 
 - The ability to delete posts
 

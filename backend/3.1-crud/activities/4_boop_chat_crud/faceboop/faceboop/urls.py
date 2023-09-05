@@ -20,5 +20,6 @@ from wall import views
 
 urlpatterns = [
     path('', views.homepage, name="home"),
+    path('add-post/', views.add_post, name="home"),
     path('admin/', admin.site.urls),
 ]
