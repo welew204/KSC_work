@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+    Book Club - Update List
+{% endblock title %}
+
+{% block content %}
+<h1>Editing List</h1>
+
+<div class="card border rounded">
+    <div class="card-body">
+        <form class="d-grid" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-lg btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

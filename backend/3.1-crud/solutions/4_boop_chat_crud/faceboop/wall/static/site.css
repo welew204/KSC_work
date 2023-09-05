@@ -1,0 +1,69 @@
+body {
+    background: #edf0f5;
+}
+
+.nav-link {
+    font-size: 16pt;
+}
+.navbar {
+    background: #3B5998 !important;
+}
+
+form textarea,
+form input {
+    font-size: 16pt;
+    max-height: 50px;
+    width: 300px;
+}
+
+form label {
+    font-size: 16pt;
+    font-weight: 200;
+    min-width: 100px;
+    vertical-align: top;
+}
+button.btn-lg {
+    font-size: 16pt;
+}
+
+/*
+https://codepen.io/mikemiello/pen/KNbadx
+
+*/
+
+.message-faceboop-friend {
+  background: rgba(223, 229, 121, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+
+.message-faceboop-user {
+  background: rgba(0, 167, 204, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+
+.messaging {
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.message-text {
+  margin-top: 10px;
+}
+
+.message-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  display: inline-block;
+}
+
+.message-name {
+  margin-left: 10px;
+  display: inline-block;
+}

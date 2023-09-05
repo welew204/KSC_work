@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Book Club - Reading Lists
+{% endblock title %}
+
+{% block content %}
+<h1>All Reading Lists</h1>
+
+<a href="/list/create/" class="btn btn-primary mb-5">
+    + Add Reading List
+</a>
+
+{% for rl in all_reading_lists %}
+    <div class="d-flex mb-5 border rounded shadow">
+        <div class="btn-group btn-group-sm">
+            <a href="/list/{{ rl.id }}/vote/up/" class="btn btn-outline-primary">&uarr;</a>
+            <a class="btn btn-outline-dark">{{ rl.votes|default:"0" }}</a>
+            <a href="/list/{{ rl.id }}/vote/down/" class="btn btn-outline-danger">&darr;</a>
+        </div>
+
+        <div class="ms-3">
+            <h5>
+                <a href="/list/{{ rl.id }}/">
+                    {{ rl.name }}
+                    <span class="badge bg-info">{{ rl.topic }}</span>
+                </a>
+            </h5>
+
+        </div>
+
+        {% if user.is_authenticated and user.username == rl.creator_username %}
+            <div class="btn-group btn-group-sm">
+                <a href="/list/update/{{ rl.id }}/" class="btn btn-outline-primary"> ✏️  </a>
+                <a href="/list/delete/{{ rl.id }}/" class="btn btn-outline-danger"> 🗑️ </a>
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+
+{% endblock content %}
+

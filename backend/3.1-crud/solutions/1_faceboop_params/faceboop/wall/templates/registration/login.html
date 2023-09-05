@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+  {% else %}
+    <p>Please login to see this page.</p>
+  {% endif %}
+{% endif %}
+
+{% csrf_token %}
+
+<div class="col-sm-6">
+    <h2>Login</h2>
+    <p>Already have a Faceboop acount? Get back to your boopin' by logging
+    in below:</p>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <p>{{ form.username }}</p>
+        <p>{{ form.password }}</p>
+        <input type="hidden" name="next" value="{{ next }}" />
+        <p><input type="submit" value="login"  class="btn btn-success btn-lg" /></p>
+    </form>
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Faceboop Chat{% endblock %}
+
+{% block content %}
+<h2>Welcome to Faceboop Chat</h2>
+<br />
+
+<div class="container">
+    <!-- some example HTML to work with! Take it or leave it.-->
+    <div class="message-faceboop-friend center-block">
+        <div class="row message-text">
+            message text
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-md-6">
+                <h4 class="message-name">message username</h4>
+            </div>
+            <div class="col-xs-4 col-md-6 text-end message-date">
+                message like_count Like(s) -
+                Delete -
+                Update
+            </div>
+        </div>
+    </div>
+
+
+    <div class="message-faceboop-user center-block">
+        <div class="row">
+            <div class="col-xs-8 col-md-6">
+                <h4 class="message-name">name2</h4>
+            </div>
+        </div>
+        <div class="row message-text ">
+            TEXT GOES HERE
+        </div>
+    </div>
+
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="messaging center-block row">
+            <input placeholder="Username" name="username" class="form-control col-3" />
+            <input name="message" type="text" class="form-control col-6" />
+            <span class="input-group-btn col-3">
+                <button class="btn btn-default">Send</button>
+            </span>
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Faceboop Chat{% endblock %}
+
+{% block content %}
+<h2>Welcome to Faceboop Chat</h2>
+<br />
+
+<h3>Edit message</h3>
+<form action="." method="POST">
+    {% csrf_token %}
+    <div class="messaging center-block row">
+        <input placeholder="Username" name="username" class="form-control col-3"
+            value="{{ message.username }}" />
+        <input name="message" type="text" class="form-control col-6"
+            value="{{ message.text }}" />
+        <span class="input-group-btn col-3">
+            <button class="btn btn-default">Save new version</button>
+        </span>
+    </div>
+</form>
+
+{% endblock content %}
+

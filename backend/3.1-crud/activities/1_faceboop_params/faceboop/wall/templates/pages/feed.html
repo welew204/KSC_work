@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}{{ username }} - Faceboop Feed{% endblock %}
+
+{% block content %}
+
+<h1>The Faceboop Wall of {{ username }}</h1>
+<h5>Probably cooler things than you 🤔</h5>
+<br />
+<br />
+
+
+
+
+<div class="row">
+    <div class="col-sm-4">
+        <h2>Profile</h2>
+        <p><strong>First name:</strong> {{ fname }}</p>
+        <p><strong>Last name:</strong> {{ lname }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+    </div>
+    <div class="col-sm-8">
+        <h2>{{ fname }}'s Wall</h2>
+        <p>...</p>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

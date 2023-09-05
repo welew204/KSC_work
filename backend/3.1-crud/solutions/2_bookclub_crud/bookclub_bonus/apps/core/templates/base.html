@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>
+        {% block title %}
+            Book Club
+        {% endblock title %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css" />
+    <link href="{% static 'css/signinform.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+  </head>
+
+<body>
+
+<nav class="navbar navbar-expand-md">
+    <div class="container">
+        <a class="navbar-brand" href="/">Book Club</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                ☰
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">All Reading Lists</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}" >Sign Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'view_profile' request.user %}" >
+                            {{ request.user }}
+                            <img src="{{ user.gravatar }}" class="navbar-avatar" />
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a id="log-in-link" class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="log-in-link" class="nav-link" href="{% url 'signup' %}">Sign up</a>
+                    </li>
+                {% endif %}
+            </ul>
+
+        </div>
+    </nav>
+</div>
+
+
+
+{% block main %}
+    <div class="container pt-2">
+
+      {# Enable Django's "messages" system #}
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+          {% endfor %}
+      {% endif %}
+
+      {% block content %}
+        <p>Use this as a way to quick start any new project.</p>
+      {% endblock content %}
+
+    </div>
+{% endblock main %}
+
+
+  </body>
+</html>
+

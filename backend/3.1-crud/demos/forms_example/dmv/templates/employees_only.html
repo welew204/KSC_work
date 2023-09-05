@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+<h2>Employees only</h2>
+
+<p>Welcome back brave employee of Springfield DMV!</p>
+
+<h3>Recent registrations</h3>
+{% for registration in registrations %}
+    <hr />
+    <h5>{{ registration.first_name }} {{ registration.last_name }}</h5>
+    <p><strong>Street Address:</strong> <pre>{{ registration.street_address }}</pre></p>
+    <p><strong>Email:</strong> {{ registration.email }}</p>
+    <p><strong>Visit Date:</strong> {{ registration.visit_date }}</p>
+    <div class="card">
+        <h6>Modify</h6>
+        <form action="/update/{{ registration.id }}/" method="POST">
+            {% csrf_token %}
+            <p>Update email: <input name="email" />
+            <button class="btn btn-warning">Update</button></p>
+        </form>
+        <p><a class="btn btn-danger" href="/delete/{{ registration.id }}/">Delete</a></p>
+    </div>
+{% endfor %}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h3>List of all users on system</h3>
+{% for user in users %}
+    <hr />
+    <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+    <p><strong>username:</strong> {{ user.username }}</p>
+    <p><strong>email:</strong> {{ user.email }}</p>
+{% endfor %}
+
+{% endblock main_content %}
+
