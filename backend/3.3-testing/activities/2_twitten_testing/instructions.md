@@ -26,13 +26,21 @@ student(s) near you the answer to the following questions:
 
 * In your own words: Describe 1) what is automated testing, and 2) why
   it is a very good thing.
+  >>>> tests that automagically compare a valid outcome with the tested outcome of some software; this is key so that as code changes/develops, testing doesn't have to rely on humans to actually click and find bugs ("manual testing")
 
 * In your own words: What do you think think each of the 3 tests is
   testing for? What bugs (or regressions) might be introduced that could
   cause a test to fail?  Can you explain what each line of code is
   doing?
+  >>> 1. checking for certain text on homepage (does homepage load as expected?)
+  >>> 2. checking for certain form components on homepage?
+  >>> 3. checking that new user can get added on homepage?
+
 
 * In your own words: What additional aspects could be checked for?
+>>> are tweets getting displayed / correctly?
+>>> can a tweet get added?
+>>> can the profile be edited?
 
 
 Challenge 2:
@@ -95,7 +103,7 @@ test case.
 Hint: See the Django documentation on this if you get stuck:
 https://docs.djangoproject.com/en/2.0/topics/testing/overview/
 
-
+>>> INTERESTING that setUp doesn't need to be run for each method (it just autoruns??)
 
 Challenge 6:
 -----------------

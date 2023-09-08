@@ -12,12 +12,13 @@ class CreatingNewUserTestCase(TestCase):
         self.assertContains(response, 'Yell about')
 
     def test_homepage_shows_all_tweets_link(self):
-        # TODO:
+        # DONE:
+        response = self.client.get('/')
+        self.assertContains(response, 'href="/all-tweets/">All Tweets</a>')
         # Make sure there is the text "All Tweets" in the homepage, to ensure
         # the all tweets link is there. See the previous test as an example.
         # Bonus: Also check for "all-tweets/" to ensure the link is correctly
         # rendered.
-        pass
 
     def test_shows_form(self):
         # Let's make sure that the homepage shows the expected form. To do so,
@@ -57,36 +58,55 @@ class CreatingNewUserTestCase(TestCase):
         self.assertEqual(user.email, 'testuser@fake.com')
 
 
-
 class TweetListsAppearTestCase(TestCase):
-    # TODO Challenge 5 -- Create a setUp method to DRY
+    # DONE Challenge 5 -- Create a setUp method to DRY
     # out your test
-
-    def test_all_tweets_page_shows_a_tweet(self):
+    def setUp(self):
         fake_user = User.objects.create(username='test')
         Tweet.objects.create(
             user=fake_user,
             text="This is a testing tweet",
         )
 
+    def test_all_tweets_page_shows_a_tweet(self):
+        # self.setUp()
         response = self.client.get('/all-tweets/')
 
-        # TODO Challenge 3 -- use "self.assertContains" to check that
+        # DONE Challenge 3 -- use "self.assertContains" to check that
         # the tweet appears on the page.
+        self.assertContains(response, "This is a testing tweet")
+        self.assertContains(response, '<a href="/users/test/">')
 
-
-    # TODO Challenge 4 -- Make a new test within this "TestCase" that
+    # DONE Challenge 4 -- Make a new test within this "TestCase" that
     # checks that the tweet also shows up on the user page
+    def test_user_page_shows_a_tweet(self):
+
+        response = self.client.get('/users/test/')
+
+        # DONE Challenge 3 -- use "self.assertContains" to check that
+        # the tweet appears on the page.
+        self.assertContains(response, "This is a testing tweet")
+        self.assertContains(response, '<a href="/users/test/">')
 
 
+# TODO Challenge 6 -- Test create tweet form
+class PostTweetWorksTestCase(TestCase):
+    def setUp(self) -> None:
+        self.client.force_login(
+            User.objects.get_or_create(username='testuser')[0])
+        # print(self.client)
 
+    def test_postTweet(self):
+        fake_user = User.objects.get(username='testuser')
+        response = self.client.get('/users/testuser/')
+        self.assertContains(response, '<form ')
+        self.client.post('/users/testuser/', {
+            'user': fake_user,
+            'text': "Testy McTesty",
+        })
 
-
-# TODO Challenge 7 -- Test create tweet form
-
-
-
-
-
-
-
+        response = self.client.get('/users/testuser/')
+        # print(response.content)
+        self.assertContains(
+            response, '<a href="/users/testuser/">')
+        self.assertContains(response, 'Testy McTesty')
