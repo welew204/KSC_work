@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Book Club - Reading Lists
+{% endblock title %}
+
+{% block content %}
+<h1>
+    {{ reading_list.name }}
+    <span class="badge bg-info">{{ reading_list.topic }}</span>
+
+    <div class="btn-group btn-group-sm ms-5">
+        <a href="/list/update/{{ reading_list.id }}/" class="btn btn-outline-primary"> ✏️  </a>
+        <a href="/list/delete/{{ reading_list.id }}/" class="btn btn-outline-danger"> 🗑️ </a>
+    </div>
+</h1>
+
+{% if user.is_authenticated %}
+    <a href="/list/{{ reading_list.id }}/book-create/" class="btn btn-primary btn-lg mb-5">
+        + Add Book
+    </a>
+{% endif %}
+
+{% for book in all_books %}
+    <div class="d-flex mb-5 border rounded shadow">
+        {% if book.cover_url %}
+            <img class="align-self-start" src="{{ book.cover_url }}" alt="Book cover" />
+        {% else %}
+            <img class="align-self-start" src="https://i.imgur.com/dMlC0dn.png" alt="Book icon" />
+        {% endif %}
+        <div class="ms-3">
+            <h5>{{ book.title }}</h5>
+            <p>{{ book.description|escape|linebreaks }}</p>
+        </div>
+
+        {% if request.user == reading_list.creator_user %}
+            <div class="btn-group btn-group-sm">
+                <a href="/list/{{ reading_list.id }}/book-update/{{ book.id }}/" class="btn btn-outline-primary"> ✏️  </a>
+                <a href="/list/{{ reading_list.id }}/book-delete/{{ book.id }}/" class="btn btn-outline-danger"> 🗑️ </a>
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+
+{% endblock content %}
+

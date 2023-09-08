@@ -1,0 +1,32 @@
+{% for tweet in tweets %}
+<div class="tweet card">
+    <div class="row">
+        <p class="card-title">
+            <a href="/users/{{ tweet.username }}/">
+                <img src="{{ tweet.get_gravatar }}" />
+                <strong>@{{ tweet.username }}</strong>
+            </a>
+            {{ tweet.text }}
+        </p>
+    </div>
+
+    <div class="links">
+        {# TODO Challenges here!! #}
+        <!--
+        Challenge 4: Wrap this icon in a link (<a> tag) that will delete this
+        tweet)
+
+        Challenge 5: Now, make sure the delete link only appears on tweets that
+        you tweeted.  E.g. you shouldn't be presented a link to delete other
+        people's links. (Hint: Use template if-statement)
+
+        Bonus Challenges: 1) Implement an edit tweet feature, 2) in a modal.
+        -->
+        {% if user.username == tweet.username %}
+        <a href="/delete-tweet/{{ tweet.id }}">
+            <i class="octicon octicon-trashcan"></i>
+        </a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}

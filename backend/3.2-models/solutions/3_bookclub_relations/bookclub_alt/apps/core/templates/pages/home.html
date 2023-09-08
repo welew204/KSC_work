@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Book Club - Reading Lists
+{% endblock title %}
+
+{% block content %}
+
+<h2>What's trending</h2>
+
+{% for rl in all_reading_lists %}
+    {# Loop through each Reading List and display it #}
+
+    <div class="d-flex justify-content-between mb-5 border rounded shadow">
+        <div class="d-flex">
+            <div class="btn-group btn-group-sm pt-1 pb-1">
+                {# If the user is logged-in, show vote up and down arrows. Otherwise just show the votes #}
+                {% if user.is_authenticated %}
+                    <a href="/list/{{ rl.id }}/vote/up/" class="btn btn-outline-primary">&uarr;</a>
+                {% endif %}
+                <a class="btn btn-outline-dark disabled">{{ rl.votes }} points</a>
+                {% if user.is_authenticated %}
+                    <a href="/list/{{ rl.id }}/vote/down/" class="btn btn-outline-danger">&darr;</a>
+                {% endif %}
+            </div>
+
+            <div class="ms-3 mt-1 mb-1 position-relative">
+                <h5>
+                    <a href="/list/{{ rl.id }}/" class="stretched-link">{{ rl.name }} <span class="badge bg-primary ms-2">{{ rl.topic }}</span></a>
+                </h5>
+            </div>
+        </div>
+        
+        <div>
+            <a class="btn btn-link" href="/account/users/{{ rl.creator_user.username }}/" >
+                created on
+                {{ rl.created }}
+                by
+                {{ rl.creator_user }}
+                <img src="{{ rl.creator_user.gravatar }}" class="navbar-avatar" />
+            </a>
+        </div>
+    </div>
+{% endfor %}
+
+
+{% endblock content %}
+

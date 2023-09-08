@@ -1,0 +1,46 @@
+
+<!-- Challenge #5 -->
+{% if user.is_authenticated %}
+    {% if user.username == tweet.username %}
+        <p>The person logged on (e.g. you) made this tweet (e.g. this is your
+        tweet!)</p>
+    {% endif %}
+{% endif %}
+
+<!-- Challenge #6 -->
+{% if user.is_authenticated and user.username == user_on_page.username %}
+    <p>The person logged on (e.g. you) is the same as the user on this page
+    (e.g.  This is your page!)</p>
+{% endif %}
+
+
+
+<!-- BONUS CHALLENGE #1 -->
+<form action="/update-tweet/{{ tweet.id }}/" method="POST">
+    {% csrf_token %}
+    <textarea name="text">{{ tweet.text }}</textarea>
+    <button class="btn btn-primary">Save changes</button>
+</form>
+
+
+
+
+<!-- BONUS CHALLENGE #2 -->
+<div class="modal fade" id="modal{{ tweet.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit tweet</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        ...stuff goes here.....
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modal{{ tweet.id }}">
+    <i class="octicon octicon-pencil"></i>
+</button>
