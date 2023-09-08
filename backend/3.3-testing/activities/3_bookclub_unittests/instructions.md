@@ -20,7 +20,7 @@ Challenge 1:
 
 - There are already several tests written. Examine "EmptySiteTestCase" in
   tests.py and see if you can understand what is being tested.
-
+>>>>> chekcking homepage for: [signup link, login link, ability to sign-up (POST request)]
 
 
 Challenge 2: Fixtures

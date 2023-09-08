@@ -6,6 +6,7 @@ from django.core.exceptions import SuspiciousOperation
 from apps.core.models import Book, ReadingList
 from apps.core.forms import AddBookForm, AddReadingListForm
 
+
 def reading_list_home(request):
     # R in CRUD --- READ ReadingLists from database
 
@@ -25,6 +26,7 @@ def reading_list_home(request):
     }
     return render(request, 'pages/home.html', context)
 
+
 def reading_list_details(request, list_id):
     # R in CRUD --- READ a single ReadingList & its books from database
     reading_list_requested = ReadingList.objects.get(id=list_id)
@@ -38,6 +40,7 @@ def reading_list_details(request, list_id):
         'all_books': books,
     }
     return render(request, 'pages/details.html', context)
+
 
 @login_required
 def reading_list_create(request):
@@ -67,8 +70,8 @@ def reading_list_delete(request, list_id):
     readinglist = ReadingList.objects.get(id=list_id)
 
     # Prevent users who are not the owner user from deleting this
-    #if readinglist.creator_user != request.user:
-    #    raise SuspiciousOperation('Attempted to delete wrong list')
+    if readinglist.creator_user != request.user:
+        raise SuspiciousOperation('Attempted to delete wrong list')
 
     readinglist.delete()
     return redirect('/')
@@ -79,9 +82,9 @@ def reading_list_create_book(request, list_id):
     # C in CRUD --- CREATE books in database
     reading_list_requested = ReadingList.objects.get(id=list_id)
 
-    # TODO: BONUS CHALLENGE - Uncomment this to fix the security defect
-    #if reading_list_requested.creator_user != request.user:
-    #    raise SuspiciousOperation('Attempted to add book to wrong list')
+    # DONE: BONUS CHALLENGE - Uncomment this to fix the security defect
+    if reading_list_requested.creator_user != request.user:
+        raise SuspiciousOperation('Attempted to add book to wrong list')
 
     if request.method == 'POST':
         # Create a form instance and populate it with data from the request
@@ -110,9 +113,9 @@ def reading_list_delete_book(request, book_id):
 
     # Ensure that the creator of the reading list of the book is indeed the
     # person requesting that the book be deleted
-    # TODO: Challenge 4 Uncomment this to fix the security defect
-    #if book.reading_list.creator_user != request.user:
-    #    raise SuspiciousOperation('Attempted to delete book to wrong list')
+    # DONE: Challenge 4 Uncomment this to fix the security defect
+    if book.reading_list.creator_user != request.user:
+        raise SuspiciousOperation('Attempted to delete book to wrong list')
 
     book.delete()
 

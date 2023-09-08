@@ -2,6 +2,8 @@ from django.test import TestCase
 
 from apps.core.models import ReadingList, Book
 from apps.accounts.models import User
+from pprint import pprint
+
 
 class EmptySiteTestCase(TestCase):
     ############
@@ -37,12 +39,12 @@ class EmptySiteTestCase(TestCase):
 
         # Now make sure the account was created and shows expected HTML
         response = self.client.get('/')
-        self.assertContains(response, 'Account created successfully. Welcome!', html=True)
+        self.assertContains(
+            response, 'Account created successfully. Welcome!', html=True)
 
         # Ensure the user is logged in & displaying a link to the user's page
         expected_navbar_link = 'href="/account/users/testuser/"'
         self.assertContains(response, expected_navbar_link)
-
 
 
 class C3FunctionalFixtureTestCase(TestCase):
@@ -74,13 +76,22 @@ class C3FunctionalFixtureTestCase(TestCase):
 
     def test_page_2_shows_expected_4_books(self):
         response = self.client.get('/?page=2')
-        # Challenge 3 TODO: Complete this for the 4 titles on Page 2
+        # Challenge 3 DONE: Complete this for the 4 titles on Page 2
+        # pprint(response.content)
+        self.assertContains(response, 'Early Adult Fantasy Novels')
+        self.assertContains(
+            response, 'Favorite books on history and geography')
+        self.assertContains(response, '19th Century Classics')
+
+        # >>>> this one is not showing, not in the printed response or the test, BUT it is in the browser....?!
+        self.assertContains(response, 'The origins of science fiction')
 
     def test_page_2_shows_doesnt_show_page_1_books(self):
         response = self.client.get('/?page=2')
-        # Challenge 3 TODO: Complete this for a title on page 1 and Page 3
-
-
+        self.assertNotContains(response, 'Dystopian YA')
+        self.assertNotContains(response, 'Fantasy books I recently read')
+        print("this one passed")
+        # Challenge 3 DONE: Complete this for a title on page 1 and Page 3
 
 
 class C4SecurityTFDTestCase(TestCase):
@@ -107,9 +118,8 @@ class C4SecurityTFDTestCase(TestCase):
         # Now, simulate the deletion, and ensure that there are still 10
         self.client.post('/list/delete/8/')
         total_count = ReadingList.objects.count()
-        # Challenge 4 TODO: Uncomment this line so the test can fail
-        #self.assertEqual(total_count, 10)
-
+        # Challenge 4 DONE: Uncomment this line so the test can fail
+        self.assertEqual(total_count, 10)
 
     def test_book_deletion_security(self):
         # Log in as test user alicereader (who has password of "password")
@@ -124,6 +134,8 @@ class C4SecurityTFDTestCase(TestCase):
 
         self.client.post('/book-delete/44/')
         # Challenge 4 TODO: Finish this with the similar code to ensure there
+        total_count = Book.objects.count()
+        self.assertEqual(total_count, 58)
         # are still 58 Books in the DB
 
 
@@ -144,20 +156,24 @@ class C5ModelReadingListUnitTestCase(TestCase):
             creator_user=fake_user,
         )
 
-
     def test_increment_views(self):
         # Ensure the views start at 0
         self.assertEqual(self.reading_list.views, 0)
-        self.reading_list.increment_views() # Run the method itself
+        self.reading_list.increment_views()  # Run the method itself
         print('reading list views:', self.reading_list.views)
-        # Challenge 5 TODO: Add an "assertEqual" to ensure the view count has
+        self.assertEqual(self.reading_list.views, 1)
+        # Challenge 5 DONE: Add an "assertEqual" to ensure the view count has
         # been incremented
-
 
     def test_recalculate_popularity(self):
         self.reading_list.views = 100
         self.reading_list.recalculate_popularity()
-        # Challenge 5 TODO: Finish the unit test for recalculate_popularity
+        print(self.reading_list.score)
+        self.assertEqual(self.reading_list.score, 10)
+        self.reading_list.views = 0
+        self.reading_list.recalculate_popularity()
+        print(self.reading_list.score)
+        self.assertEqual(self.reading_list.score, 0)
+        # Challenge 5 DONE: Finish the unit test for recalculate_popularity
         # - with views at 100 (score should be 10)
         # - with views at 0   (score should be 0)
-
