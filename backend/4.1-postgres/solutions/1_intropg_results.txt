@@ -1,0 +1,101 @@
+damp-fjord-77965::DATABASE=> SELECT * FROM users;
+ id |  username   
+----+-------------
+  1 | janeqhacker
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT * FROM users;
+ id |  username   
+----+-------------
+  1 | janeqhacker
+(1 row)
+
+damp-fjord-77965::DATABASE=> INSERT INTO users (id, username) VALUES (2, 'admin');
+INSERT 0 1
+damp-fjord-77965::DATABASE=> SELECT * FROM users;
+ id |  username   
+----+-------------
+  1 | janeqhacker
+  2 | admin
+(2 rows)
+
+damp-fjord-77965::DATABASE=> INSERT INTO users (id, username) VALUES (3, 'dolanduck');
+INSERT 0 1
+damp-fjord-77965::DATABASE=> select * from users;
+ id |  username   
+----+-------------
+  1 | janeqhacker
+  2 | admin
+  3 | dolanduck
+(3 rows)
+
+damp-fjord-77965::DATABASE=> INSERT INTO users (id, username) VALUES (4, 'dril');
+INSERT 0 1
+damp-fjord-77965::DATABASE=> SELECT * FROM users;
+ id |  username   
+----+-------------
+  1 | janeqhacker
+  2 | admin
+  3 | dolanduck
+  4 | dril
+(4 rows)
+
+damp-fjord-77965::DATABASE=> ALTER TABLE users ADD bio VARCHAR(255);
+ALTER TABLE
+damp-fjord-77965::DATABASE=> SELECT * FROM users;
+ id |  username   | bio 
+----+-------------+-----
+  1 | janeqhacker | 
+  2 | admin       | 
+  3 | dolanduck   | 
+  4 | dril        | 
+(4 rows)
+
+damp-fjord-77965::DATABASE=> UPDATE users SET bio = 'truth lover' WHERE username = 'dril';
+UPDATE 1
+damp-fjord-77965::DATABASE=> SELECT * FROM users;
+ id |  username   |     bio     
+----+-------------+-------------
+  1 | janeqhacker | 
+  2 | admin       | 
+  3 | dolanduck   | 
+  4 | dril        | truth lover
+(4 rows)
+
+damp-fjord-77965::DATABASE=> CREATE TABLE tweets (
+damp-fjord-77965::DATABASE(>     id INT,
+damp-fjord-77965::DATABASE(>     user_id INT,
+damp-fjord-77965::DATABASE(>     text VARCHAR(250)
+damp-fjord-77965::DATABASE(> );
+CREATE TABLE
+damp-fjord-77965::DATABASE=> \d
+            List of relations
+ Schema |  Name  | Type  |     Owner      
+--------+--------+-------+----------------
+ public | tweets | table | hbgnmugdpfzbyh
+ public | users  | table | hbgnmugdpfzbyh
+(2 rows)
+
+damp-fjord-77965::DATABASE=> SELECT * FROM tweets;
+ id | user_id | text 
+----+---------+------
+(0 rows)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> INSERT INTO tweets (id, user_id, text)
+damp-fjord-77965::DATABASE-> VALUES
+damp-fjord-77965::DATABASE->     (1, 1, 'h4ck th3 pl4n37'),
+damp-fjord-77965::DATABASE->     (2, 4, 'no'),
+damp-fjord-77965::DATABASE->     (3, 3, 'hi i''m dolan'),
+damp-fjord-77965::DATABASE->     (4, 3, 'gooby pls');
+INSERT 0 4
+damp-fjord-77965::DATABASE=> SELECT * FROM tweets;
+ id | user_id |      text       
+----+---------+-----------------
+  1 |       1 | h4ck th3 pl4n37
+  2 |       4 | no
+  3 |       3 | hi i'm dolan
+  4 |       3 | gooby pls
+(4 rows)
+
+damp-fjord-77965::DATABASE=> 

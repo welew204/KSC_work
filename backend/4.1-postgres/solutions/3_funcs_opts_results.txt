@@ -1,0 +1,209 @@
+
+damp-fjord-77965::DATABASE=> SELECT SUM(population) FROM popdata WHERE year = 2006;
+        sum         
+--------------------
+ 6575597802.4849866
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT population, population FROM popdata WHERE year = 2006;
+damp-fjord-77965::DATABASE=> SELECT SUM(population) FROM popdata WHERE year = 2006;
+        sum         
+--------------------
+ 6575597802.4849866
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT SUM(population) FROM popdata;
+         sum         
+---------------------
+ 13989270735.4849866
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT AVG(population) FROM popdata WHERE year = 2006;
+          avg          
+-----------------------
+ 30302294.020668141014
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT ROUND(AVG(population)) FROM popdata WHERE year = 2006;
+  round   
+----------
+ 30302294
+(1 row)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=>     SELECT ROUND(AVG(population), 2) FROM popdata WHERE year = 2006;
+    round    
+-------------
+ 30302294.02
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT MIN(population), MAX(population) FROM popdata WHERE year = 2006;
+      min      |        max         
+---------------+--------------------
+ 10101.0000000 | 1311020000.0000000
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT * FROM popdata WHERE year = 2006;
+damp-fjord-77965::DATABASE=>  SELECT MAX(population) / 1000 FROM popdata WHERE year = 2006;
+       ?column?       
+----------------------
+ 1311020.000000000000
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT SUM(population) AS totalpop FROM popdata WHERE year = 2006;
+      totalpop      
+--------------------
+ 6575597802.4849866
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->         ROUND(AVG(population) / 1000 / 1000) AS average_population_mil,
+damp-fjord-77965::DATABASE->         ROUND(MAX(population) / 1000 / 1000) AS most_populous_mil
+damp-fjord-77965::DATABASE->     FROM popdata WHERE year = 2006;
+ average_population_mil | most_populous_mil 
+------------------------+-------------------
+                     30 |              1311
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->     ROUND(SUM(population) / 1000, 1) AS total_k_2016
+damp-fjord-77965::DATABASE-> FROM popdata
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     year = 2016;
+ total_k_2016 
+--------------
+    7413672.9
+(1 row)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->     ROUND(AVG(population) / 1000 / 1000)
+damp-fjord-77965::DATABASE->         AS average_population_mil,
+damp-fjord-77965::DATABASE->     ROUND(MAX(population) / 1000 / 1000)
+damp-fjord-77965::DATABASE->         AS most_populous_mil
+damp-fjord-77965::DATABASE-> FROM popdata
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     year = 2016;
+ average_population_mil | most_populous_mil 
+------------------------+-------------------
+                     34 |              1379
+(1 row)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->     ROUND(STDDEV(population) / 1000 / 1000)
+damp-fjord-77965::DATABASE->         AS stddev_population_mil
+damp-fjord-77965::DATABASE-> FROM popdata
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     year = 2016;
+ stddev_population_mil 
+-----------------------
+                   135
+(1 row)
+
+damp-fjord-77965::DATABASE=> SELECT year, ROUND(SUM(population)) AS poptotal FROM popdata GROUP BY year;
+ year |  poptotal  
+------+------------
+ 2016 | 7413672933
+ 2006 | 6575597802
+(2 rows)
+
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->     ROUND(STDDEV(population) / 1000 / 1000)
+damp-fjord-77965::DATABASE->         AS stddev_population_mil
+damp-fjord-77965::DATABASE-> FROM popdata
+damp-fjord-77965::DATABASE-> GROUP BY year;
+ stddev_population_mil 
+-----------------------
+                   135
+                   123
+(2 rows)
+
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->     year,
+damp-fjord-77965::DATABASE->     ROUND(STDDEV(population) / 1000 / 1000)
+damp-fjord-77965::DATABASE->         AS stddev_population_mil
+damp-fjord-77965::DATABASE-> FROM popdata
+damp-fjord-77965::DATABASE-> GROUP BY year;
+ year | stddev_population_mil 
+------+-----------------------
+ 2016 |                   135
+ 2006 |                   123
+(2 rows)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->     ROUND(AVG(population) / 1000 / 1000)
+damp-fjord-77965::DATABASE->         AS average_population_mil,
+damp-fjord-77965::DATABASE->     ROUND(MAX(population) / 1000 / 1000)
+damp-fjord-77965::DATABASE->         AS max_population_mil
+damp-fjord-77965::DATABASE-> FROM popdata
+damp-fjord-77965::DATABASE-> GROUP BY year;
+ average_population_mil | max_population_mil 
+------------------------+--------------------
+                     34 |               1379
+                     30 |               1311
+(2 rows)
+
+damp-fjord-77965::DATABASE=> SELECT year,
+    ROUND(AVG(population) / 1000 / 1000)
+        AS average_population_mil,
+    ROUND(MAX(population) / 1000 / 1000)
+        AS max_population_mil
+FROM popdata
+GROUP BY year;
+ year | average_population_mil | max_population_mil 
+------+------------------------+--------------------
+ 2016 |                     34 |               1379
+ 2006 |                     30 |               1311
+(2 rows)
+
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->     name,
+damp-fjord-77965::DATABASE->     ROUND(AVG(population) / 1000 / 1000, 2)
+damp-fjord-77965::DATABASE->         AS averagepop
+damp-fjord-77965::DATABASE-> FROM popdata
+damp-fjord-77965::DATABASE-> GROUP BY name
+damp-fjord-77965::DATABASE-> ORDER BY averagepop;
+damp-fjord-77965::DATABASE=> SELECT
+damp-fjord-77965::DATABASE->     name,
+damp-fjord-77965::DATABASE->     ROUND(AVG(population) / 1000 / 1000, 2)
+damp-fjord-77965::DATABASE->         AS averagepop
+damp-fjord-77965::DATABASE-> FROM popdata
+damp-fjord-77965::DATABASE-> GROUP BY name
+damp-fjord-77965::DATABASE-> ORDER BY averagepop DESC;
+              name              | averagepop 
+--------------------------------+------------
+ China                          |    1344.84
+ India                          |    1243.07
+ United States                  |     310.75
+ Indonesia                      |     245.48
+ Brazil                         |     198.33
+ Pakistan                       |     175.15
+ Nigeria                        |     164.30
+ Bangladesh                     |     154.16
+ Russian Federation             |     143.70
+ Japan                          |     127.42
+ Mexico                         |     118.82
+ Philippines                    |      95.56
+ Ethiopia                       |      90.63
+ Vietnam                        |      88.01
+ Egypt, Arab Rep.               |      86.92
+ Germany                        |      82.52
+ Iran, Islamic Rep.             |      75.75
+ Turkey                         |      74.14
+ Congo, Dem. Rep.               |      67.64
+ Thailand                       |      67.34
+ France                         |      65.26
+ United Kingdom                 |      63.24
+
