@@ -1,0 +1,328 @@
+Starting with Challenge 3:
+damp-fjord-77965::DATABASE=> SELECT company_records.name, states.name, states.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> LEFT JOIN states
+damp-fjord-77965::DATABASE-> ON
+damp-fjord-77965::DATABASE->     company_records.state_id = states.id
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     company_records.employee_count > 100 AND
+damp-fjord-77965::DATABASE->     company_records.seed_round = 'a';
+      name      |      name      | population 
+----------------+----------------+------------
+ Infusionsoft   | Arizona        |    6731484
+ Facebook       | California     |   38802500
+ Google         | California     |   38802500
+ Cafepress      | California     |   38802500
+ Cafepress      | California     |   38802500
+ Six Apart      | California     |   38802500
+ BlueLithium    | California     |   38802500
+ Art.com        | California     |   38802500
+ Friendster     | California     |   38802500
+ Ask.com        | California     |   38802500
+ Tesla Motors   | California     |   38802500
+ fabrik         | California     |   38802500
+ OverSee        | California     |   38802500
+ Vantage Media  | California     |   38802500
+ Endeca         | Massachusetts  |    6745408
+ Optaros        | Massachusetts  |    6745408
+ ChannelAdvisor | North Carolina |    9943964
+ TheLadders     | New York       |   19746227
+ Strands        | Oregon         |    3970239
+ Appian         | Virginia       |    8326289
+ Zango          | Washington     |    7061530
+ Zillow         | Washington     |    7061530
+ WhitePages.com | Washington     |    7061530
+(23 rows)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT * FROM company_records;
+damp-fjord-77965::DATABASE=> SELECT * FROM states;
+damp-fjord-77965::DATABASE=> SELECT company_records.name, states.name, states.population
+FROM company_records
+LEFT JOIN states
+ON
+    company_records.state_id = states.id
+WHERE
+    company_records.employee_count > 100 AND
+    company_records.seed_round = 'a';
+      name      |      name      | population 
+----------------+----------------+------------
+ Infusionsoft   | Arizona        |    6731484
+ Facebook       | California     |   38802500
+ Google         | California     |   38802500
+ Cafepress      | California     |   38802500
+ Cafepress      | California     |   38802500
+ Six Apart      | California     |   38802500
+ BlueLithium    | California     |   38802500
+ Art.com        | California     |   38802500
+ Friendster     | California     |   38802500
+ Ask.com        | California     |   38802500
+ Tesla Motors   | California     |   38802500
+ fabrik         | California     |   38802500
+ OverSee        | California     |   38802500
+ Vantage Media  | California     |   38802500
+ Endeca         | Massachusetts  |    6745408
+ Optaros        | Massachusetts  |    6745408
+ ChannelAdvisor | North Carolina |    9943964
+ TheLadders     | New York       |   19746227
+ Strands        | Oregon         |    3970239
+ Appian         | Virginia       |    8326289
+ Zango          | Washington     |    7061530
+ Zillow         | Washington     |    7061530
+ WhitePages.com | Washington     |    7061530
+(23 rows)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT company_records.name, states.name, states.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> LEFT JOIN states
+damp-fjord-77965::DATABASE-> ON
+damp-fjord-77965::DATABASE->     company_records.state_id = states.id
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     company_records.employee_count > 100 AND
+damp-fjord-77965::DATABASE->     company_records.seed_round = 'a' AND
+damp-fjord-77965::DATABASE->     states.population > 9000000;
+      name      |      name      | population 
+----------------+----------------+------------
+ Facebook       | California     |   38802500
+ Google         | California     |   38802500
+ Cafepress      | California     |   38802500
+ Cafepress      | California     |   38802500
+ Six Apart      | California     |   38802500
+ BlueLithium    | California     |   38802500
+ Art.com        | California     |   38802500
+ Friendster     | California     |   38802500
+ Ask.com        | California     |   38802500
+ Tesla Motors   | California     |   38802500
+ fabrik         | California     |   38802500
+ OverSee        | California     |   38802500
+ Vantage Media  | California     |   38802500
+ ChannelAdvisor | North Carolina |    9943964
+ TheLadders     | New York       |   19746227
+(15 rows)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT DISTINCT company_records.name, states.name, states.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> INNER JOIN states
+damp-fjord-77965::DATABASE-> ON
+damp-fjord-77965::DATABASE->     company_records.state_id = states.id
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     states.population < 2000000;
+     name      |         name         | population 
+---------------+----------------------+------------
+ GridPoint     | District of Columbia |     658893
+ LaunchBox     | District of Columbia |     658893
+ Searchles     | District of Columbia |     658893
+ SwapDrive     | District of Columbia |     658893
+ HotPads       | District of Columbia |     658893
+ Tizra         | Rhode Island         |    1055173
+ Bill Me Later | Nebraska             |    1881503
+ Balihoo       | Idaho                |    1634464
+ HEXIO         | Maine                |    1330089
+ Cogent        | District of Columbia |     658893
+ Ntractive     | North Dakota         |     739482
+ Foneshow      | Maine                |    1330089
+(12 rows)
+
+damp-fjord-77965::DATABASE=> SELECT DISTINCT company_records.name, states.name, states.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> INNER JOIN states
+damp-fjord-77965::DATABASE-> ON
+damp-fjord-77965::DATABASE->     company_records.state_id = states.id
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     states.population < 2000000;
+     name      |         name         | population 
+---------------+----------------------+------------
+ GridPoint     | District of Columbia |     658893
+ LaunchBox     | District of Columbia |     658893
+ Searchles     | District of Columbia |     658893
+ SwapDrive     | District of Columbia |     658893
+ HotPads       | District of Columbia |     658893
+ Tizra         | Rhode Island         |    1055173
+ Bill Me Later | Nebraska             |    1881503
+ Balihoo       | Idaho                |    1634464
+ HEXIO         | Maine                |    1330089
+ Cogent        | District of Columbia |     658893
+ Ntractive     | North Dakota         |     739482
+ Foneshow      | Maine                |    1330089
+(12 rows)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT DISTINCT company_records.name, states.name, states.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> FULL OUTER JOIN states
+damp-fjord-77965::DATABASE-> ON
+damp-fjord-77965::DATABASE->     company_records.state_id = states.id
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     states.population < 2000000;
+     name      |         name         | population 
+---------------+----------------------+------------
+               | West Virginia        |    1850326
+ GridPoint     | District of Columbia |     658893
+ LaunchBox     | District of Columbia |     658893
+ Searchles     | District of Columbia |     658893
+ SwapDrive     | District of Columbia |     658893
+               | South Dakota         |     853175
+               | Vermont              |     626562
+ HotPads       | District of Columbia |     658893
+ Tizra         | Rhode Island         |    1055173
+ Bill Me Later | Nebraska             |    1881503
+               | New Hampshire        |    1326813
+ Balihoo       | Idaho                |    1634464
+               | Delaware             |     935614
+ HEXIO         | Maine                |    1330089
+ Cogent        | District of Columbia |     658893
+               | Montana              |    1023579
+               | Wyoming              |     584153
+ Ntractive     | North Dakota         |     739482
+ Foneshow      | Maine                |    1330089
+               | Hawaii               |    1419561
+               | Alaska               |     736732
+(21 rows)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT DISTINCT company_records.name, states.name, states.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> RIGHT JOIN states
+damp-fjord-77965::DATABASE-> ON
+damp-fjord-77965::DATABASE->     company_records.state_id = states.id
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     states.population < 2000000;
+     name      |         name         | population 
+---------------+----------------------+------------
+               | West Virginia        |    1850326
+ GridPoint     | District of Columbia |     658893
+ LaunchBox     | District of Columbia |     658893
+ Searchles     | District of Columbia |     658893
+ SwapDrive     | District of Columbia |     658893
+               | South Dakota         |     853175
+               | Vermont              |     626562
+ HotPads       | District of Columbia |     658893
+ Tizra         | Rhode Island         |    1055173
+ Bill Me Later | Nebraska             |    1881503
+               | New Hampshire        |    1326813
+ Balihoo       | Idaho                |    1634464
+               | Delaware             |     935614
+ HEXIO         | Maine                |    1330089
+ Cogent        | District of Columbia |     658893
+               | Montana              |    1023579
+               | Wyoming              |     584153
+ Ntractive     | North Dakota         |     739482
+ Foneshow      | Maine                |    1330089
+               | Hawaii               |    1419561
+               | Alaska               |     736732
+(21 rows)
+
+damp-fjord-77965::DATABASE=> 
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT DISTINCT company_records.name, states.name, states.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> RIGHT JOIN states
+damp-fjord-77965::DATABASE-> ON
+damp-fjord-77965::DATABASE->     company_records.state_id = states.id
+damp-fjord-77965::DATABASE-> WHERE
+damp-fjord-77965::DATABASE->     states.population < 2000000;
+     name      |         name         | population 
+---------------+----------------------+------------
+               | West Virginia        |    1850326
+ GridPoint     | District of Columbia |     658893
+ LaunchBox     | District of Columbia |     658893
+ Searchles     | District of Columbia |     658893
+ SwapDrive     | District of Columbia |     658893
+               | South Dakota         |     853175
+               | Vermont              |     626562
+ HotPads       | District of Columbia |     658893
+ Tizra         | Rhode Island         |    1055173
+ Bill Me Later | Nebraska             |    1881503
+               | New Hampshire        |    1326813
+ Balihoo       | Idaho                |    1634464
+               | Delaware             |     935614
+ HEXIO         | Maine                |    1330089
+ Cogent        | District of Columbia |     658893
+               | Montana              |    1023579
+               | Wyoming              |     584153
+ Ntractive     | North Dakota         |     739482
+ Foneshow      | Maine                |    1330089
+               | Hawaii               |    1419561
+               | Alaska               |     736732
+(21 rows)
+
+damp-fjord-77965::DATABASE=> 
+damp-fjord-77965::DATABASE=> SELECT * FROM cities;
+damp-fjord-77965::DATABASE=> SELECT * FROM company_records
+damp-fjord-77965::DATABASE-> ;
+damp-fjord-77965::DATABASE=> SELECT * FROM cities;
+damp-fjord-77965::DATABASE=> SELECT * FROM company_records
+;
+damp-fjord-77965::DATABASE=> SELECT DISTINCT
+damp-fjord-77965::DATABASE->     company_records.name,
+damp-fjord-77965::DATABASE->     cities.name,
+damp-fjord-77965::DATABASE->     cities.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> LEFT JOIN cities
+damp-fjord-77965::DATABASE-> ON                                   e
+damp-fjord-77965::DATABASE-> WHEREompany_records.city = cities.name 
+00;p-fjord-77965::DATABASE->     company_records.employee_count > 10
+damp-fjord-77965::DATABASE=> SELECT DISTINCT
+    company_records.name,
+    cities.name,
+    cities.population
+FROM company_records
+LEFT JOIN cities
+ON
+    company_records.city = cities.name
+WHERE
+    company_records.employee_count > 100;
+damp-fjord-77965::DATABASE=> SELECT DISTINCT
+    company_records.name,
+    cities.name,
+    cities.population
+FROM company_records
+LEFT JOIN cities
+ON
+    company_records.city = cities.name
+WHERE
+    company_records.employee_count > 100;
+damp-fjord-77965::DATABASE=> SELECT DISTINCT
+    company_records.name,
+    cities.name,
+    cities.population
+FROM company_records
+LEFT JOIN cities
+ON
+    company_records.city = cities.name
+WHERE
+    company_records.employee_count > 100;
+damp-fjord-77965::DATABASE=> SELECT DISTINCT
+damp-fjord-77965::DATABASE->     company_records.name,
+damp-fjord-77965::DATABASE->     cities.name,
+damp-fjord-77965::DATABASE->     cities.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> INNER JOIN cities
+damp-fjord-77965::DATABASE-> ON                                   e
+damp-fjord-77965::DATABASE-> WHEREompany_records.city = cities.name 
+00;p-fjord-77965::DATABASE->     company_records.employee_count > 10
+damp-fjord-77965::DATABASE=> SELECT DISTINCT
+    company_records.name,
+    cities.name,
+    cities.population
+FROM company_records
+INNER JOIN cities
+ON
+    company_records.city = cities.name
+WHERE
+    company_records.employee_count > 100;
+damp-fjord-77965::DATABASE=> SELECT DISTINCT
+damp-fjord-77965::DATABASE->     company_records.name,
+damp-fjord-77965::DATABASE->     cities.name,
+damp-fjord-77965::DATABASE->     cities.population
+damp-fjord-77965::DATABASE-> FROM company_records
+damp-fjord-77965::DATABASE-> RIGHT JOIN cities
+damp-fjord-77965::DATABASE-> ON                                   e
+damp-fjord-77965::DATABASE-> WHEREompany_records.city = cities.name 
+00;p-fjord-77965::DATABASE->     company_records.employee_count > 10
+
+:
