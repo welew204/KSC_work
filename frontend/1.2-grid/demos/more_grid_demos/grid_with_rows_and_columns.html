@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+    <style>
+        .GridContainer {
+            display: grid;
+            grid-template-columns: 100px auto 1fr 2fr;
+            grid-template-rows: 100px 300px;
+            grid-gap: 5px;
+        }
+
+        .Red {
+            background-color: red;
+            grid-row: 1 / span 2;
+            grid-column: 1;
+        }
+
+        .Green {
+            background-color: green;
+            grid-row: 1 / span 2;
+            grid-column: 2;
+        }
+
+        .Blue {
+            background-color: blue;
+            grid-column: 3 / span 2;
+        }
+
+        .Yellow {
+            background-color: yellow;
+            grid-row: 2;
+            grid-column: 3 / span 2;
+        }
+
+        body {
+            font-size: 36pt; 
+        }
+    </style>
+    </head>
+    <body>
+        <div class="GridContainer">
+            <div class="Red">Red</div>
+            <div class="Green">Green</div>
+            <div class="Blue">Blue</div>
+            <div class="Yellow">Yellow</div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,58 @@
+/*
+    Boopstrap v1.0 (C) 2011
+    An Open Source Project by Twitten Inc.
+*/
+
+
+/* TODO: Uncomment the following CSS: */
+.container {
+    /* max-width: 1170px; */
+    /* margin: auto; */
+}
+
+.img-fluid {
+    /* max-width: 100%; */
+}
+
+/* TODO: Fill in the blanks below based on hints & context... */
+
+.col-1, .col-md-1,
+.col-2, .col-md-2,
+.col-3, .col-md-3,
+.col-4, .col-md-4,
+.col-5, .col-md-5,
+.col-6, .col-md-6,
+.col-7, .col-md-7,
+.col-8, .col-md-8,
+.col-9, .col-md-9,
+.col-10, .col-md-10,
+.col-11, .col-md-11,
+.col-12, .col-md-12 {
+    /* TODO: Fill in! */
+    /* Hint: "float: left" */
+}
+
+.col-1, .col-md-1   { width: 8.3%;   }
+.col-2, .col-md-2   { width: 16.6%;  }
+.col-3, .col-md-3   {                } /* TODO: Fill in! */
+.col-4, .col-md-4   { width: 33.3%;  }
+.col-5, .col-md-5   { width: 41.6%;  }
+.col-6, .col-md-6   {                } /* TODO: Fill in! */
+.col-7, .col-md-7   { width: 58.3%;  }
+.col-8, .col-md-8   {                } /* TODO: Fill in! */
+.col-9, .col-md-9   {                } /* TODO: Fill in! */
+.col-10, .col-md-10 { width: 83.3%;  }
+.col-11, .col-md-11 { width: 91.6%;  }
+.col-12, .col-md-12 { width: 100%;   }
+
+@media screen and (max-width: 960px) {
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+    .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        /* TODO: Fill in! */
+
+    }
+}
+
+.row {
+    clear: both;
+}

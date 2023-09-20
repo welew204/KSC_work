@@ -1,0 +1,53 @@
+/* Challenge 4 can go here */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************ Solution to Part 1 below ****************/
+
+/*
+    We set up a grid like this:
+
+    | <--> | 200px |       600px     | <--> | ^
+    |      |       |                 |      | 100px
+    | ---- | ----- | --------------- | ---- | v
+    |      |       |                 |      | ^
+    |      |       |                 |      | auto
+    |      |       |                 |      | v
+*/
+
+/* Challenge 2 */
+.Container {
+    display: grid;
+    grid-template-columns: 1fr 200px 600px 1fr;
+    grid-template-rows: 100px auto;
+
+    /* Space out all the rows and columns by 20px */
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+/* Challenge 3 */
+.Navigation {
+    grid-column: 3 / span 2;
+}
+
+.Sidebar {
+    grid-column: 2;
+}
+
+.MainContent {
+    grid-column: 3;
+}
+

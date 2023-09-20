@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+    <style>
+        .HoverButton {
+            font-size: 36pt; 
+            color: white;
+            border-radius: 40px;
+            border: solid blue 1px;
+
+            background-color: skyblue;
+            width: 300px;
+
+            /*
+            transition: background-color 3s,
+                        width 1s;
+            */
+
+        }
+
+        .HoverButton:hover {
+            background-color: yellowgreen;
+            width: 500px;
+        }
+
+        .Rainbow {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*
+            animation: RainbowColors 10s;
+            animation-iteration-count: infinite;
+            */
+        }
+
+        .BouncyBlock {
+            position: absolute;
+            left: 100px;
+            top: 300px;
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            /*
+            animation: BouncingAround 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            */
+        }
+
+
+        @keyframes RainbowColors {
+            from { background-color: red;    }
+            15%  { background-color: orange; }
+            30%  { background-color: yellow; }
+            45%  { background-color: green ; }
+            60%  { background-color: blue;   }
+            75%  { background-color: indigo; }
+            to   { background-color: violet; }
+        }
+
+        @keyframes BouncingAround {
+            from { left: 0px;    }
+            to   { left: 500px;  }
+        }
+    </style>
+    </head>
+    <body>
+        <button class="HoverButton">Hover</button>
+
+        <br />
+        <br />
+
+        <div class="Rainbow">
+        </div>
+        <div class="BouncyBlock">
+        </div>
+    </body>
+</html>
+

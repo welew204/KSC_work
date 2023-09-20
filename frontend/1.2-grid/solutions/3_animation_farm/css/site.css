@@ -1,0 +1,128 @@
+/* Challenge 1 */
+
+.AnimalPen {
+    background: transparent;
+    transition: background 3s;
+}
+
+.AnimalPen:hover {
+    background: brown;
+}
+
+
+
+
+/* Challenge 2 */
+
+.River {
+    padding: 0px;
+    transition: padding 2s;
+}
+
+.River--part1:hover {
+    padding: 10px;
+}
+
+.River--part2:hover {
+    padding: 20px;
+}
+
+.River--part3:hover {
+    padding: 30px;
+}
+
+
+
+
+/* Challenge 3 */
+
+.Rabbit:hover {
+    transform: translate3d(0, 0, 0);
+    animation: Hop 0.2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes Hop {
+  from { transform: translate3d(0, 0, 0);    }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+
+/* Challenge 4 */
+
+.Rabbit:hover {
+    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+}
+
+/* Challenge 5 */
+.Bear {
+  animation: BearMoving 3.0s 0s infinite alternate;
+}
+
+@keyframes BearMoving {
+  from {
+    right: 10vw;
+    top: 10vh;
+  }
+  to {
+    right: 90vw;
+    top: 40vh;
+  }
+}
+
+/* Bonus Challenge: */
+.Pig:hover,
+.Horse:hover,
+.Goat:hover {
+    animation: HopSpin 0.8s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes HopSpin {
+    from {
+        transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+    50% {
+        transform: translate3d(10px, -40px, 0) rotateY(180deg);
+    }
+    70% {
+        transform: translate3d(10px, -40px, 0) rotateY(0deg);
+    }
+    90% {
+        transform: translate3d(10px, -40px, 0) rotateY(180deg);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+}
+
+/* Advanced Bonus Challenges: Commented out below */
+
+/*
+
+.AnimalPen::before,
+.AnimalPen::after {
+    filter: contrast(150%) brightness(150%) drop-shadow(5px 5px 10px gray);
+}
+
+.River {
+    backdrop-filter: brightness(110%) blur(5px);
+    background: rgba(0, 0, 255, 0.2);
+    animation: WaterBlur 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes WaterBlur {
+    from {
+        backdrop-filter: brightness(150%) blur(10px);
+    }
+    to {
+        backdrop-filter: brightness(110%) blur(20px);
+    }
+}
+*/

@@ -1,0 +1,60 @@
+/* Challenge 2: CSS Specificity Brain Teaser */
+/*
+
+    Instructions:
+        1. Assume all of the following rules apply to the same element.
+        2. What will be the resulting CSS applied to it?
+
+    Hint: Go one by one, think about which selectors "win" against the others.
+    Hint: To keep track of your answers, fill in the properties at the bottom
+    (or in a separate text editor) with what you think the equivalent or final
+    CSS will be for the element being styled.
+*/
+
+
+
+/* color */
+.SelectorA { color: red; }
+.SelectorB { color: green; }
+.SelectorC { color: blue; }
+
+
+/* background-color */
+.SelectorD { background-color: red; }
+#SelectorE { background-color: green; }
+.SelectorF { background-color: blue; }
+
+
+/* font-size */
+.SelectorH { font-size: 10px; }
+div, span  { font-size: 20px; }
+div        { font-size: 30px; }
+
+
+/* padding */
+.SelectorI { padding: 10px; }
+div        { padding: 20px !important; }
+#SelectorE { padding: 30px; }
+
+
+/* margin */
+span, div.SelectorK { margin: 10px; }
+div.SelectorL       { margin: 20px; }
+.SelectorM          { margin: 30px; }
+
+
+
+/*
+    Write your answer below (or in a separate text editor), before checking
+    your work in the solution or browser! 
+
+    Resulting CSS is:
+
+        color:
+        background-color:
+        font-size:
+        padding:
+        margin:
+*/
+
+

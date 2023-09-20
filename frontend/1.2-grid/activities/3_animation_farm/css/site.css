@@ -1,0 +1,44 @@
+/* Challenge 1 */
+
+.AnimalPen {
+    background: transparent;
+}
+
+.AnimalPen:hover {
+}
+
+
+
+
+/* Challenge 2 */
+/* HINT: Selectors are written for you below. */
+.River {
+}
+
+.River--part1:hover {
+}
+
+.River--part2:hover {
+}
+
+.River--part3:hover {
+}
+
+
+
+
+/* Challenge 3 */
+
+.Rabbit:hover {
+    /* Add code here! */
+}
+
+@keyframes Hop {
+  from { transform: translate3d(0, 0, 0);    }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+
+/* Challenge 4 & 5 */
+
+

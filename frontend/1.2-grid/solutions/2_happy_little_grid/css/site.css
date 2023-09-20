@@ -1,0 +1,105 @@
+
+/*
+    We set up a grid like this:
+
+    | <--> | 200px |       600px     | <--> | ^
+    |      |       |                 |      | 100px
+    | ---- | ----- | --------------- | ---- | v
+    |      |       |                 |      | ^
+    |      |       |                 |      | auto
+    |      |       |                 |      | v
+*/
+
+/* Challenge 2 */
+.Container {
+    display: grid;
+    grid-template-columns: 1fr 200px 600px 1fr;
+    /* 
+        Bonus Challenge 1:
+        Instead of using 600px below, we used minmax(auto, 600px) which will
+        make it "responsive". This special minmax is a CSS function that will
+        use a maximum of 600px OR a minimum the remaining space, whatever is
+        smallest.
+
+        grid-template-columns: 1fr 200px minmax(auto, 600px) 1fr;
+    */
+
+    grid-template-rows: 100px auto;
+
+    /* Space out all the rows and columns by 20px */
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+/* Challenge 3 */
+.Navigation {
+    grid-column: 3 / span 2;
+}
+
+
+
+
+/* Challenge 4 */
+.Sidebar {
+    grid-column: 2;
+}
+
+.MainContent {
+    grid-column: 3;
+}
+
+
+.Article {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 3em auto;
+    grid-column-gap: 10px;
+    align-items: center;
+}
+
+.Article-title {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.Article-image {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+/* Bonus Challenge 2 */
+.Container {
+    min-height: calc(100vh - var(--footer-height));
+}
+
+:root {
+    --footer-height: 2em;
+}
+
+.Footer {
+    background: lightgray;
+    height: var(--footer-height);
+    padding-top: 5px;
+    text-align: center;
+}
+
+
+/* Bonus Challenge 3: Hover effect */
+/*
+.Container {
+    transition: min-height 1s;
+}
+.Footer {
+    transition: height 1s;
+}
+
+.Container:hover {
+    --footer-height: 2em;
+}
+.Container {
+    --footer-height: 4em;
+}
+.Footer:hover {
+    --footer-height: 4em;
+}
+*/

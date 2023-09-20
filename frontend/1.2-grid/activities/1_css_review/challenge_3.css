@@ -1,0 +1,49 @@
+/* Challenge 3: CSS Box Sizing, Selectors, & Positioning Brain Teaser */
+/*
+    Instructions:
+        1. This challenge consists of 3 "brain teaser" questions
+        2. Write the answer next to each one
+
+    Hint: To keep track of your answers, fill in the comments (or in a separate
+    text editor) with which each answer based on your knowledge of CSS.
+*/
+
+
+/* Question 1: Will BoxA or BoxB have more room for text? */
+/* ANSWER:                                                */
+.BoxA {
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+    margin: 100px;
+}
+
+.BoxB {
+    box-sizing: content-box;
+    width: 220px;
+    height: 220px;
+    padding: 80px;
+    margin: 50px;
+}
+
+
+
+/* Question 2: Which square will show in the lower right side of the window? */
+/* ANSWER:                                                      */
+.SquareA { position: absolute; left: 1px;   right: 1px; }
+.SquareB { position: relative; bottom: 1px; right: 1px; }
+.SquareC { position: fixed;    bottom: 1px; right: 1px; }
+.SquareD { position: sticky;   top: 1px;    right: 1px; }
+
+
+
+/* Question 3: If there are exactly 5 paragraphs alone on a page, which
+** one of the following rules will style exactly 3 with blue text?      */
+/* ANSWER:                                                      */
+p::before           { color: blue; }
+p:nth-child(even)   { color: blue; }
+p:first-child       { color: blue; }
+p:nth-of-type(odd)  { color: blue; }
+p:last-of-type      { color: blue; }
+

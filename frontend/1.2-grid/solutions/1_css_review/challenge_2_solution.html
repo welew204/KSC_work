@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+
+/* color */
+.SelectorA { color: red; }
+.SelectorB { color: green; }
+.SelectorC { color: blue; }
+
+
+/* background-color */
+.SelectorD { background-color: red; }
+#SelectorE { background-color: green; }
+.SelectorF { background-color: blue; }
+
+
+/* font-size */
+.SelectorH { font-size: 10px; }
+div, span  { font-size: 20px; }
+div        { font-size: 30px; }
+
+
+/* padding */
+.SelectorI { padding: 10px; }
+div        { padding: 20px !important; }
+#SelectorE { padding: 30px; }
+
+
+/* margin */
+div.SelectorK { margin: 10px; }
+div.SelectorL { margin: 20px; }
+.SelectorM    { margin: 30px; }
+
+
+
+/*
+    ANSWER:
+
+        color:            blue;
+        background-color: green;
+        font-size:        10px;
+        padding:          20px;
+        margin:           20px;
+*/
+</style>
+
+
+<body>
+
+<h1>The element being styled:</h1>
+
+<div 
+    id="SelectorE"
+    class="SelectorA SelectorB SelectorC SelectorD SelectorH SelectorF SelectorJ SelectorK SelectorL SelectorM">
+        Sociis natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+        pretium quis, sem.  Nulla consequat massa quis enim. Donec pede justo,
+        fringilla vel, aliquet nec, vulputate eget, arcu.  In enim justo,
+        rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
+        pede mollis pretium. Integer tincidunt.
+</div>
+
+</body>
+</html>

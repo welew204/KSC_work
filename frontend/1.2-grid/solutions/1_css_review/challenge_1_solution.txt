@@ -1,0 +1,48 @@
+
+* css selector - how we "target" CSS onto certain elements, often via id
+  or class
+* responsive design - react to the size of the browser.
+* media query - "if-statements" in our CSS that lets us only apply it in
+    certain circumstances
+* specificity - the more specific the selector it is, the more likely it is
+    to "win" against other selectors
+
+* pseudo-classes - selectors that check on some extra things like hover
+* pseudo-elements - selectors that allow insertion and styling of content
+    before or after other elements
+
+* margin - spacing between elements
+* padding - spacing within elements
+* inline - an element that word-wraps in a paragraph (as an example an "em"
+    tag making text italic in a paragraph)
+* block - an element that takes up a square amount of space, by default
+    stretching horizontally to take up all available space
+* inline-block - (rarer) a square element that exists in a paragraph
+    (example: an image icon within a paragraph of text)
+* div - a HTML element that has no default behavior other than being
+    styled by CSS (block by default)
+* span - a HTML element that has no default behavior other than being
+    styled by CSS (inline by default)
+
+* box model - the way sizes of block elements are computed in CSS
+* box-sizing - how the width is calculated, by default "content-box".
+    Change to "border-box" to have border and padding included in size
+    calculations.
+
+* DOM - Document Object Model - tree-like structure that represents the
+    current state of the page (as opposed to the original state, as expressed
+    by the HTML code)
+* parent - the "containing" element is called the "parent"
+* child - the "contained" element is called a child
+* ancestor - any parent or grandparent or greatgrandparent, etc
+* descendent - any child or grandchild or greatgrandchild, etc
+
+* position - CSS property that lets us move stuff "manually" around the
+  page
+* static - the default, implied setting ("going with the flow", or not
+    positioned)
+* relative - "deliberately positioned"
+* absolute - position this element w.r.t to the first relative positioned
+    ancestor
+* fixed - position this element w.r.t to the screen
+

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+
+<!--
+    For this Bonus Challenge, practice your CSS skills by making your own grid
+    system from scratch. You'll be "re-implementing" something similar to the
+    original Bootstrap grid from Bootstrap v1. Note that this activity is
+    intended to build up your knowledge of how CSS frameworks are built, but
+    *is not* the correct way to do things! We'll learn that soon, with Grid and
+    Flexbox. For now, we'll use the old-school hack of using "float: left" for
+    our grid.
+
+    Bootstrap has a Base-12
+-->
+
+    <head>
+        <link rel="stylesheet" href="./bonus_challenge_solution.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1>Welcome to my happy little blog!</h1>
+                    <img src="https://i.imgur.com/nDNtBG1.png" class="img-fluid" />
+
+                    <h4>The stuff I'm working on</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ol>
+                </div>
+
+                <div class="col-md-8">
+                    <h1>My thoughts on things...</h1>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="https://i.imgur.com/7Xk108J.png"
+                                class="img-fluid img-thumbnail" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3>Happy blog post</h3>
+                                </div>
+                                <div class="col-6">
+                                    <p>January 1, 1995 by <a href="#">Bob Ross</a></p>
+                                </div>
+                            </div>
+                            <p>Cras mattis consectetur purus sit amet
+                            fermentum. Sed posuere consectetur est at
+                            lobortis.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="https://i.imgur.com/7Xk108J.png"
+                                class="img-fluid img-thumbnail" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3>Another blog post</h3>
+                                </div>
+                                <div class="col-6">
+                                    <p>January 2, 1995 by <a href="#">Bob Ross</a></p>
+                                </div>
+                            </div>
+                            <p>Cras mattis consectetur purus sit amet
+                            fermentum. Sed posuere consectetur est at
+                            lobortis.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
+

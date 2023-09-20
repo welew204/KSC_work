@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+    <style>
+        .GridContainer {
+            display: grid;
+            grid-template-columns: 100px auto 1fr 2fr;
+            grid-template-rows: 100px 300px;
+            grid-gap: 5px;
+            grid-template-areas:
+                "sidenarrow sidewide nav nav"
+                "sidenarrow sidewide content content";
+        }
+
+        .Red {
+            background-color: red;
+            grid-area: sidenarrow;
+        }
+
+        .Green {
+            background-color: green;
+            grid-area: sidewide;
+        }
+
+        .Blue {
+            background-color: blue;
+            grid-area: nav;
+        }
+
+        .Yellow {
+            background-color: yellow;
+            grid-area: content;
+        }
+
+        body {
+            font-size: 36pt; 
+        }
+    </style>
+    </head>
+    <body>
+        <div class="GridContainer">
+            <div class="Red">Red</div>
+            <div class="Green">Green</div>
+            <div class="Blue">Blue</div>
+            <div class="Yellow">Yellow</div>
+        </div>
+    </body>
+</html>
+

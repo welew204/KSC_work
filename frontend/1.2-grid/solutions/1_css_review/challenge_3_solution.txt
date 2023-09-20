@@ -1,0 +1,9 @@
+Question 1: Will BoxA or BoxB have more room for text?
+ANSWER: BoxB
+
+Question 2: Which square will show in the lower right side of the window?
+ANSWER: SquareC
+
+Question 3: If there are 5 paragraphs on a page, which one of the
+following rules will style exactly 3 of them with blue text?
+ANSWER: p:nth-of-type(odd)

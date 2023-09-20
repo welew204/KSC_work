@@ -1,0 +1,35 @@
+Challenge 1: CSS TERM DISCUSSION
+
+Define VERY BRIEFLY each of these terms in your own words:
+
+* css selector
+* responsive design
+* media query
+* specificity
+
+* pseudo-classes
+* pseudo-elements
+
+* margin
+* padding
+
+* inline
+* block
+* inline-block
+* div
+* span
+
+* box model
+* box-sizing
+
+* DOM
+* parent
+* child
+* ancestor
+* descendent
+* position
+* static
+* relative
+* absolute
+* fixed
+

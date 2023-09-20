@@ -1,0 +1,48 @@
+/* ***********************************
+
+    No need to touch this file! This is just to add
+    some base styles to the page. The only file you
+    need to edit is "site.css" to add grid alignments.
+
+   *********************************** */
+
+
+body {
+    font-family: "Indie Flower", sans-serif;
+    text-align: justify;
+}
+
+.Sidebar {
+    display: relative;
+}
+
+.Sidebar img {
+    max-width: 100%;
+}
+
+.Sidebar a {
+    display: block;
+    font-size: 30px;
+    text-decoration: none;
+    color: olive;
+    font-weight: bold;
+    text-shadow: 0 0 3px olive;
+}
+
+.Sidebar a:hover {
+    text-shadow: 0 0 10px olive;
+}
+
+.Navigation h1 {
+    font-size: 40px;
+}
+
+.Article-title {
+    font-size: 2em;
+}
+
+.ArticleImage {
+    float: left;
+    margin-right: 20px;
+}
+

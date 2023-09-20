@@ -1,0 +1,77 @@
+/*
+    INSTRUCTIONS - Box Model Calculation Challenge.
+    Calculate the height and width for each of the divs. Assume no other pertinent styling.
+
+    HINTS: Formulas for each of the box sizing models below:
+    content-box: total height = height + padding top + padding bottom + border top + border bottom
+    border-box: total height = height
+*/
+
+div#c1 {
+    box-sizing: content-box;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    padding: 25px;
+    padding-left: 15px;
+    border: 10px solid red;
+}
+/* total height = 200 + 25 + 25 + 10 + 10 (no margin!)= 270px */
+/* total width = 300 + 25 + 15 + 10 + 10 (no margin!)= 360px */
+
+div#c2 {
+    box-sizing: border-box;
+    width: 300px;
+    height: 200px;
+    margin: 30px;
+    padding: 25px;
+    padding-left: 15px;
+    border: 10px solid red;
+}
+/* total height = 200px */
+/* total width = 300px */
+
+div#c3 {
+    box-sizing: border-box;
+    width: 300px;
+    height: 200px;
+    margin: 15px;
+    padding: 25px;
+    padding-left: 15px;
+    border: 5px solid red;
+    border-left: none;
+    border-top: none;
+}
+/* total height = 200px */
+/* total width = 300px */
+
+
+div#c4 {
+    width: 300px;
+    height: 200px;
+    margin-left: 0;
+    margin: 10px;
+    padding: 25px;
+    border: 5px solid red;
+    border-left: none;
+    border-top: none;
+    max-width: 280px;
+}
+/* DEFAULT box-sizing IS !CONTENT-BOX! */
+/* total height = 200 + 25 + 25 + 10 + 10 + 5 = 275px */
+/* total width = 280 + 25 + 25 + 10 + 5 = px */
+
+/*
+    Bonus Challenge 1: Go back, and calculate the content (e.g., inner) height
+    and width of each div.
+
+    HINT: Formulas for "content" (or inner) height as follows:
+    content-box: content height = height
+    border-box: content height = height - padding top - padding bottom - border top - border bottom
+*/
+
+
+/*
+    Bonus Challenge 2: Calculate the spacing between each div.
+    HINT: Remember margins "collapse", that is, combine, and the largest "wins".
+*/

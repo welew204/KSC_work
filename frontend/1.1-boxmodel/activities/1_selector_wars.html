@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+
+<!--
+    INSTRUCTIONS - Selector Wars
+
+    These selectors are at war with each other! Complete this activity BY ONLY
+    looking at this source code. This activity involves reading CSS, and
+    guessing which CSS will take effect.
+
+    1. Each of these challenges consists of 2-3 CSS rules
+    2. Each CSS rule targets only a single element, so they "compete"
+    3. Only ONE of these rules will "win" and take effect, coloring the
+    text in that element red, green, or blue.
+
+    Pick which color and write down (in a comment) next to each challenge.
+-->
+
+<html>
+
+<head>
+    <style>
+        /* Challenge 1 - Which color will the element be? */
+        .challenge-1 {
+            color: red;
+        }
+
+        .challenge-1 {
+            color: green;
+        }
+
+        #challenge-1 {
+            color: blue;
+        }
+
+        /* BLUE > id selected */
+
+
+        /* Challenge 2 - Which color will the element be? */
+        p.challenge-2 {
+            color: red;
+        }
+
+        p.challenge-2 {
+            color: green;
+        }
+
+        p.challenge-2 {
+            color: blue;
+        }
+
+        /* BLUE > LWW (last word wins) */
+
+
+        /* Challenge 3 - Which color will the element be? */
+        #challenge-3 {
+            color: red;
+        }
+
+        .challenge-3 {
+            color: green;
+        }
+
+        .challenge-3 {
+            color: blue;
+        }
+
+        /* RED > ID selector */
+
+
+        /* Challenge 4 - Which color will the element be? */
+        h2 {
+            color: red;
+        }
+
+        h2.challenge-4 {
+            color: green;
+        }
+
+        .challenge-4 {
+            color: blue;
+        }
+
+        /* GREEN; combo of type + class is most specific */
+
+
+        /* Challenge 5 - Which color will the element be? */
+        body h3.challenge-5 {
+            color: red;
+        }
+
+        #challenge-5 {
+            color: green;
+        }
+
+        h3.challenge-5 {
+            color: blue;
+        }
+
+        /* GREEN: id always wins */
+
+
+        /* Challenge 6 - Which color will the element be? */
+        h4 {
+            color: red;
+        }
+
+        body h4 {
+            color: green;
+        }
+
+        h4.challenge-6 {
+            color: blue;
+        }
+
+        /* BLUE > type + class is most specific */
+
+
+        /* Challenge 7
+    - At screen width 400px, which color will the element be? BLUE
+    - At screen width 600px, which color will the element be? GREEN
+    - At screen width 800px, which color will the element be? RED
+    - At screen width 1000px, which color will the element be? NONE
+*/
+        @media screen and (max-device-width: 900px) {
+            .challenge-7 {
+                color: red;
+            }
+        }
+
+        @media screen and (max-device-width: 700px) {
+            .challenge-7 {
+                color: green;
+            }
+        }
+
+        @media screen and (max-device-width: 500px) {
+            .challenge-7 {
+                color: blue;
+            }
+        }
+
+
+
+        /* Challenge 8
+    - At screen width 400px, which color will the element be? BLUE (LWW)
+    - At screen width 600px, which color will the element be? BLUE (LWW)
+    - At screen width 800px, which color will the element be? BLUE 
+    - At screen width 1000px, which color will the element be? YELLOW (cuz I defined it)
+*/
+        .challenge-8 {
+            color: yellow;
+        }
+
+        @media screen and (max-device-width: 500px) {
+            .challenge-8 {
+                color: red;
+            }
+        }
+
+        @media screen and (max-device-width: 700px) {
+            .challenge-8 {
+                color: green;
+            }
+        }
+
+        @media screen and (max-device-width: 900px) {
+            .challenge-8 {
+                color: blue;
+            }
+        }
+
+        /*
+    When you are done, check your answers by opening this up in the browser.
+*/
+    </style>
+</head>
+
+
+
+
+
+
+<style>
+    p,
+    div,
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-size: 32pt;
+        display: block;
+        height: 50px;
+        background: gray;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <div id="challenge-1" class="challenge-1">11111111111111</div>
+    <p id="challenge-2" class="challenge-2">22222222222222</p>
+    <h1 id="challenge-3" class="challenge-3">33333333333333</h1>
+    <h2 id="challenge-4" class="challenge-4">44444444444444</h2>
+    <h3 id="challenge-5" class="challenge-5">55555555555555</h3>
+    <h4 id="challenge-6" class="challenge-6">66666666666666</h4>
+    <div id="challenge-7" class="challenge-7">77777777777777</div>
+    <div id="challenge-8" class="challenge-8">88888888888888</div>
+</body>

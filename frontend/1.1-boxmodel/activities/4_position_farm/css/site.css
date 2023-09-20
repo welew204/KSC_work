@@ -1,0 +1,155 @@
+body {
+    background: url('../img/grass_top.png');
+}
+
+
+.River {
+    background: url('../img/water.png');
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.AnimalPen {
+    position: fixed;
+    bottom: 10px;
+    left: 20px;
+    width: 550px;
+    height: 250px;
+    border: 3px solid brown;
+    background: rgba(127, 100, 100, 0.2);
+}
+
+
+
+.Wheat {
+    display: block;
+    position: fixed;
+}
+
+/* ********************************** */
+
+/*
+    Your code goes here!
+
+    Some commented out example code to get you going...
+*/
+
+
+
+.Goat {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index:2;
+}
+.Horse {
+    position: absolute;
+    top: 15px;
+    left: 172px;
+    z-index:2;
+}
+.Pig {
+    position: absolute;
+    top: 45px;
+    left: 1px;
+    z-index:2;
+}
+
+.Bear {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+}
+
+.Wheat:nth-child(1) {
+    top: 58px;
+    left: 30px;
+}
+.Wheat:nth-child(2) {
+    top: 41px;
+    left: 150px;
+}
+.Wheat:nth-child(3) {
+    top: 82px;
+    left: 257px;
+}
+
+.Rabbit {
+    position: fixed;
+    top: -19px;
+    left: 245px;
+}
+
+.River--part1 {
+    position: fixed; 
+    right: 20px;
+    top: 200px;
+    width: 200px;
+    height: 200px;
+}
+.River--part2 {
+    position: fixed; 
+    right: 15px;
+    top: 390px;
+    width: 100px;
+    height: 100px;
+}
+.River--part3 {
+    position: fixed; 
+    right: 50px;
+    top: 490px;
+    width: 150px;
+    height: 150px;
+}
+
+
+.Stone1 {
+    background: gray;
+    border: 5px darkgray solid;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    right: 153px;
+    top: 276px;
+}
+.Stone2 {
+    background: gray;
+    border: 5px darkgray solid;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    right: 107px;
+    top: 382px;
+}
+.Stone3 {
+    background: gray;
+    border: 5px darkgray solid;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    right: 61px;
+    top: 548px;
+}
+
+.AnimalPen::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -10px;
+    width: 650px;
+    height: 150px;
+    display: block;
+    z-index: 1;
+    background: url('../img/fence_wood.png');
+}
+.AnimalPen::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -10px;
+    width: 650px;
+    height: 150px;
+    display: block;
+    z-index: 3;
+    background: url('../img/fence_wood.png');
+}

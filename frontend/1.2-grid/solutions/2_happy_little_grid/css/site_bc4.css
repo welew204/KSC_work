@@ -1,0 +1,18 @@
+/* Bonus Challenge #4 Solution */
+.Container {
+    grid-template-areas:
+        "lmarg nav nav rmarg"
+        "lmarg sidebar main rmarg";
+}
+
+.Navigation {
+    grid-area: nav;
+}
+
+.Sidebar {
+    grid-area: sidebar;
+}
+
+.MainContent {
+    grid-area: main;
+}
