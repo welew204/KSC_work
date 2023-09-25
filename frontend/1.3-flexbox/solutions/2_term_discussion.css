@@ -1,0 +1,36 @@
+
+.Container {
+    /* Creates a template for the columns / rows of a grid layout */
+    grid-template-columns: 100px 300px;
+    grid-template-rows: 200px auto;
+
+    /* specifies spacing between children, aka "gutter" */
+    grid-gap: 30px;
+}
+
+.Item {
+    /* For children, positions them */
+    grid-column: 1;
+    grid-row: 2 / span 3;
+}
+
+
+.Example {
+    /* Fades all color changes for 1 second instead of instantly */
+    transition: color 1s;
+    /* Applies a defined animation keyframes called BounceAround  */
+    animation: BounceAround, 2s;
+}
+
+.Container {
+    /* Used for controlling spacing and alignment between items in flexbox */
+    justify-content: space-around;
+    align-items: top;
+
+    /* Determines how flexbox stacks */
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+
+    /* Positions element w.r.t. flex or grid parent*/
+    align-self: top;
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+    <style>
+        .Red { background-color: red; }
+        .Green { background-color: green; }
+        .Blue { background-color: blue; }
+        .Yellow { background-color: yellow; }
+
+        .GotClicked {
+            border: 30px solid black;
+        }
+
+        body {
+            font-size: 36pt; 
+        }
+    </style>
+    </head>
+    <body>
+        <div>
+            <div class="Red" onClick="alert('Hello World!')">Red</div>
+            <div class="Green" onClick="console.log('Hello world over here!')">Green</div>
+            <div class="Blue" onClick="
+                    document.querySelector('.Blue').textContent = 'Got clicked.';
+                ">Blue</div>
+            <div class="Yellow"  onClick="
+                    document.querySelector('.Yellow').classList.toggle('GotClicked');
+                    // Can also do .add
+                    // or          .remove
+                ">Yellow</div>
+        </div>
+    </body>
+</html>
+
+
+
+

@@ -3,33 +3,62 @@ Challenge 1: CSS TERM DISCUSSION
 Define VERY BRIEFLY each of these terms in your own words:
 
 * css selector
+>>> statement of where you're 'aiming' your styling
 * responsive design
+>>> able to style correctly on different devices
 * media query
+>>> help create if statement for handling various users (devices)
 * specificity
+>>> the rule that governs if an item is targeted (or not)
 
 * pseudo-classes
+>>> way of picking the nth **** of a certain type/class, etc (handling zebra striping, beginning of paragraphs, etc), or behavior, designated by :
 * pseudo-elements
+>> way of ADDING elements to the DOM, designated with :: 
 
 * margin
+>>> space around an item
 * padding
+>>> space within an item, between it's elements (or it's content and it's border)
 
 * inline
+>>> "In an inline formatting context, boxes are laid out horizontally, one after the other, beginning at the top of a containing block. Horizontal margins, borders, and padding are respected between these boxes. The boxes may be aligned vertically in different ways: their bottoms or tops may be aligned, or the baselines of text within them may be aligned. The rectangular area that contains the boxes that form a line is called a line box." - 9.4.2
+>>> these WORDWRAP!
 * block
+"In a block formatting context, boxes are laid out one after the other, vertically, beginning at the top of a containing block. The vertical distance between two sibling boxes is determined by the 'margin' properties. Vertical margins between adjacent block-level boxes in a block formatting context collapse.
+In a block formatting context, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch)." - 9.4.1
+>>> these DON't WORDWRAP!
 * inline-block
+--> similar to inline, but allows you to set the width/height on the element; also, respects top/bottom margins (inline does not)
+--> difference with block: no imposed line break between (vertical) element
 * div
+--> a generic block element w/ no other content/display (of it's own)
 * span
+--> a generic inline element w/ no other content/display (of it's own)
 
 * box model
+>>> the layout on browsers (in > out): content, padding, border, margin ; box-sizing: content or border
 * box-sizing
+>>> how the values are computed (based on size of content or OUTSIDE size 'border')
 
 * DOM
+>>> Document Object Model, the actual thing that displays/interprets code into what you'll see
 * parent
+>>> object containing descendent
 * child
+>>> object contained by ancestor
 * ancestor
+>>> related item that contains the focal item
 * descendent
+>>> item inside a focal item (or inside a child of it)
 * position
+>>> how to compute the positional values handed in
 * static
+>>> positioned on webpage around other objects according to stacking rules, etc, can get scrolled away from
 * relative
+>>> values move item relative to it's stacking position
 * absolute
+>>> values relative to first ancestor position
 * fixed
+>>> values relative to VIEWPORT (think header or ad)
 

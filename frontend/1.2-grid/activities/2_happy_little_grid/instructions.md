@@ -1,4 +1,4 @@
-Challenge 1
+ Challenge 1
 ----------------------
 
 1. Refer to the `mockup_part_1.png` solution image provided.

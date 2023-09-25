@@ -1,0 +1,122 @@
+/*
+Practice with Flexbox along with miscellaneous other CSS features.
+
+
+*/
+
+
+/*
+    Challenge #1: Review - Animation review
+    Presently, the navigation links "snap" to a new background-color. Make it
+    so that it is a gradual transition, taking half of a second.
+*/
+
+.Navigation > a {
+    transition: background-color, 1s;
+}
+
+
+/*
+    Challenge #2: Review - CSS Grid
+    The Sidebar is in the wrong location. It should be to the left of the main
+    content. Use grid-column to place the sidebar in a certain location.
+*/
+.Sidebar {
+    grid-column: 2;
+}
+
+
+/*
+    Challenge #3: Flexbox Navbar
+    The navigation bar is a mess. About, Gallery, and Blog should be next to
+    each other. Uncomment the following bit of code to set "display: flex" and
+    make its children stack horizontally.
+*/
+
+.Navigation {
+    /* display: flex; */
+    display: flex;
+}
+
+
+
+/*
+    Challenge #4: Flexbox Navbar tweaks
+    The navbar still doesn't look quite right, with everything scooted to the
+    left, and too tall.
+
+    1. Make it so that the contents of them are spaced as you see in the mock
+    up. Hint: Look up the "justify-contents" property
+    
+    2. Finally, make it so that they are centered vertically.
+    Hint: look up the align-items property.
+    
+    Hint: Good resource: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+.Navigation {
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/*
+    Challenge #5: Gallery
+    The gallery could use a little TLC.
+
+    1. Enable flex on it
+    
+    2. Enable flexbox wrapping
+    
+    3. Make the justification so that the elements are centered but
+    also have space between them.
+
+    4. Finally, adjust the item alignment so that the bottom of the painting
+    images line up, even the paintings with the "for sale" prices. Hint: This
+    final one can be done with only 1 line of CSS, setting align-items!
+
+    Hint: Good resource: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+.Gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+
+
+/*
+    Bonus Challenge: CSS 3D transform + animation
+
+    Can you make it so when you hover on a Gallery-item, it:
+
+    1. Gently "floats" above the other images (use translate3D)
+    2. Uses "filter" to gradually become higher contrast
+    3. Gains a shadow that grows at the same rate as the "floating" effect
+
+    Hint: For a full 3D effect, set a "perspective" and "perspective-origin".
+*/
+.Gallery {
+    perspective: 2000px;
+    perspective-origin: bottom right;
+}
+
+.Gallery-item {
+    position: relative;
+    background: white;
+    z-index: 0;
+    transform: translate3d(0, 0, 0);
+    transition: transform 2s,
+                box-shadow 2s,
+                filter 5s;
+}
+
+.Gallery-item:hover {
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transform: translate3d(0, 0, 200px);
+    filter: contrast(2.0);
+}
+

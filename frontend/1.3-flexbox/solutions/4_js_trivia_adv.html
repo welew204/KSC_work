@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                background: 
+                    linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, 
+                    linear-gradient(63deg, transparent 74%, #999 78%), 
+                    linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), 
+                    #888;
+                background-size: 16px 48px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .Question {
+                display: grid;
+                grid-template-rows: 70px 100px 100px;
+                grid-template-columns: 1fr 1fr;
+                background: whiteSmoke;
+                padding: 20px;
+                margin: 50px;
+                font-family: sans-serif;
+                width: 500px;
+                grid-gap: 30px;
+            }
+
+            .Question-answer {
+                grid-row: 4;
+                grid-column: 1 / span 2;
+                text-align: center;
+                font-size: 20pt;
+            }
+
+            .Question h3 {
+                grid-column: 1 / span 2;
+                margin: 0;
+                font-size: 18pt;
+            }
+
+            .Question button {
+                background: linear-gradient(to bottom, rgba(235,233,249,1) 0%,
+                    rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%,
+                    rgba(193,191,234,1) 100%);
+                color: black;
+                border: darkgray;
+                font-size: 20pt;
+                box-shadow: 0px 0px 0px 7px rgba(0, 0, 0, 0.1) inset;
+            }
+            .Question button:active {
+                background: linear-gradient(to top, rgba(235,233,249,1) 0%,
+                    rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%,
+                    rgba(193,191,234,1) 100%);
+            }
+
+            .Question--correct {
+                background: lightgreen;
+            }
+
+            .Question--wrong {
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="Question" >
+            <h3>Which is the only American state to begin with the letter 'p'?</h3>
+            <button>California</button>
+            <button>Washington D.C.</button>
+            <button is-correct>Pennsylvania</button>
+            <button>Canada</button>
+        </div>
+
+        <div class="Question">
+            <h3>What is the diameter of Earth?</h3>
+            <button>10 centimeters</button>
+            <button>2 kilometers</button>
+            <button>8 inches</button>
+            <button is-correct>8,000 miles</button>
+        </div>
+
+
+        <div class="Question">
+            <h3>What is the capital city of Spain?</h3>
+            <div class="Question-answer" id="q3answer"></div>
+            <button>Españalandia</button>
+            <button>Despacito</button>
+            <button is-correct>Madrid</button>
+            <button>New York</button>
+        </div>
+
+
+        <div class="Question" id="q4">
+            <h3>Which country is Prague in?</h3>
+            <button>Monaco</button>
+            <button is-correct>Czech Republic</button>
+            <button>Vatican City</button>
+            <button>Singapore</button>
+        </div>
+
+
+        <div class="Question">
+            <h3>What was the legendary Benedictine monk who invented champagne?</h3>
+            <button>Duff</button>
+            <button>Sir Fizzy Sparkles</button>
+            <button is-correct>Dom Perignon</button>
+            <button>Don Spumante de Frizzante</button>
+        </div>
+
+
+        <div class="Question">
+            <h3>What is the largest freshwater lake in the world?</h3>
+            <button is-correct>Lake Superior</button>
+            <button>Lake Inferior</button>
+            <button>Lake Merit</button>
+            <button>Lake Toilet</button>
+        </div>
+
+        <div class="Question">
+            <h3>What is someone who shoes horses called?</h3>
+            <button>Horser</button>
+            <button is-correct>Farrier</button>
+            <button>Horsist</button>
+            <button>Horseyman</button>
+        </div>
+
+        <div class="Question">
+            <h3>Who invented the rabies vaccination?</h3>
+            <button>Sir Francis Bacon and Eggs</button>
+            <button is-correct>Louis Pasteur</button>
+            <button>Dunder Mifflin</button>
+            <button>Sir Rabies-Be-Gone</button>
+        </div>
+
+        <div class="Question">
+            <h3>Which of the following cities does NOT have an underground rail
+            systems?</h3>
+            <button>Liverpool</button>
+            <button>Glasgow</button>
+            <button>Newcastle</button>
+            <button is-correct>Birmingham</button>
+        </div>
+
+        <!--
+            Advanced Bonus Challenge:
+
+            Time to take a plunge into more advanced JavaScript!
+
+            Read the following code. Can you understand what it is doing? Can
+            you add the attributes it is expecting to the HTML, so that it will
+            print "Advanced challenge: Correct answer!" to the console?
+
+            Can you complete it, to make a more DRY, versatile trivia game?
+        -->
+        <script>
+            let correct = 0;
+            let total = 0;
+            let elements = document.querySelectorAll('.Question');
+            for (let element of elements) {
+                let buttons = element.querySelectorAll('button');
+                for (let button of buttons) {
+                    button.onclick = () => {
+                        total++;
+                        if (button.hasAttribute('is-correct')) {
+                            correct++;
+                            element.textContent = "Correct " +
+                                 " - Score: " + correct + "/" + total;
+                            element.classList.add('Question--correct');
+                        } else {
+                            element.textContent = "Wrong " +
+                                " - Score: " + correct + "/" + total;
+                            element.classList.add('Question--wrong');
+                        }
+                    };
+                }
+            }
+        </script>
+    </body>
+</html>

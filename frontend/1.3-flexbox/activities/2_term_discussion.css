@@ -1,0 +1,37 @@
+/*
+
+For each of the following CSS properties, write the following:
+    1. A comment describing its function (in your own words)
+    2. An example of a valid value for each one
+
+*/
+.SomeClass {
+    grid-template-columns:
+    grid-template-rows:
+
+    grid-gap:
+
+    grid-column:
+    grid-row:
+    align-self:
+
+    flex-direction:
+    flex-wrap:
+    justify-content:
+    align-items:
+
+    transition:
+    animation:
+
+    position:
+    left:
+    top:
+
+    box-sizing:
+    padding:
+    margin:
+
+    /* Bonus: */
+    transform:
+    filter:
+}

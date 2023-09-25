@@ -1,8 +1,26 @@
 /* Challenge 4 can go here */
 
+.Article {
+    display: grid;
+    grid-template-columns: 120px auto;
+    grid-template-rows: 1fr 2fr;
+    column-gap: 10px;
+    align-items: center;
+}
 
-
-
+.Article-image {
+    grid-row: span 2;
+    width: 100px;
+    height: 100px;
+}
+.Article-title {
+    grid-column: 2;
+}
+.Article-summary {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+}
 
 
 

@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                background: 
+                    linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, 
+                    linear-gradient(63deg, transparent 74%, #999 78%), 
+                    linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), 
+                    #888;
+                background-size: 16px 48px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .Question {
+                display: grid;
+                grid-template-rows: 70px 100px 100px;
+                grid-template-columns: 1fr 1fr;
+                background: whiteSmoke;
+                padding: 20px;
+                margin: 50px;
+                font-family: sans-serif;
+                width: 400px;
+                grid-gap: 30px;
+            }
+
+            .Question-answer {
+                grid-row: 4;
+                grid-column: 1 / span 2;
+                text-align: center;
+                font-size: 20pt;
+            }
+
+            .Question h3 {
+                grid-column: 1 / span 2;
+                margin: 0;
+                font-size: 18pt;
+            }
+
+            .Question button {
+                background: linear-gradient(to bottom, rgba(235,233,249,1) 0%,
+                    rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%,
+                    rgba(193,191,234,1) 100%);
+                color: black;
+                border: darkgray;
+                font-size: 20pt;
+                box-shadow: 0px 0px 0px 7px rgba(0, 0, 0, 0.1) inset;
+            }
+            .Question button:active {
+                background: linear-gradient(to top, rgba(235,233,249,1) 0%,
+                    rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%,
+                    rgba(193,191,234,1) 100%);
+            }
+
+            .Question--correct {
+                background: lightgreen;
+            }
+
+            .Question--wrong {
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <!--
+            Challenge 1: alert
+            Add onClick attributes so that when the user clicks on the right
+            button, it displays an alert saying "Correct!" and when the user
+            clicks the wrong button, it says "Wrong!".
+        -->
+        <div class="Question" >
+            <h3>Which is the only American state to begin with the letter 'p'?</h3>
+            <button onClick="alert('Wrong!')">California</button>
+            <button onClick="alert('Wrong!')">Washington D.C.</button>
+            <button onClick="alert('Right!')">Pennsylvania</button>
+            <button onClick="alert('Wrong!')">Canada</button>
+        </div>
+
+        <!--
+            Challenge 2: console.log
+            Add onClick attributes so that when the user clicks on the right
+            button, it says in the Dev Tools console "Correct!" using
+            console.log and when the user clicks the wrong button, it says
+            "Wrong!".
+
+            Hint: The first one is done for you.
+        -->
+        <div class="Question">
+            <h3>What is the diameter of Earth?</h3>
+            <button onClick="console.log('Wrong!')">10 centimeters</button>
+            <button onClick="console.log('Wrong!')">2 kilometers</button>
+            <button onClick="console.log('Wrong!')">8 inches</button>
+            <button onClick="console.log('Right!')">8,000 miles</button>
+        </div>
+
+
+        <!--
+            Challenge 3: textContent
+            Add onClick attributes so that when the user clicks on the right
+            button, it sets the contents of the #q3answer element to the
+            appropriate message.
+
+            Hint: The first one is done for you.
+        -->
+        <div class="Question">
+            <h3>What is the capital city of Spain?</h3>
+            <div class="Question-answer" id="q3answer"></div>
+            <button onClick="
+                document.querySelector('#q3answer').textContent = 'Wrong!';
+            ">Españalandia</button>
+            <button onClick="
+                document.querySelector('#q3answer').textContent = 'Wrong!';
+            ">Despacito</button>
+            <button onClick="
+                document.querySelector('#q3answer').textContent = 'Right!';
+            ">Madrid</button>
+            <button onClick="
+                document.querySelector('#q3answer').textContent = 'Wrong!';
+            ">New York</button>
+        </div>
+
+
+        <!--
+            Challenge 4: addClass
+            Add onClick attributes to add a class to the entire Question
+            indicating when the wrong (or correct) answer is selected.
+
+            Hint: The first one is done for you.
+        -->
+        <div class="Question" id="q4">
+            <h3>Which country is Prague in?</h3>
+            <button onClick="
+                document.querySelector('#q4').classList.remove('Question--correct');
+                document.querySelector('#q4').classList.add('Question--wrong');
+            ">Monaco</button>
+            <button onClick="
+                document.querySelector('#q4').classList.remove('Question--wrong');
+                document.querySelector('#q4').classList.add('Question--correct');
+            ">Czech Republic</button>
+            <button onClick="
+                document.querySelector('#q4').classList.remove('Question--correct');
+                document.querySelector('#q4').classList.add('Question--wrong');
+            ">Vatican City</button>
+            <button onClick="
+                document.querySelector('#q4').classList.remove('Question--correct');
+                document.querySelector('#q4').classList.add('Question--wrong');
+            ">Singapore</button>
+        </div>
+
+
+        <!--
+            Challenge 5:
+            Implement Challenge 3 and 4 for this trivia question.
+
+            Hint: This time you will need to create a new div, and add id's to
+            the existing divs, to permit accessing the necessary properties.
+        -->
+        <div class="Question" id="q5">
+            <h3>What was the legendary Benedictine monk who invented champagne?</h3>
+            <div class="Question-answer" id="q5answer"></div>
+            <button onClick="
+                document.querySelector('#q5answer').textContent = 'Wrong!';
+                document.querySelector('#q5').classList.remove('Question--correct');
+                document.querySelector('#q5').classList.add('Question--wrong');
+            ">Duff</button>
+            <button onClick="
+                document.querySelector('#q5answer').textContent = 'Wrong!';
+                document.querySelector('#q5').classList.remove('Question--correct');
+                document.querySelector('#q5').classList.add('Question--wrong');
+            ">Sir Fizzy Sparkles</button>
+            <button onClick="
+                document.querySelector('#q5answer').textContent = 'Right!';
+                document.querySelector('#q5').classList.remove('Question--wrong');
+                document.querySelector('#q5').classList.add('Question--correct');
+            ">Dom Perignon</button>
+            <button onClick="
+                document.querySelector('#q5answer').textContent = 'Wrong!';
+                document.querySelector('#q5').classList.remove('Question--correct');
+                document.querySelector('#q5').classList.add('Question--wrong');
+            ">Don Spumante de Frizzante</button>
+        </div>
+
+
+        <!--
+            Challenge 6:
+            Add an onClick event to replace this question with a message, like
+            "Incorrect, the correct answer was Lake Superior", or "Correct! Go
+            on to the next one."
+        -->
+        <div class="Question" id="q6">
+            <h3>What is the largest freshwater lake in the world?</h3>
+            <button onClick="
+                    document.querySelector('#q6').textContent = 'Correct! Go on to the next one.';
+                ">Lake Superior</button>
+            <button onClick="
+                    document.querySelector('#q6').textContent = 'Incorrect, the correct answer was Lake Superior';
+                ">Lake Inferior</button>
+            <button onClick="
+                    document.querySelector('#q6').textContent = 'Incorrect, the correct answer was Lake Superior';
+                ">Lake Merit</button>
+            <button onClick="
+                    document.querySelector('#q6').textContent = 'Incorrect, the correct answer was Lake Superior';
+                ">Lake Toilet</button>
+        </div>
+
+        <!--
+            Bonus Challenges:
+            For the next 3 challenges, keep track of the count of correct and
+            incorrect answers. Report them using either alert or innerContent
+            or innerHTML.
+
+            The variables are initiated for you.
+        -->
+        <script>
+            let countRight = 0;
+            let countWrong = 0;
+            // HINT: To increment, something like:
+            //     countRight++;
+        </script>
+
+        <div class="Question">
+            <h3>What is someone who shoes horses called?</h3>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Horser</button>
+            <button onClick="
+                countRight++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Farrier</button>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Horsist</button>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Horseyman</button>
+        </div>
+
+        <div class="Question">
+            <h3>Who invented the rabies vaccination?</h3>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Sir Francis Bacon and Eggs</button>
+            <button onClick="
+                countRight++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Louis Pasteur</button>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Dunder Mifflin</button>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Sir Rabies-Be-Gone</button>
+        </div>
+
+        <div class="Question">
+            <h3>Which of the following cities does NOT have an underground rail
+            systems?</h3>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Liverpool</button>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Glasgow</button>
+            <button onClick="
+                countWrong++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Newcastle</button>
+            <button onClick="
+                countRight++;
+                alert('right: ' + countRight + '   wrong: ' + countWrong);
+            ">Birmingham</button>
+        </div>
+
+    </body>
+</html>
