@@ -1,16 +1,25 @@
 /* Challenge #1: Review - Transitions */
 .Navigation > a {
+    transition: background-color .5s;
+
+}
+
+.Navigation > a:hover {
+    background-color: cadetblue; 
 }
 
 
 /* Challenge #2: Review - CSS Grid */
 .Sidebar {
+    grid-column: 2;
+    grid-row: 2;
 }
 
 
 /* Challenge #3: Flexbox Navbar */
 /* HINT: use "display: flex" here */
 .Navigation {
+    display: flex;
 }
 
 
@@ -18,11 +27,26 @@
 
 /* Challenge #4: Flexbox Navbar tweaks */
 .Navigation {
+    justify-content: space-around;
+    align-items: center;
 }
 
 
 
 /* Challenge #5: Gallery */
 .Gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
 }
 
+.Gallery-item {
+    box-shadow: none;
+    transition: box-shadow .5s;
+}
+
+.Gallery-item:hover {
+    box-shadow: 10px 5px 5px red;
+    box-shadow: 20%;
+}

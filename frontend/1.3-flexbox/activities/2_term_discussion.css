@@ -7,31 +7,81 @@ For each of the following CSS properties, write the following:
 */
 .SomeClass {
     grid-template-columns:
+    /* definition of columns in your grid */
+    /* eg: 20px 1fr 1fr 25px */
     grid-template-rows:
-
+    /* number of rows in your grid */
+    /* eg: 20px 1fr 1fr 25px */
+    
     grid-gap:
-
+    /* space between grid items */
+    /* eg: 20px */
+    
     grid-column:
+    /* param for child element inside a grid, defining start and end or span horizontally */
+    /* 1 / span 2 */
     grid-row:
+    /* param for child element inside a grid, defining start and end or span vertically */
+    /* 1 / span 2 */
     align-self:
+    /* param for child element inside a grid cell, defining horizontal placement (since items stack) */
+    /* center */
+
 
     flex-direction:
+    /* define the flow of the items in the parent (flex) element */
+    /* column */
     flex-wrap:
+    /* define the wrapping of items within the parent (flex) element */
+    /* nowrap */
     justify-content:
+    /* define the position/spacing of elements within the parent (flex) element on the main-axis */
+    /* space-around */
     align-items:
+    /* define the position/spacing of elements on the cross-axis the parent (flex) element */
+    /* baseline */
 
     transition:
+    /* defines the field to 'turn on' for transition, as well as the time for the transition */
+    /* background-color 5s; */
     animation:
+    /* short-hand for LOTS of properties:
+        animation-delay
+        animation-direction
+        animation-duration
+        animation-fill-mode
+        animation-iteration-count
+        animation-name
+        animation-play-state
+        animation-timeline
+        animation-timing-function
+*/
 
     position:
+    /* how an element is positioned in document */
+    /* absolute; */
     left:
+    /* the value from the left wall of the viewer, based on the position of element */
+    /* 20px; */
     top:
+    /* the value from the top wall of the viewer, based on the position of element */
+    /* 20vh; */
 
     box-sizing:
+    /* defines HOW css calculates the sizing of the element (measure from outside (box) or from content size... */
+    /* content-box; */
     padding:
+    /* the area between the content and the border */
     margin:
+    /* the area between the outer part of the box and the neighbor stuff */
 
     /* Bonus: */
     transform:
+    /* The transform CSS property lets you rotate, scale, skew, or translate an element. 
+    It modifies the coordinate space of the CSS visual formatting model. */
+    /* usually takes a css function as param, eg: transform: scale3d(2.4, 1.2, 0.3); */
     filter:
+    /* The filter CSS property applies graphical effects like blur or color shift to an element. 
+    Filters are commonly used to adjust the rendering of images, backgrounds, and borders. */
+    /* eg:  filter: blur(5px);*/
 }
