@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" />
+    </head>
+    <body>
+        <button
+            id="count_button"
+            onClick="
+                count = count + 1;
+                let button = document.querySelector('#count_button');
+                button.textContent = count;
+            ">Click me</button>
+
+        <br />
+        <br />
+        <br />
+        <button onClick="addParagraph()">Add paragraph</button>
+
+        <div id="blocks">
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <script>
+            let count = 0;
+
+            function updateButton () {
+                console.log('updateButton getting clicked');
+                count = count + 1;
+
+                let button = document.querySelector('#count_button');
+                button.textContent = "Clicked "  + count;
+                console.log(button);
+
+                if (count > 30) {
+                    button.textContent = 'Too big';
+                }
+            }
+
+            function addParagraph () {
+                console.log('addParagraph getting clicked');
+                let div = document.querySelector('#blocks');
+                console.log(div);
+                let pTag = document.createElement('p');
+                pTag.textContent = 'New P-tag';
+                console.log(pTag);
+                div.appendChild(pTag);
+            }
+        </script>
+
+    </body>
+</html>
+
+
+
+
+

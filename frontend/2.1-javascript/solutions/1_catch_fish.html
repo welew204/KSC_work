@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-vader.css" />
+        <style>
+            img {
+                float: left;
+                margin-right: 20px;
+            }
+            button {
+                font-size: 24pt;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Gettin' Fishy</h1>
+
+        <hr />
+        <button onClick="console.log('Hello world!')">Challenge 1</button>
+
+        <button onClick="
+                console.log('Challenge 2');
+                let image = document.querySelector('#top-image');
+                console.log(image);
+            ">Challenge 2</button>
+
+        <button onClick="
+                console.log('Challenge 3');
+                let header = document.querySelector('#top-header');
+                console.log(header);
+            ">Challenge 3</button>
+
+        <button onClick="
+                console.log('Challenge 4');
+                let p = document.querySelector('#second-paragraph');
+                console.log(p);
+                console.log(p.parentNode);
+                console.log(p.parentNode.parentNode);
+            ">Challenge 4</button>
+
+
+        <button onClick="
+                console.log('Challenge 5');
+                let allParas = document.querySelectorAll('.BottomParagraph');
+                console.log(allParas);
+            ">Challenge 5</button>
+
+        <hr />
+
+        <button onClick="
+                console.log('Bonus #1');
+                console.log(document.querySelector('article:nth-of-type(1) p:nth-of-type(1)'));
+                console.log(document.querySelector('article:nth-of-type(1) p:nth-of-type(2)'));
+                console.log(document.querySelector('article:nth-of-type(2) p:nth-of-type(1)'));
+                console.log(document.querySelector('article:nth-of-type(3) p:nth-of-type(1)'));
+                console.log(document.querySelector('article:nth-of-type(3) p:nth-of-type(2)'));
+            ">Bonus #1</button>
+
+        <button onClick="
+                console.log('Bonus #2');
+                let allParas = document.querySelectorAll('p');
+                for (let para of allParas) {
+                    console.log(para);
+                }
+            ">Bonus #2</button>
+
+        <hr />
+
+        <article>
+            <h2 id="top-header">Unlikely fish situations</h2>
+            <img src="https://i.imgur.com/fRkDFs3.jpg" id="top-image" />
+            <p>Chub New Zealand smelt Billfish; pollock flier turkeyfish;
+            weeverfish velvet catfish climbing catfish mudsucker Blacksmelt
+            temperate perch streamer fish loach catfish. Grenadier
+            telescopefish dogfish shark leopard danio deep sea eel, sind danio,
+            paradise fish ribbonbearer; zebra bullhead shark? Garpike jellynose
+            fish frogmouth catfish codling seatrout, herring smelt handfish
+            orangespine unicorn fish Old World rivuline. Turkeyfish; Raccoon
+            butterfly fish, cobbler deep sea smelt. Owens pupfish bonytongue,
+            catalufa scythe butterfish, Ratfish dragonfish. Pleco megamouth
+            shark Sacramento blackfish yellowmargin triggerfish grunt sculpin,
+            wels catfish knifefish pencilsmelt.</p>
+
+            <img src="https://i.imgur.com/riRbgK9.png" />
+
+            <p id="second-paragraph">Sand knifefish, "Alaska blackfish eel-goby
+            sailfin silverside ghoul righteye flounder armorhead catfish
+            Moorish idol knifefish, kanyu tompot blenny yellowbelly tail
+            catfish." Yellow moray spinefoot prickleback cat shark ballan
+            wrasse cornetfish; European chub. Cownose ray warmouth. Upside-down
+            catfish lenok ocean perch killifish catalufa murray cod smalltooth
+            sawfish? Bleak white shark, halosaur spaghetti eel wolf-herring
+            Rainbow trout mud minnow.</p>
+        </article>
+
+        <article>
+            <h2>Sea'ing is believing</h2>
+            <img src="https://i.imgur.com/gyRkkE3.png" />
+            <p class="BottomParagraph">Featherfin knifefish, frogmouth catfish
+            nurse shark snipe eel sea chub yellow-eye mullet rudd. Saw shark, whale
+            catfish, mouthbrooder grenadier blue catfish Oregon chub, opaleye hake
+            shovelnose sturgeon Mexican blind cavefish flying characin. Cutlassfish
+            bango sarcastic fringehead, grunion paradise fish morwong, longfin
+            smelt needlefish." Tompot blenny European flounder marlin.  Northern
+            clingfish snubnose parasitic eel, slender mola. Swampfish graveldiver
+            paradise fish pilchard garibaldi eulachon Gila trout elephant fish
+            snake eel rudd gulf menhaden greeneye. Earthworm eel searobin, "bramble
+            shark sharksucker, barbel," glass knifefish sole skipping goby
+            Sacramento blackfish handfish; flabby whalefish. Chubsucker tui chub
+            common carp lenok jewfish: scat duckbill convict blenny pickerel.</p>
+        </article>
+
+        <article>
+            <h2>One school of fish, who are regional polka experts</h2>
+            <img src="https://i.imgur.com/RQUheJl.jpg" />
+            <p class="BottomParagraph">Pilot fish, sixgill ray, cownose ray;
+            vendace bangus New World rivuline Cornish Spaktailed Bream, straptail.
+            Devario Pacific argentine croaker marblefish fusilier fish giant sea
+            bass dragonfish gulper ricefish barbel. Carpetshark gurnard largemouth
+            bass lemon shark northern lampfish; grenadier queen danio zebra
+            lionfish. Sixgill shark, gulper dorab, yellowfin croaker, yellow-eye
+            mullet.</p>
+
+            <p class="BottomParagraph">Striped bass seahorse, cichlid; skilfish
+            snake mackerel Sacramento blackfish, "yellow jack," Rabbitfish; warty
+            angler: northern pearleye striped bass. Kokopu swordfish cod icefish
+            river stingray dhufish sturgeon saw shark: handfish.</p>
+            <img src="https://i.imgur.com/P1XA7Ih.png" />
+        </article>
+    </body>
+</html>
+
+

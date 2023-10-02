@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" />
+    </head>
+    <body>
+        <h1>Render function pattern example</h1>
+
+        <div id="output1"></div>
+        <div id="output2"></div>
+
+        <button onClick="addPhrase()">Add phrase</button>
+
+        <script>
+            let vulcanPhrases = [
+                'live long & prosper',
+                'the needs of the many outweigh the needs of the few',
+            ];
+
+            // Use an object (dict or map like data type)
+            let objectExample = {
+                name: 'Spock',
+                title: 'Ambassador',
+                actor: 'Leonard Nemoy',
+            };
+
+            function render() {
+                // This render function takes the data in the variables above,
+                // and then rewrites the HTML from this..
+
+
+                // Fetch div with id output1 from the page
+                let divOne = document.querySelector('#output1');
+                divOne.innerHTML = '';
+                for (let phrase of vulcanPhrases) {
+                    let p = document.createElement('p');
+                    p.textContent = 'Vulcan phrase: ' + phrase;
+                    divOne.appendChild(p);
+                }
+
+                // Lets add some content using innerHTML
+                let divTwo = document.querySelector('#output2');
+                divTwo.innerHTML = '';
+                divTwo.innerHTML += 'name: ' + objectExample.name + '<br />';
+                divTwo.innerHTML += 'title: ' + objectExample.title + '<br />';
+                divTwo.innerHTML += 'actor: ' + objectExample.actor + '<br />';
+            }
+
+            function addPhrase() {
+                vulcanPhrases.push('You have, and will always be, my friend.')
+                render();
+            }
+
+            render()
+        </script>
+    </body>
+</html>
+
+

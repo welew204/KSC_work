@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" />
+    </head>
+    <body>
+        <h1 id="header">Hello world!</h1>
+
+        <button onClick="
+                console.log('getting clicked');
+                let header = document.querySelector('#header');
+                console.log('header', header);
+            ">Get header</button>
+
+        <button onClick="
+                let allButtons = document.querySelectorAll('button');
+                console.log('all the buttons on the page', allButtons);
+            ">Get all buttons</button>
+    </body>
+</html>
+

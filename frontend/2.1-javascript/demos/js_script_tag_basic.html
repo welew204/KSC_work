@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<body>
+
+Nothing to see here... everything is in the script tag!
+
+<script>
+
+let count = 5;
+console.log('hello world!');
+count = count + 10;
+console.log('This is count:', count);
+
+// If statements
+if (count > 10) {
+    console.log('count is greater than 10');
+} else {
+    console.log('count is less than 10');
+}
+
+// Function example
+function wizardConverter(galleons, sickles, knuts) {
+    // Given Harry Potter wizarding currency, convert to British
+    // pounds
+
+    // 493 knuts to a sickle
+    let sicklesAndKnuts = sickles + (knuts / 493.0);
+
+    //# 17 sickles to a galleon
+    let galleonsAndSickles = galleons + (sicklesAndKnuts / 17.0);
+
+    // Galleons are pinned at £5 per galleon
+    return galleonsAndSickles * 5.0;
+}
+
+let results = wizardConverter(10, 3, 8);
+console.log('Pounds:', results);
+
+results = wizardConverter(5, 2, 100);
+console.log('Pounds:', results);
+
+</script>
+</body>
+</html>
+

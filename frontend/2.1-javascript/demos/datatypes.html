@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" />
+    </head>
+    <body>
+        <h1>Example data</h1>
+
+        <div id="output1"></div>
+        <div id="output2"></div>
+
+        <script>
+            let vulcanPhrases = [
+                'live long & prosper',
+                'the needs of the many outweigh the needs of the few',
+            ];
+
+            // Fetch div with id output1 from the page
+            let divOne = document.querySelector('#output1');
+            for (let phrase of vulcanPhrases) {
+                let p = document.createElement('p');
+                p.textContent = 'Vulcan phrase: ' + phrase;
+                divOne.appendChild(p);
+            }
+
+            // Use an object (dict or map like data type)
+            let objectExample = {
+                name: 'Spock',
+                title: 'Ambassador',
+                actor: 'Leonard Nemoy',
+            };
+
+            // Lets add some content using innerHTML
+            let divTwo = document.querySelector('#output2');
+            divTwo.innerHTML += 'name: ' + objectExample.name + '<br />';
+            divTwo.innerHTML += 'title: ' + objectExample.title + '<br />';
+            divTwo.innerHTML += 'actor: ' + objectExample.actor + '<br />';
+        </script>
+    </body>
+</html>
+
+

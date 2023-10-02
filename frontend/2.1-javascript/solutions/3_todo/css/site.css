@@ -1,0 +1,98 @@
+/* RESET ------------------------------ */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* SIMPLE TODO STYLES ----------------- */
+/* NOTE: This IS NOT BEM style naming, it's kept simple just for this activity */
+body {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #ef32d9, #89fffd);
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 50px;
+}
+
+#todo-list {
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  min-height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  counter-reset: todo-count;
+}
+
+input,
+button,
+#todo-list > p {
+  height: 50px;
+  background: whiteSmoke;
+  font-size: 20px;
+}
+
+input,
+#todo-list > p {
+  background: rgba(255, 255, 255, 0.5);
+  border: 4px dashed #ef32d9;
+  width: 50vw;
+  margin-top: 2vh;
+  box-shadow: 2px 2px 10px inset rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  margin-right: 0;
+  border-right: none;
+  color: black;
+}
+
+button {
+  width: 7vw;
+  font-weight: bold;
+  margin-left: -8px;
+  background-color: #ef32d9;
+  color: white;
+  border: none;
+  border-radius: 0 10px 10px 0;
+}
+
+#todo-list button {
+  position: absolute;
+  padding: 0;
+  right: -40px;
+  top: -4px;
+  width: 40px;
+}
+
+#todo-list > p {
+  position: relative;
+  border-style: solid;
+}
+
+#todo-list > p::before {
+  /* Use counter(todo-count) to add numbering */
+  content: counter(todo-count) '. ';
+  counter-increment: todo-count;
+}

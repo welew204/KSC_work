@@ -1,0 +1,213 @@
+<!doctype html>
+<!--
+    In this activity we practice good JavaScript habits:
+
+    1. Always console.log when you attach an event
+
+    2. Always console.log when you fetch an element
+
+    3. Always console.log at the start of a script (we'll learn this one later)
+
+    Essentially, console.log everywhere! The challenges below will help us
+    practice using onClick events to "fish" elements from the DOM (e.g. HTML
+    tags), and using console.log + the Google Dev Tools console to make sure we
+    are accessing or targeting the correct elements and inspecting their
+    properties.
+-->
+<script>console.log("hey guy!!")</script>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-vader.css" />
+    <style>
+        img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        button {
+            font-size: 24pt;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gettin' Fishy</h1>
+
+    <hr />
+    <!--
+            Challenge #1:
+            Add an onClick attribute to the button that uses console.log to say
+            "Hello fishing world!"
+
+            Hint:
+                onClick="
+                    console.log('Hello fishing world!');
+                "
+        -->
+    <button onclick="console.log('hello fishing world!')">Challenge 1</button>
+
+    <!--
+            Challenge #2:
+            1. Add an onClick attribute to the button that says "challenge 2
+            clicked". Ensure it is working in the debug console.
+
+            2. Add more code that gets the element with ID "top-image" and puts
+            it into a variable called "image"
+
+            3. Remember the rule: What's the first thing you do whenever you
+            retrieve an element from the DOM? console.log it! So console.log
+            the "image" variable.
+
+            4. Use the debug console to inspect the properties of the image.
+            Can you find the "src" in the debug panel?
+
+            Hint: All together, it might look like this:
+                console.log('Challenge 2 clicked');
+                let image = document.querySelector('#top-image');
+                console.log(image);
+        -->
+    <button onclick="
+    console.log('challenge 2 clicked!');
+    let image = document.querySelectorAll('#top-image');
+    console.log(image);">Challenge 2</button>
+
+    <!--
+            Challenge #3:
+            Repeat Challenge 2, except this time targeting the element with ID
+            "top-header".
+        -->
+    <button onclick="
+    console.log('challenge 3 clicked!');
+    let header = document.querySelectorAll('#top-header');
+    console.log(header);">Challenge 3</button>
+
+
+    <!--
+            Challenge #4:
+            1. Fetch the paragraph with ID second-paragraph
+            2. Poke around at its attributes using Google Dev Tools
+            3. Can you write a console.log command to get the parent and grand
+            parent of it?
+        -->
+    <button onclick="
+    console.log('challenge 4 clicked!');
+    let secPara = document.querySelectorAll('#second-paragraph');
+    console.log(secPara);
+    console.log(secPara[0].parentElement);
+    console.log(secPara[0].parentElement?.parentElement);
+
+    ">Challenge 4</button>
+
+
+    <!--
+            Challenge #5:
+            1. Use querySelectorAll to fetch ALL "BottomParagraph" elements
+            2. Use console.log to log out the result
+            3. What type of data is this? >> LIST
+        -->
+    <button onclick="
+    console.log('challenge 5 clicked!');
+    let bottomParas = document.querySelectorAll('.BottomParagraph');
+    console.log(bottomParas);
+    //console.log(bottomParas[0].parentElement);
+    //console.log(bottomParas[0].parentElement?.parentElement);
+
+    ">Challenge 5</button>
+
+    <hr />
+
+    <!--
+            Bonus Challenge #1:
+            querySelector supports all CSS selectors, including pseudo-classes.
+            Using pseudo-classes (such as nth-child), select and console.log
+            out each paragraph individually
+        -->
+    <button onclick="
+    console.log('challenge BONUS 1 clicked!');
+    let nthPara = document.querySelectorAll('p:nth-child(odd)');
+    console.log(nthPara);
+    for (let i = 0; i < nthPara.length; i++ ) {
+        console.log(nthPara[i]);
+    }
+    //console.log(bottomParas[0].parentElement);
+    //console.log(bottomParas[0].parentElement?.parentElement);
+
+    ">Bonus #1</button>
+
+
+    <!--
+            Bonus Challenge #2:
+            Research "for of" loop syntax online and/or on a cheatsheet. Use
+            querySelectorAll in conjunction with this to loop through and
+            console log every paragraph on the page.
+        -->
+    <button>Bonus #2</button>
+
+    <hr />
+
+    <article>
+        <h2 id="top-header">Unlikely fish situations</h2>
+        <img src="https://i.imgur.com/fRkDFs3.jpg" id="top-image" />
+        <p>Chub New Zealand smelt Billfish; pollock flier turkeyfish;
+            weeverfish velvet catfish climbing catfish mudsucker Blacksmelt
+            temperate perch streamer fish loach catfish. Grenadier
+            telescopefish dogfish shark leopard danio deep sea eel, sind danio,
+            paradise fish ribbonbearer; zebra bullhead shark? Garpike jellynose
+            fish frogmouth catfish codling seatrout, herring smelt handfish
+            orangespine unicorn fish Old World rivuline. Turkeyfish; Raccoon
+            butterfly fish, cobbler deep sea smelt. Owens pupfish bonytongue,
+            catalufa scythe butterfish, Ratfish dragonfish. Pleco megamouth
+            shark Sacramento blackfish yellowmargin triggerfish grunt sculpin,
+            wels catfish knifefish pencilsmelt.</p>
+
+        <img src="https://i.imgur.com/riRbgK9.png" />
+
+        <p id="second-paragraph">Sand knifefish, "Alaska blackfish eel-goby
+            sailfin silverside ghoul righteye flounder armorhead catfish
+            Moorish idol knifefish, kanyu tompot blenny yellowbelly tail
+            catfish." Yellow moray spinefoot prickleback cat shark ballan
+            wrasse cornetfish; European chub. Cownose ray warmouth. Upside-down
+            catfish lenok ocean perch killifish catalufa murray cod smalltooth
+            sawfish? Bleak white shark, halosaur spaghetti eel wolf-herring
+            Rainbow trout mud minnow.</p>
+    </article>
+
+    <article>
+        <h2>Sea'ing is believing</h2>
+        <img src="https://i.imgur.com/gyRkkE3.png" />
+        <p class="BottomParagraph">Featherfin knifefish, frogmouth catfish
+            nurse shark snipe eel sea chub yellow-eye mullet rudd. Saw shark, whale
+            catfish, mouthbrooder grenadier blue catfish Oregon chub, opaleye hake
+            shovelnose sturgeon Mexican blind cavefish flying characin. Cutlassfish
+            bango sarcastic fringehead, grunion paradise fish morwong, longfin
+            smelt needlefish." Tompot blenny European flounder marlin. Northern
+            clingfish snubnose parasitic eel, slender mola. Swampfish graveldiver
+            paradise fish pilchard garibaldi eulachon Gila trout elephant fish
+            snake eel rudd gulf menhaden greeneye. Earthworm eel searobin, "bramble
+            shark sharksucker, barbel," glass knifefish sole skipping goby
+            Sacramento blackfish handfish; flabby whalefish. Chubsucker tui chub
+            common carp lenok jewfish: scat duckbill convict blenny pickerel.</p>
+    </article>
+
+    <article>
+        <h2>One school of fish, who are regional polka experts</h2>
+        <img src="https://i.imgur.com/RQUheJl.jpg" />
+        <p class="BottomParagraph">Pilot fish, sixgill ray, cownose ray;
+            vendace bangus New World rivuline Cornish Spaktailed Bream, straptail.
+            Devario Pacific argentine croaker marblefish fusilier fish giant sea
+            bass dragonfish gulper ricefish barbel. Carpetshark gurnard largemouth
+            bass lemon shark northern lampfish; grenadier queen danio zebra
+            lionfish. Sixgill shark, gulper dorab, yellowfin croaker, yellow-eye
+            mullet.</p>
+
+        <p class="BottomParagraph">Striped bass seahorse, cichlid; skilfish
+            snake mackerel Sacramento blackfish, "yellow jack," Rabbitfish; warty
+            angler: northern pearleye striped bass. Kokopu swordfish cod icefish
+            river stingray dhufish sturgeon saw shark: handfish.</p>
+        <img src="https://i.imgur.com/P1XA7Ih.png" />
+    </article>
+</body>
+
+</html>
