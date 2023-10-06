@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bare-css@2.0.3/css/bare.min.css" />
+    </head>
+    <body>
+        <nav>
+            <section>
+                <h1>Shopping List</h1>
+            </section>
+        </nav>
+        <section>
+            <section id="shopping-list">
+            </section>
+            <input placeholder="Enter item" id="new-item" />
+            <button onCLick="addItemToList()">Add item</button>
+        </section>
+
+        <script>
+
+            console.log('Working');
+
+            let shoppingList = [
+                "First Item",
+                "Second Item",
+            ];
+
+            function render() {
+                let div = document.querySelector('#shopping-list');
+                div.innerHTML = '';
+                for (let text of shoppingList) {
+                    let item = document.createElement('h3');
+                    item.textContent = text;
+                    div.appendChild(item);
+
+                    // do delete button
+                    let xButton = document.createElement('button');
+                    xButton.textContent = 'X';
+                    xButton.onclick = () => {
+                        shoppingList.splice(shoppingList.indexOf(text), 1);
+
+                        // ADVANCED BONUS
+                        localStorage.setItem('shopping', JSON.stringify(shoppingList));
+                        render();
+                    };
+                    item.append(xButton);
+
+
+                    // do buy button
+                    let doneButton = document.createElement('button');
+                    doneButton.textContent = 'BUY';
+                    doneButton.onclick = () => {
+                        shoppingList[shoppingList.indexOf(text)] += 'Bought';
+
+                        // ADVANCED BONUS
+                        localStorage.setItem('shopping', JSON.stringify(shoppingList));
+                        render();
+                    };
+                    item.append(doneButton);
+
+                }
+            }
+
+            /* Challenge #2: */
+            render();
+
+            function addItemToList() {
+                /* Challenge #3 & #4 */
+                console.log('adding an item to the array');
+                let input = document.querySelector('#new-item');
+                let value = input.value;
+                shoppingList.push(value);
+                input.value = '';
+                render();
+
+                // ADVANCED BONUS
+                // Need to use "stringify" so that we convert the array type
+                // into a string, since the localStorage does not support
+                // complex data types.
+                localStorage.setItem('shopping', JSON.stringify(shoppingList));
+            }
+
+            /*
+                Advanced Bonus Challenge: localStorage
+                Browsers can store data to "localStorage" so that the changes
+                you make can be restored when the browser is reloaded. Modify
+                this shopping list to store the list to localStorage, and load
+                the list when you visit again.
+            */
+            function loadFromLocalStorage() {
+                let data = localStorage.getItem('shopping');
+                if (data) {
+                    // Need to use "parse" to retrieve convert the array type
+                    // from a string
+                    shoppingList = JSON.parse(data);
+                }
+                render(); // rerender
+            }
+            loadFromLocalStorage();
+
+        </script>
+    </body>
+</html>

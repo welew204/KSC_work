@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bare-css@2.0.3/css/bare.min.css" />
+    </head>
+    <body>
+    <div id="app">
+    </div>
+
+<script>
+    let animal = 'Goose';
+
+    function render() {
+        let app = document.querySelector('#app');
+        app.innerHTML = `
+            <h1>${animal}</h1>
+            <button onClick="setTitleDuck()">Set to Duck</button>
+            <button onClick="setTitleGoose()">Set to Goose</button>
+        `;
+
+        /*
+        // OR, a very similar using an if-statement to selectively render one
+        // thing or another
+        if (animal === 'Goose') {
+            output.innerHTML = `
+                <h1>Currently, I am a goose!</h1>
+                <button onClick="setTitleDuck()">Set to Duck</button>
+            `;
+        } else {
+            output.innerHTML = `
+                <h1>Currently, I am a duck!</h1>
+                <button onClick="setTitleGoose()">Set to Goose</button>
+            `;
+        }
+        */
+    }
+
+    function setTitleDuck() {
+        console.log('duck time!');
+        animal = 'Duck';
+        render();
+    }
+
+    function setTitleGoose() {
+        console.log('goose time!');
+        animal = 'Goose';
+        render();
+    }
+    render();
+</script>
+
+</body>
+</html>

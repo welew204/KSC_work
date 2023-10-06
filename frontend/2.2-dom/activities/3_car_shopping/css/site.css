@@ -1,0 +1,89 @@
+html {
+  background: url('http://i.imgur.com/VYttIyJ.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  min-height: 75vh;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px white;
+}
+
+table {
+  margin-bottom: 20px;
+  background: white;
+}
+
+h1 {
+  font-size: 5vw;
+  font-weight: 300;
+}
+
+.Btn,
+tr > td.Btn {
+    padding: .5em 1em;
+    color: rgba(0,0,0,.8);
+    border: transparent;
+    background-color: #e6e6e6;
+    text-decoration: none;
+    border-radius: 2px;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+
+    background: rgb(28, 184, 65);
+    color: white;
+    border-radius: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    font-size: 100%;
+}
+
+.Btn,
+tr > td.Btn--edit {
+    background: rgb(66, 184, 221);
+}
+
+.EditModal,
+.EditModal-backdrop,
+.EditModal-contents {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.EditModal-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.EditModal-contents {
+  background: rgb(223, 117, 20);
+  background: whiteSmoke;
+  text-align: center;
+  top: 20vh;
+  left: 20vw;
+  height: auto;
+  width: 60vw;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.EditModal {
+  display: none;
+}
+.EditModal--visible {
+  display: block;
+}

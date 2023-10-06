@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bare-css@2.0.3/css/bare.min.css" />
+    </head>
+    <body>
+        <nav>
+            <section>
+                <h1>Shopping List Strikes Back</h1>
+            </section>
+        </nav>
+        <section>
+            <section id="shopping-list">
+            </section>
+            <input placeholder="Enter item" id="new-item" />
+            <button onClick="addItemToList()">Add item</button>
+        </section>
+
+        <script>
+            /*
+                Challenge #1:
+                Do the first thing you do in JavaScript!
+
+                Hint: Add in a console.log, and double check in Chrome(ium) Dev
+                Tools you are seeing the change appear.
+            */
+
+            let shoppingList = [
+                "Buy Milk",
+                "Buy Cereal",
+            ];
+
+            /*
+                Challenge #2:
+                - Examine the following render() function.
+                - Can you explain to the person next to you what it is doing?
+                - Add a console.log and ensure it is getting invoked.
+                - If you discover that is not getting invoked, add the code
+                  necessary to invoke it.
+            */
+
+            function render() {
+                let div = document.querySelector('#shopping-list');
+                div.innerHTML = ''; // Clear contents of div
+
+                for (let text of shoppingList) {
+                    let item = document.createElement('h3');
+                    item.textContent = text;
+                    div.appendChild(item);
+                }
+            }
+
+
+
+            function addItemToList() {
+                /*
+                    Challenge #3: "Read" from DOM
+
+                    Access the input element from the DOM so we can access the
+                    value that the user typed in. Console.log out the value
+                    they typed in.
+
+                    HINT #1: Once you get the right element, use "element.value"
+                    to get the value. Always use console.log at each step of
+                    the process.
+
+                    HINT #2: Look at the previous solution for help.
+                */
+
+
+                /*
+                    Challenge #4: "Create" elements in DOM
+
+                    Add a new element to the DOM for this new item.
+
+                    HINT: Look at the previous solution for help.
+                */
+            }
+
+            /*
+                Challenge #5: "Update" to DOM
+                Add a "BUY" button to each item. This should replace the text
+                of that item with the word "Bought".
+
+                HINT #1: This is challenging, and will require adding code in
+                multiple spots.
+
+            */
+
+            /*
+                // HINT #2: To add on click events to an element we create
+                // using "document.createElement", look at the following
+                // example:
+                let newButton = document.createElement('button');
+                newButton.textContent = 'BUY';
+
+                // NOTE: notice that it is "onclick", all lowercase
+                newButton.onclick = () => {
+                    console.log('Do something here!!');
+                };
+            */
+
+
+            /*
+                Challenge #6: "Delete" to DOM
+                Every item should have a delete button. Implement it in any way
+                you can.
+
+                HINT: This is also challenging, and will also require adding
+                code in multiple spots.
+            */
+
+
+            /*
+                Advanced Bonus Challenge: localStorage
+                Browsers can store data to "localStorage" so that the changes
+                you make can be restored when the browser is reloaded. Modify
+                this list to store the list to localStorage, and load the list
+                when you visit again.
+            */
+
+        </script>
+    </body>
+</html>

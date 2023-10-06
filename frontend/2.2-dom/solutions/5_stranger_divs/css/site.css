@@ -1,0 +1,214 @@
+body {
+  background: #000;
+  color: white;
+}
+
+.App {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 200px minmax(auto, 600px) 1fr;
+    grid-template-rows: 400px auto;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    text-align: justify;
+    align-items: stretch;
+}
+
+.TopPart {
+    margin-top: -100px;
+    grid-column: 2 / span 2;
+}
+
+.TopPart .Logo {
+    margin-bottom: -100px;
+}
+
+.TopPart h1,
+.TopPart h3,
+.TopPart p  {
+    text-align: center;
+}
+
+.Sidebar {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.Sidebar label {
+  color: rgba(237,43,18, 1);
+}
+
+.MainContent {
+    grid-column: 3;
+}
+
+
+.TestSubject {
+  padding: 2px;
+  background: rgba(237,43,18, 0.5);
+  font: 900 18px Lato, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: black;
+  border: rgba(237,43,18, 0.2) 3px solid;
+  border-radius: 4px;
+  transition: all 300ms ease;
+  margin-bottom: 3px;
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+/*
+Credit to Robin for the CSS for htis Button
+https://codepen.io/lessthanthree/pen/mwHEJ
+*/
+.Input {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.Input {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.Input {
+  padding: 30px 50px;
+  background: rgba(237,43,18, 0.03);
+  font: 900 18px Lato, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: rgba(237,43,18, 0.4);
+  border: rgba(237,43,18, 0.2) 3px solid;
+  border-radius: 4px;
+  transition: all 300ms ease;
+}
+.Input:hover {
+  border-color: rgba(237,43,18, 1);
+  text-shadow: rgba(237,43,18, 0.5) 0 0 10px;
+  color: rgba(237,43,18, 1);
+  box-shadow: rgba(237,43,18, 0.5) 0 0 20px;
+}
+
+.Input--smaller {
+  padding: 20px 30px;
+  padding-right: 5px;
+  max-width: 50%;
+}
+
+/* 
+    Credit to Michael Edelstone for effect:
+    https://codepen.io/edelstone/pen/NAJqkY
+*/
+.Logo {
+  width: 625px;
+  margin: 6rem auto 3rem auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 8rem;
+  font-family: 'ITC Benguiat W01';
+  font-weight: 800;
+  color: #1c0502;
+  text-shadow: -0.05rem -0.05rem 1px #ed2b12,
+    0.05rem -0.05rem 1px #ed2b12,
+    -0.05rem 0.05rem 1px #ed2b12,
+    0.05rem 0.05rem 1px #ed2b12,
+    0 0 15px #630100,
+    0 0 20px #450100;
+  letter-spacing: -2px;
+}
+
+.Logo p {
+  display: inline-block;
+  margin: 0;
+}
+
+.Logo-bound {
+  box-shadow: -0.05rem -0.05rem 2px #ed2b12,
+    0.05rem -0.05rem 2px #ed2b12,
+    -0.05rem 0.05rem 2px #ed2b12,
+    0.05rem 0.05rem 2px #ed2b12;
+  height: 5px;
+}
+
+.Logo-bound-full {
+  width: 100%;
+  margin: auto;
+  margin-bottom: -1.2rem;
+  max-width: 612px;
+  margin-left: 5px;
+}
+
+.Logo-bound-mini {
+  margin-top: 0.5rem;
+}
+
+.Logo-bound-left {
+  float: left;
+  width: 99px;
+  position: relative;
+  left: 5px;
+}
+
+.Logo-bound-right {
+  float: right;
+  width: 103px;
+  left: 0.3rem;
+  position: relative;
+}
+
+.Logo-bottom {
+  clear: both;
+  top: -3.75rem;
+  position: relative;
+  left: .6rem;
+  letter-spacing: 2px;
+}
+
+.Logo-drop {
+  line-height: 0;
+  position: relative;
+  top: 1.55rem;
+}
+
+.Logo-stranger-s {
+  font-size: 10.5rem;
+  letter-spacing: -8px;
+}
+
+.Logo-stranger-t {
+  letter-spacing: 0;
+}
+
+.Logo-stranger-n {
+  letter-spacing: -5px;
+}
+
+.Logo-stranger-g {
+  letter-spacing: 0;
+}
+
+.Logo-stranger-r-2 {
+  font-size: 10.5rem;
+  right: 0.2rem;
+}
+
+.Logo-things-t {
+  font-size: 104%;
+  letter-spacing: 2px;
+}
+
+.Logo-things-n {
+  letter-spacing: -5px;
+}
+
+.Logo-things-g {
+  letter-spacing: -3px;
+}
+
+

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bare-css@2.0.3/css/bare.min.css" />
+    </head>
+    <body>
+        <nav>
+            <section>
+                <h1>Ad Lib Game</h1>
+            </section>
+        </nav>
+        <section>
+            <input placeholder="Name" id="name" onKeyUp="render()" />
+            <input placeholder="Noun" id="noun" onKeyUp="render()"  />
+            <input placeholder="Adjective" id="adjective" onKeyUp="render()"  />
+            <input placeholder="Large number" id="large-number" onKeyUp="render()"  />
+            <input placeholder="Family name" id="family-name" onKeyUp="render()"  />
+            <input placeholder="Country" id="country" onKeyUp="render()"  />
+            <input placeholder="Silly noun" id="silly-noun" onKeyUp="render()"  />
+            <select id="formats" onChange="render()">
+                <option value="uni">University</option>
+                <option value="ins">Instructions</option>
+                <option value="hw">Homework</option>
+            </select>
+            <!--
+            <button onClick="render()">Render</button>
+            -->
+            <section id="output">
+            </section>
+        </section>
+
+        <script src="./js/main.js"></script>
+    </body>
+</html>
