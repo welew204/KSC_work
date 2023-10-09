@@ -1,199 +1,210 @@
 <!doctype html>
 <html>
+
 <body>
-Remember to open Chrome Dev Tools Console! There is nothing else to see
-here in terms of HTML / CSS.
+    Remember to open Chrome Dev Tools Console! There is nothing else to see
+    here in terms of HTML / CSS.
 
-<script>
-    /*
-        **************************************
-        Challenge #1: What's the first thing you start JS with?
-
-        Hint: It's console.log to make sure your script is loading.
-    */
-
-
-    /*
-        **************************************
-        Challenge #2:
-        The following lines of code have a variety of mistakes.
-        1. Uncomment the code (delete the lines with the / * and * /)
-        2. Only by editing the code between the dashes, make the if
-        statement print out to the console "Challenge #2, complete"
-    */
+    <script>
+        /*
+            **************************************
+            Challenge #1: What's the first thing you start JS with?
+    
+            Hint: It's console.log to make sure your script is loading.
+        */
+        console.log("sup dawg.")
 
 
-    // --------------------------
-    /*
-    let testString = Testing code;
-    l et testing = "Testing code";
-    const num = 3;
-    num++;
-    */
-    // --------------------------
-
-    /*
-    if (testString === testing && num === 4) {
-        console.log("Challenge #2, complete");
-    }
-    */
+        /*
+            **************************************
+            Challenge #2:
+            The following lines of code have a variety of mistakes.
+            1. Uncomment the code (delete the lines with the / * and * /)
+            2. Only by editing the code between the dashes, make the if
+            statement print out to the console "Challenge #2, complete"
+        */
 
 
-    /*
-        **************************************
-        Challenge #3: The following is supposed to console.log the phrase
-        "Challenge 3 Working" a total of 3 times. Fix the mistakes to get
-        it working.
+        // --------------------------
 
-        Hint: "===" is how we compare things in JavaScript. Not "==" or "="
-    */
+        let testString = "Testing code";
+        let testing = "Testing code";
+        let num = 3;
+        num++;
+        //console.log("Challenge 2 complete")
 
-    let a = 3;
-    if (a = 4) {
-        console.log("Challenge 3 is broken!");
-    } else {
-        console.log("Challenge 3 Working");
-    }
-
-    let b = "0";
-    if (b == false) {
-        console.log("Challenge 3 is broken!");
-    } else {
-        console.log("Challenge 3 Working");
-    }
-
-    let c = 30;
-    let d = 20;
-    /*
-    if (c > 20 and d > 10) {
-        console.log("Challenge 3 Working");
-    } else {
-        console.log("Challenge 3 is broken!");
-    }
-    */
+        // --------------------------
 
 
-    /*
-        **************************************
-        Challenge #4: More syntax errors, this time with other data types.
-        Uncomment the code and fix the mistakes to get it working. When
-        functional, it log "Challenge #4 Working" x6 (a total of 6 times).
-    */
-
-    /*
-    let obj1 = {
-        abc: 3
-        def: 100
-    };
-    if (obj1.abc === 3) {
-        console.log("Challenge #4 Working");
-    }
-
-    let obj2 = {
-        "a b c": 3,
-        "d e f": 100,
-            h i j : 300,
-    };
-    if (obj2['h i j'] === 300) {
-        console.log("Challenge #4 Working");
-    }
-
-    let arr1 = [
-        'a'
-        'b'
-        'c'
-    ];
-    if (arr1[0] === 'a') {
-        console.log("Challenge #4 Working");
-    }
+        if (testString === testing && num === 4) {
+            console.log("Challenge #2, complete");
+        }
 
 
-    let arr2 = [
-        'a',
-        'a',
-        'a',
-    ];
-    for (let item in arr2) {
-        if (item === 'a') {
+
+        /*
+            **************************************
+            Challenge #3: The following is supposed to console.log the phrase
+            "Challenge 3 Working" a total of 3 times. Fix the mistakes to get
+            it working.
+    
+            Hint: "===" is how we compare things in JavaScript. Not "==" or "="
+        */
+
+        let a = 3;
+        for (let i of Array(3).keys()) {
+            let b = a + i;
+            console.log(b)
+            if (a === 4) {
+                console.log("Challenge 3 is broken!");
+            } else {
+                console.log("Challenge 3 Working");
+            };
+        }
+
+        let b = 0;
+        if (b === false) {
+            console.log("Challenge 3 is broken!");
+        } else {
+            console.log("Challenge 3 Working");
+        }
+
+        let c = 30;
+        let d = 20;
+
+        if (c > 20 && d > 10) {
+            console.log("Challenge 3 Working");
+        } else {
+            console.log("Challenge 3 is broken!");
+        };
+
+
+
+        /*
+            **************************************
+            Challenge #4: More syntax errors, this time with other data types.
+            Uncomment the code and fix the mistakes to get it working. When
+            functional, it log "Challenge #4 Working" x6 (a total of 6 times).
+        */
+
+
+        let obj1 = {
+            abc: 3,
+            def: 100
+        };
+        if (obj1.abc === 3) {
             console.log("Challenge #4 Working");
         }
-    }
-    */
 
-
-
-    /*
-        **************************************
-        Bonus Challenge #1:
-        Google "Template Literal Syntax". See if you can use it here with a
-        console.log to display something.
-    */
-
-    /*
-    // Template literal syntax
-    let example = `
-        Here is the value of a: ${a}
-    `;
-    console.log(example);
-    */
-
-
-    /*
-        **************************************
-        Advanced Challenge 1: JavaScript often uses "callback" syntax. This
-        won't be the last time we see code like this.
-        
-        Uncomment the following code and fix the syntax errors.  When
-        functioning, it should say "Bonus 1 Working" x12
-
-        Brief technical explanation of callbacks: The "=>" syntax (called
-        "arrow syntax" or "lambda syntax") is creating a function without a
-        name (called an "anonymous function"). This gets passed as an argument
-        to another method or function, to be "called back". e.g.  or called at
-        a later time. We will be seeing this A LOT MORE moving forward.
-    */
-
-    /*
-    let testArray = ['a', 'a', 'a'];
-
-    testArray.forEach((item) => {
-        if (item === 'a') {
-            console.log("Bonus 1 Working");
+        let obj2 = {
+            "a b c": 3,
+            "d e f": 100,
+            "h i j": 300,
+        };
+        if (obj2['h i j'] === 300) {
+            console.log("Challenge #4 Working");
         }
-    );
 
-    testArray.map(item => {
-        if (item === 'a') {
-            console.log("Bonus 1 Working");
+        let arr1 = [
+            'a',
+            'b',
+            'c'
+        ];
+        if (arr1[0] === 'a') {
+            console.log("Challenge #4 Working");
         }
-    }});
 
-    testArray.forEach(item =>
-        if (item === 'a') {
-            console.log("Bonus 1 Working");
+
+        let arr2 = [
+            'a',
+            'a',
+            'a',
+        ];
+        for (let item of arr2) {
+            if (item === 'a') {
+                console.log("Challenge #4 Working!!!");
+            }
         }
-    );
 
-    testArray.filter(item => item === 'a').forEach(
-        () => {}
-        console.log("Bonus 1 Working");
-    );
-    */
+
+
+
+        /*
+            **************************************
+            Bonus Challenge #1:
+            Google "Template Literal Syntax". See if you can use it here with a
+            console.log to display something.
+        */
+
+        /*
+        // Template literal syntax
+        let example = `
+            Here is the value of a: ${a}
+        `;
+        console.log(example);
+        */
+
+
+        /*
+            **************************************
+            Advanced Challenge 1: JavaScript often uses "callback" syntax. This
+            won't be the last time we see code like this.
+            
+            Uncomment the following code and fix the syntax errors.  When
+            functioning, it should say "Bonus 1 Working" x12
+    
+            Brief technical explanation of callbacks: The "=>" syntax (called
+            "arrow syntax" or "lambda syntax") is creating a function without a
+            name (called an "anonymous function"). This gets passed as an argument
+            to another method or function, to be "called back". e.g.  or called at
+            a later time. We will be seeing this A LOT MORE moving forward.
+        */
+
+
+        let testArray = ['a', 'a', 'a'];
+
+        testArray.forEach((item) => {
+            if (item === 'a') {
+                console.log("Bonus 1 Working");
+            }
+        }
+        );
+
+        testArray.map(item => {
+            if (item === 'a') {
+                console.log("Bonus 1 Working");
+            }
+        });
+
+        testArray.forEach(item => {
+            if (item === 'a') {
+                console.log("Bonus 1 Working");
+            }
+        }
+        );
+
+        testArray.filter(item => item === 'a').forEach(
+            () => {
+                console.log("Bonus 1 Working");
+            }
+        );
+
 
 
     // Advanced Challenge 2: Uncomment the following code. Can you explain
     // why it behaves the way it does?
 
-    /*
-    let x = 3.14;
-    x++;
-    if (x === 4.14) {
-        console.log('Bonus 2: exactly as expected');
-    } else {
-        console.log('Bonus 2: lolwut');
-    }
-    */
+        /*
+        let x = 3.14;
+        x++;
+        if (x === 4.14) {
+            console.log('Bonus 2: exactly as expected');
+        } else {
+            console.log('Bonus 2: lolwut');
+        }
+        */
 
-</script>
+    </script>
 </body>
+
 </html>
