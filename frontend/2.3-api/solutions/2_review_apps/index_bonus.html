@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/sakura-vader.css" />
+    <style>
+        button, input {
+            font-size: 1.8rem;
+        }
+
+        button {
+            margin-right: 10px;
+        }
+
+        ol {
+            counter-reset: todolistnum;
+        }
+
+        li::before {
+            content: counter(todolistnum) ". ";
+            counter-increment: todolistnum;
+        }
+
+        li {
+            display: grid;
+            grid-template-columns: 30px 1fr 40px;
+            padding: 10px;
+            transition:  background-color 0.3s;
+        }
+
+        li > button {
+            opacity: 0;
+            transition:  opacity 0.5s;
+        }
+        li:hover > button {
+            opacity: 1;
+        }
+        li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .Arithmetic input {
+            max-width: 80px;
+        }
+        .Arithmetic--correct {
+            background: darkgreen;
+        }
+        .Arithmetic--wrong {
+            background: tomato;
+        }
+        .Arithmetic--correct::after {
+            content: 'CORRECT';
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript from scratch</h1>
+
+    <p>Example HTML below. Feel free to delete / modify whatever you need!</p>
+
+    <hr />
+
+    <h3>Counter</h3>
+    <h5>Meeting attendance counter</h5>
+    <div id="meeting-counters">
+    </div>
+
+    <hr />
+
+    <h3>Trivia</h3>
+    
+    <div id="trivia-questions">
+    </div>
+    
+    <hr />
+
+    <h3>To-do App</h3>
+    <ol id="todo-list">
+    </ol>
+    <p>
+        <input id="new-todo-item" placeholder="New to-do item" type="text" />
+        <button id="add-todo-item" onClick="addItem()">Add</button>
+    </p>
+
+    <hr />
+
+    <h3>Arithmetic</h3>
+    <p class="Arithmetic">
+        <span id="math-operand1">15</span>
+        <span id="math-operation">+</span>
+        <span id="math-operand2">17</span>
+        <span>=</span>
+        <input id="math-result" type="number" onKeyUp="checkAnswer()" />
+        <span id="math-remainder-area">
+            remainder
+            <input id="math-remainder" type="number"  onKeyUp="checkAnswer()" />
+        </span>
+        <span id="math-countdown"></span>
+    </p>
+
+    <script src="js/bonus_trivia.js"></script>
+    <script src="js/bonus_todo.js"></script>
+    <script src="js/bonus_counter.js"></script>
+    <script src="js/bonus_mathquiz.js"></script>
+</body>
+</html>
+
+
+

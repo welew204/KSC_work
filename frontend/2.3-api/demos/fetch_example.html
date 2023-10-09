@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bare-css@2.0.3/css/bare.min.css" />
+    </head>
+    <body>
+        <section id="output">
+        </section>
+        <section>
+            <button onClick="doFetch()">Fetch data</button>
+            <button onClick="displayOutput()">Display output</button>
+        </section>
+<script>
+    let state = {
+        /* Placeholder data until we add real data... */
+        data: [
+            {
+                title: 'Nothing yet...',
+                description: 'Nada...',
+            },
+        ],
+    };
+
+    function displayOutput() {
+        let output = document.querySelector('#output');
+        output.innerHTML = '';
+        for (let film of state.data) {
+            output.innerHTML += `
+                <h1>${film.title}</h1>
+                <p>${film.description}</p>
+            `;
+        }
+    }
+
+    function doFetch() {
+        fetch('https://ghibliapi.herokuapp.com/films')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                state.data = data;
+            });
+    }
+</script>
+
+</body>
+</html>

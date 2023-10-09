@@ -1,26 +1,36 @@
 <!doctype html>
 <html>
-    <head>
-        <link rel="stylesheet" href="./css/bare.min.css" />
-        <link rel="stylesheet" href="./css/site.css" />
-    </head>
-    <body>
-        <section><h2>Ad Lib Game</h2></section>
 
-        <section>
-            <input placeholder="Name" id="name" />
-            <input placeholder="Noun" id="noun" />
-            <input placeholder="Adjective" id="adjective" />
-            <input placeholder="Large number" id="large-number" />
-            <input placeholder="Family name" id="family-name" />
-            <input placeholder="Country" id="country" />
-            <input placeholder="Silly noun" id="silly-noun" />
-            <button onClick="render()">Render</button>
-        </section>
+<head>
+    <link rel="stylesheet" href="./css/bare.min.css" />
+    <link rel="stylesheet" href="./css/site.css" />
+</head>
 
-        <section id="output">
-        </section>
+<body>
+    <section>
+        <h2>Ad Lib Game</h2>
+    </section>
 
-        <script src="./js/main.js"></script>
-    </body>
+    <section>
+        <select id="formats">
+            <option value="uni">University</option>
+            <option value="hw">Homework Excuse</option>
+            <option value="wash">Washing Instructions</option>
+        </select>
+        <input onkeyup="render()" placeholder="Name" id="name" />
+        <input onkeyup="render()" placeholder="Noun" id="noun" />
+        <input onkeyup="render()" placeholder="Adjective" id="adjective" />
+        <input onkeyup="render()" placeholder="Large number" id="large-number" />
+        <input onkeyup="render()" placeholder="Family name" id="family-name" />
+        <input onkeyup="render()" placeholder="Country" id="country" />
+        <input onkeyup="render()" placeholder="Silly noun" id="silly-noun" />
+        <button onClick="render()">Render</button>
+    </section>
+
+    <section id="output">
+    </section>
+
+    <script src="./js/main.js"></script>
+</body>
+
 </html>

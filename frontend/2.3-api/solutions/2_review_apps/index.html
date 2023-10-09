@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="./css/sakura-vader.css" />
+    <style>
+        button, input {
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript from scratch</h1>
+
+    <p>Example HTML below. Feel free to delete / modify whatever you need!</p>
+
+    <hr />
+
+    <h3>Counter</h3>
+    <h5>Meeting attendance counter</h5>
+    <p>
+        <button onClick="incrementAttendees()">Meeting attendees:</button>
+        <span id="attendees">0</span>
+    </p>
+    <p>
+        <button onClick="incrementPresenters()">Meeting presenters:</button>
+        <span id="presenters">0</span>
+    </p>
+
+    <hr />
+
+    <h3>Trivia</h3>
+
+    <h5>What is the capital of the state of California?</h5>
+    <p id="q1buttons">
+        <button onClick="sayWrongAnswer()">A) San Francisco</button>
+        <button onClick="sayWrongAnswer()">B) Oakland</button>
+        <button onClick="sayRightAnswer()">C) Sacramento</button>
+        <button onClick="sayWrongAnswer()">D) Los Angeles</button>
+    </p>
+
+    <hr />
+
+
+    <h3>To-do App</h3>
+    <ol id="todo-list">
+        <li>Buy milk (almond)</li>
+        <li>Buy Nintendo Switch from sus craigslist person</li>
+    </ol>
+    <p>
+        <input id="new-todo-item" placeholder="New to-do item" type="text" />
+        <button id="add-todo-item" onClick="addItem()">Add</button>
+    </p>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

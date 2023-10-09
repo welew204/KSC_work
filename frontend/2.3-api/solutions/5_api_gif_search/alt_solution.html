@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bare-css@2.0.3/css/bare.min.css" />
+    </head>
+    <body>
+        <nav>
+            <section>
+                <h1>Gif Search</h1>
+            </section>
+        </nav>
+        <section>
+            <input placeholder="Search for a Gif" id="search" />
+            <button onClick="doFetch()">Search</button>
+        </section>
+        <section id="output">
+        </section>
+
+<script>
+    let state = {
+        /* Placeholder data until we add real data... */
+        data: [],
+    };
+
+    function render() {
+        let output = document.querySelector('#output');
+        output.innerHTML = '';
+
+        for (let gif of state.data) {
+            output.innerHTML += `
+                <img
+                    onClick="alert('Titled: ${gif.title}')"
+                    src="${gif.images.preview_gif.url}"
+                />
+            `;
+        }
+
+        /*
+            Using map: 
+            output.innerHTML = state.data.map(gif => `
+                    <img
+                        onClick="alert('Titled: ${gif.title}')"
+                        src="${gif.images.preview_gif.url}"
+                    />
+                `).join('');
+
+        */
+
+        /*
+            // Another example solution, using map & forEach
+            output.innerHTML = '';
+            state.data
+                .map(gif => {
+                    let img = document.createElement('img');
+                    img.setAttribute('src', gif.images.preview_gif.url);
+                    img.onclick = () => alert(`Titled: ${gif.title}`);
+                    return img;
+                })
+                .forEach(img => output.appendChild(img));
+
+        */
+    }
+
+    function doFetch() {
+        let element = document.querySelector('#search');
+        let searchTerm = element.value;
+        fetch('http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=' + searchTerm)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setState({data: data.data});
+                render();
+            });
+    }
+
+    function setState(newState) {
+        // Object.assign is a built-in function to JavaScript that updates one
+        // object with another
+        Object.assign(state, newState);
+    }
+</script>
+</body>
+</html>
