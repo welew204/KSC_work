@@ -1,0 +1,2709 @@
+@charset "UTF-8";
+
+/*
+    Visualize by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+/* Reset */
+
+    body {
+        background-color: #000;
+        background-image: url("./images/bg.jpg");
+        background-size: cover;
+        background-position: top center;
+    }
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol, ul {
+        list-style: none;
+    }
+
+    blockquote, q {
+        quotes: none;
+    }
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    body {
+        -webkit-text-size-adjust: none;
+    }
+
+/* Box Model */
+
+    *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+/* Grid */
+
+    .row {
+        border-bottom: solid 1px transparent;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .row > * {
+        float: left;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .row:after, .row:before {
+        content: '';
+        display: block;
+        clear: both;
+        height: 0;
+    }
+
+    .row.uniform > * > :first-child {
+        margin-top: 0;
+    }
+
+    .row.uniform > * > :last-child {
+        margin-bottom: 0;
+    }
+
+    .row.\30 \25 > * {
+        padding: 0 0 0 0em;
+    }
+
+    .row.\30 \25 {
+        margin: 0 0 -1px 0em;
+    }
+
+    .row.uniform.\30 \25 > * {
+        padding: 0em 0 0 0em;
+    }
+
+    .row.uniform.\30 \25 {
+        margin: 0em 0 -1px 0em;
+    }
+
+    .row > * {
+        padding: 0 0 0 2em;
+    }
+
+    .row {
+        margin: 0 0 -1px -2em;
+    }
+
+    .row.uniform > * {
+        padding: 2em 0 0 2em;
+    }
+
+    .row.uniform {
+        margin: -2em 0 -1px -2em;
+    }
+
+    .row.\32 00\25 > * {
+        padding: 0 0 0 4em;
+    }
+
+    .row.\32 00\25 {
+        margin: 0 0 -1px -4em;
+    }
+
+    .row.uniform.\32 00\25 > * {
+        padding: 4em 0 0 4em;
+    }
+
+    .row.uniform.\32 00\25 {
+        margin: -4em 0 -1px -4em;
+    }
+
+    .row.\31 50\25 > * {
+        padding: 0 0 0 3em;
+    }
+
+    .row.\31 50\25 {
+        margin: 0 0 -1px -3em;
+    }
+
+    .row.uniform.\31 50\25 > * {
+        padding: 3em 0 0 3em;
+    }
+
+    .row.uniform.\31 50\25 {
+        margin: -3em 0 -1px -3em;
+    }
+
+    .row.\35 0\25 > * {
+        padding: 0 0 0 1em;
+    }
+
+    .row.\35 0\25 {
+        margin: 0 0 -1px -1em;
+    }
+
+    .row.uniform.\35 0\25 > * {
+        padding: 1em 0 0 1em;
+    }
+
+    .row.uniform.\35 0\25 {
+        margin: -1em 0 -1px -1em;
+    }
+
+    .row.\32 5\25 > * {
+        padding: 0 0 0 0.5em;
+    }
+
+    .row.\32 5\25 {
+        margin: 0 0 -1px -0.5em;
+    }
+
+    .row.uniform.\32 5\25 > * {
+        padding: 0.5em 0 0 0.5em;
+    }
+
+    .row.uniform.\32 5\25 {
+        margin: -0.5em 0 -1px -0.5em;
+    }
+
+    .\31 2u, .\31 2u\24 {
+        width: 100%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\31 1u, .\31 1u\24 {
+        width: 91.6666666667%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\31 0u, .\31 0u\24 {
+        width: 83.3333333333%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\39 u, .\39 u\24 {
+        width: 75%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\38 u, .\38 u\24 {
+        width: 66.6666666667%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\37 u, .\37 u\24 {
+        width: 58.3333333333%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\36 u, .\36 u\24 {
+        width: 50%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\35 u, .\35 u\24 {
+        width: 41.6666666667%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\34 u, .\34 u\24 {
+        width: 33.3333333333%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\33 u, .\33 u\24 {
+        width: 25%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\32 u, .\32 u\24 {
+        width: 16.6666666667%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\31 u, .\31 u\24 {
+        width: 8.3333333333%;
+        clear: none;
+        margin-left: 0;
+    }
+
+    .\31 2u\24 + *,
+    .\31 1u\24 + *,
+    .\31 0u\24 + *,
+    .\39 u\24 + *,
+    .\38 u\24 + *,
+    .\37 u\24 + *,
+    .\36 u\24 + *,
+    .\35 u\24 + *,
+    .\34 u\24 + *,
+    .\33 u\24 + *,
+    .\32 u\24 + *,
+    .\31 u\24 + * {
+        clear: left;
+    }
+
+    .\-11u {
+        margin-left: 91.66667%;
+    }
+
+    .\-10u {
+        margin-left: 83.33333%;
+    }
+
+    .\-9u {
+        margin-left: 75%;
+    }
+
+    .\-8u {
+        margin-left: 66.66667%;
+    }
+
+    .\-7u {
+        margin-left: 58.33333%;
+    }
+
+    .\-6u {
+        margin-left: 50%;
+    }
+
+    .\-5u {
+        margin-left: 41.66667%;
+    }
+
+    .\-4u {
+        margin-left: 33.33333%;
+    }
+
+    .\-3u {
+        margin-left: 25%;
+    }
+
+    .\-2u {
+        margin-left: 16.66667%;
+    }
+
+    .\-1u {
+        margin-left: 8.33333%;
+    }
+
+    @media screen and (max-width: 1680px) {
+
+        .row > * {
+            padding: 0 0 0 2em;
+        }
+
+        .row {
+            margin: 0 0 -1px -2em;
+        }
+
+        .row.uniform > * {
+            padding: 2em 0 0 2em;
+        }
+
+        .row.uniform {
+            margin: -2em 0 -1px -2em;
+        }
+
+        .row.\32 00\25 > * {
+            padding: 0 0 0 4em;
+        }
+
+        .row.\32 00\25 {
+            margin: 0 0 -1px -4em;
+        }
+
+        .row.uniform.\32 00\25 > * {
+            padding: 4em 0 0 4em;
+        }
+
+        .row.uniform.\32 00\25 {
+            margin: -4em 0 -1px -4em;
+        }
+
+        .row.\31 50\25 > * {
+            padding: 0 0 0 3em;
+        }
+
+        .row.\31 50\25 {
+            margin: 0 0 -1px -3em;
+        }
+
+        .row.uniform.\31 50\25 > * {
+            padding: 3em 0 0 3em;
+        }
+
+        .row.uniform.\31 50\25 {
+            margin: -3em 0 -1px -3em;
+        }
+
+        .row.\35 0\25 > * {
+            padding: 0 0 0 1em;
+        }
+
+        .row.\35 0\25 {
+            margin: 0 0 -1px -1em;
+        }
+
+        .row.uniform.\35 0\25 > * {
+            padding: 1em 0 0 1em;
+        }
+
+        .row.uniform.\35 0\25 {
+            margin: -1em 0 -1px -1em;
+        }
+
+        .row.\32 5\25 > * {
+            padding: 0 0 0 0.5em;
+        }
+
+        .row.\32 5\25 {
+            margin: 0 0 -1px -0.5em;
+        }
+
+        .row.uniform.\32 5\25 > * {
+            padding: 0.5em 0 0 0.5em;
+        }
+
+        .row.uniform.\32 5\25 {
+            margin: -0.5em 0 -1px -0.5em;
+        }
+
+        .\31 2u\28xlarge\29, .\31 2u\24\28xlarge\29 {
+            width: 100%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 1u\28xlarge\29, .\31 1u\24\28xlarge\29 {
+            width: 91.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 0u\28xlarge\29, .\31 0u\24\28xlarge\29 {
+            width: 83.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\39 u\28xlarge\29, .\39 u\24\28xlarge\29 {
+            width: 75%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\38 u\28xlarge\29, .\38 u\24\28xlarge\29 {
+            width: 66.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\37 u\28xlarge\29, .\37 u\24\28xlarge\29 {
+            width: 58.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\36 u\28xlarge\29, .\36 u\24\28xlarge\29 {
+            width: 50%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\35 u\28xlarge\29, .\35 u\24\28xlarge\29 {
+            width: 41.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\34 u\28xlarge\29, .\34 u\24\28xlarge\29 {
+            width: 33.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\33 u\28xlarge\29, .\33 u\24\28xlarge\29 {
+            width: 25%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\32 u\28xlarge\29, .\32 u\24\28xlarge\29 {
+            width: 16.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 u\28xlarge\29, .\31 u\24\28xlarge\29 {
+            width: 8.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 2u\24\28xlarge\29 + *,
+        .\31 1u\24\28xlarge\29 + *,
+        .\31 0u\24\28xlarge\29 + *,
+        .\39 u\24\28xlarge\29 + *,
+        .\38 u\24\28xlarge\29 + *,
+        .\37 u\24\28xlarge\29 + *,
+        .\36 u\24\28xlarge\29 + *,
+        .\35 u\24\28xlarge\29 + *,
+        .\34 u\24\28xlarge\29 + *,
+        .\33 u\24\28xlarge\29 + *,
+        .\32 u\24\28xlarge\29 + *,
+        .\31 u\24\28xlarge\29 + * {
+            clear: left;
+        }
+
+        .\-11u\28xlarge\29 {
+            margin-left: 91.66667%;
+        }
+
+        .\-10u\28xlarge\29 {
+            margin-left: 83.33333%;
+        }
+
+        .\-9u\28xlarge\29 {
+            margin-left: 75%;
+        }
+
+        .\-8u\28xlarge\29 {
+            margin-left: 66.66667%;
+        }
+
+        .\-7u\28xlarge\29 {
+            margin-left: 58.33333%;
+        }
+
+        .\-6u\28xlarge\29 {
+            margin-left: 50%;
+        }
+
+        .\-5u\28xlarge\29 {
+            margin-left: 41.66667%;
+        }
+
+        .\-4u\28xlarge\29 {
+            margin-left: 33.33333%;
+        }
+
+        .\-3u\28xlarge\29 {
+            margin-left: 25%;
+        }
+
+        .\-2u\28xlarge\29 {
+            margin-left: 16.66667%;
+        }
+
+        .\-1u\28xlarge\29 {
+            margin-left: 8.33333%;
+        }
+
+    }
+
+    @media screen and (max-width: 1280px) {
+
+        .row > * {
+            padding: 0 0 0 2em;
+        }
+
+        .row {
+            margin: 0 0 -1px -2em;
+        }
+
+        .row.uniform > * {
+            padding: 2em 0 0 2em;
+        }
+
+        .row.uniform {
+            margin: -2em 0 -1px -2em;
+        }
+
+        .row.\32 00\25 > * {
+            padding: 0 0 0 4em;
+        }
+
+        .row.\32 00\25 {
+            margin: 0 0 -1px -4em;
+        }
+
+        .row.uniform.\32 00\25 > * {
+            padding: 4em 0 0 4em;
+        }
+
+        .row.uniform.\32 00\25 {
+            margin: -4em 0 -1px -4em;
+        }
+
+        .row.\31 50\25 > * {
+            padding: 0 0 0 3em;
+        }
+
+        .row.\31 50\25 {
+            margin: 0 0 -1px -3em;
+        }
+
+        .row.uniform.\31 50\25 > * {
+            padding: 3em 0 0 3em;
+        }
+
+        .row.uniform.\31 50\25 {
+            margin: -3em 0 -1px -3em;
+        }
+
+        .row.\35 0\25 > * {
+            padding: 0 0 0 1em;
+        }
+
+        .row.\35 0\25 {
+            margin: 0 0 -1px -1em;
+        }
+
+        .row.uniform.\35 0\25 > * {
+            padding: 1em 0 0 1em;
+        }
+
+        .row.uniform.\35 0\25 {
+            margin: -1em 0 -1px -1em;
+        }
+
+        .row.\32 5\25 > * {
+            padding: 0 0 0 0.5em;
+        }
+
+        .row.\32 5\25 {
+            margin: 0 0 -1px -0.5em;
+        }
+
+        .row.uniform.\32 5\25 > * {
+            padding: 0.5em 0 0 0.5em;
+        }
+
+        .row.uniform.\32 5\25 {
+            margin: -0.5em 0 -1px -0.5em;
+        }
+
+        .\31 2u\28large\29, .\31 2u\24\28large\29 {
+            width: 100%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 1u\28large\29, .\31 1u\24\28large\29 {
+            width: 91.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 0u\28large\29, .\31 0u\24\28large\29 {
+            width: 83.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\39 u\28large\29, .\39 u\24\28large\29 {
+            width: 75%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\38 u\28large\29, .\38 u\24\28large\29 {
+            width: 66.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\37 u\28large\29, .\37 u\24\28large\29 {
+            width: 58.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\36 u\28large\29, .\36 u\24\28large\29 {
+            width: 50%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\35 u\28large\29, .\35 u\24\28large\29 {
+            width: 41.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\34 u\28large\29, .\34 u\24\28large\29 {
+            width: 33.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\33 u\28large\29, .\33 u\24\28large\29 {
+            width: 25%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\32 u\28large\29, .\32 u\24\28large\29 {
+            width: 16.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 u\28large\29, .\31 u\24\28large\29 {
+            width: 8.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 2u\24\28large\29 + *,
+        .\31 1u\24\28large\29 + *,
+        .\31 0u\24\28large\29 + *,
+        .\39 u\24\28large\29 + *,
+        .\38 u\24\28large\29 + *,
+        .\37 u\24\28large\29 + *,
+        .\36 u\24\28large\29 + *,
+        .\35 u\24\28large\29 + *,
+        .\34 u\24\28large\29 + *,
+        .\33 u\24\28large\29 + *,
+        .\32 u\24\28large\29 + *,
+        .\31 u\24\28large\29 + * {
+            clear: left;
+        }
+
+        .\-11u\28large\29 {
+            margin-left: 91.66667%;
+        }
+
+        .\-10u\28large\29 {
+            margin-left: 83.33333%;
+        }
+
+        .\-9u\28large\29 {
+            margin-left: 75%;
+        }
+
+        .\-8u\28large\29 {
+            margin-left: 66.66667%;
+        }
+
+        .\-7u\28large\29 {
+            margin-left: 58.33333%;
+        }
+
+        .\-6u\28large\29 {
+            margin-left: 50%;
+        }
+
+        .\-5u\28large\29 {
+            margin-left: 41.66667%;
+        }
+
+        .\-4u\28large\29 {
+            margin-left: 33.33333%;
+        }
+
+        .\-3u\28large\29 {
+            margin-left: 25%;
+        }
+
+        .\-2u\28large\29 {
+            margin-left: 16.66667%;
+        }
+
+        .\-1u\28large\29 {
+            margin-left: 8.33333%;
+        }
+
+    }
+
+    @media screen and (max-width: 980px) {
+
+        .row > * {
+            padding: 0 0 0 2em;
+        }
+
+        .row {
+            margin: 0 0 -1px -2em;
+        }
+
+        .row.uniform > * {
+            padding: 2em 0 0 2em;
+        }
+
+        .row.uniform {
+            margin: -2em 0 -1px -2em;
+        }
+
+        .row.\32 00\25 > * {
+            padding: 0 0 0 4em;
+        }
+
+        .row.\32 00\25 {
+            margin: 0 0 -1px -4em;
+        }
+
+        .row.uniform.\32 00\25 > * {
+            padding: 4em 0 0 4em;
+        }
+
+        .row.uniform.\32 00\25 {
+            margin: -4em 0 -1px -4em;
+        }
+
+        .row.\31 50\25 > * {
+            padding: 0 0 0 3em;
+        }
+
+        .row.\31 50\25 {
+            margin: 0 0 -1px -3em;
+        }
+
+        .row.uniform.\31 50\25 > * {
+            padding: 3em 0 0 3em;
+        }
+
+        .row.uniform.\31 50\25 {
+            margin: -3em 0 -1px -3em;
+        }
+
+        .row.\35 0\25 > * {
+            padding: 0 0 0 1em;
+        }
+
+        .row.\35 0\25 {
+            margin: 0 0 -1px -1em;
+        }
+
+        .row.uniform.\35 0\25 > * {
+            padding: 1em 0 0 1em;
+        }
+
+        .row.uniform.\35 0\25 {
+            margin: -1em 0 -1px -1em;
+        }
+
+        .row.\32 5\25 > * {
+            padding: 0 0 0 0.5em;
+        }
+
+        .row.\32 5\25 {
+            margin: 0 0 -1px -0.5em;
+        }
+
+        .row.uniform.\32 5\25 > * {
+            padding: 0.5em 0 0 0.5em;
+        }
+
+        .row.uniform.\32 5\25 {
+            margin: -0.5em 0 -1px -0.5em;
+        }
+
+        .\31 2u\28medium\29, .\31 2u\24\28medium\29 {
+            width: 100%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 1u\28medium\29, .\31 1u\24\28medium\29 {
+            width: 91.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 0u\28medium\29, .\31 0u\24\28medium\29 {
+            width: 83.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\39 u\28medium\29, .\39 u\24\28medium\29 {
+            width: 75%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\38 u\28medium\29, .\38 u\24\28medium\29 {
+            width: 66.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\37 u\28medium\29, .\37 u\24\28medium\29 {
+            width: 58.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\36 u\28medium\29, .\36 u\24\28medium\29 {
+            width: 50%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\35 u\28medium\29, .\35 u\24\28medium\29 {
+            width: 41.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\34 u\28medium\29, .\34 u\24\28medium\29 {
+            width: 33.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\33 u\28medium\29, .\33 u\24\28medium\29 {
+            width: 25%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\32 u\28medium\29, .\32 u\24\28medium\29 {
+            width: 16.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 u\28medium\29, .\31 u\24\28medium\29 {
+            width: 8.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 2u\24\28medium\29 + *,
+        .\31 1u\24\28medium\29 + *,
+        .\31 0u\24\28medium\29 + *,
+        .\39 u\24\28medium\29 + *,
+        .\38 u\24\28medium\29 + *,
+        .\37 u\24\28medium\29 + *,
+        .\36 u\24\28medium\29 + *,
+        .\35 u\24\28medium\29 + *,
+        .\34 u\24\28medium\29 + *,
+        .\33 u\24\28medium\29 + *,
+        .\32 u\24\28medium\29 + *,
+        .\31 u\24\28medium\29 + * {
+            clear: left;
+        }
+
+        .\-11u\28medium\29 {
+            margin-left: 91.66667%;
+        }
+
+        .\-10u\28medium\29 {
+            margin-left: 83.33333%;
+        }
+
+        .\-9u\28medium\29 {
+            margin-left: 75%;
+        }
+
+        .\-8u\28medium\29 {
+            margin-left: 66.66667%;
+        }
+
+        .\-7u\28medium\29 {
+            margin-left: 58.33333%;
+        }
+
+        .\-6u\28medium\29 {
+            margin-left: 50%;
+        }
+
+        .\-5u\28medium\29 {
+            margin-left: 41.66667%;
+        }
+
+        .\-4u\28medium\29 {
+            margin-left: 33.33333%;
+        }
+
+        .\-3u\28medium\29 {
+            margin-left: 25%;
+        }
+
+        .\-2u\28medium\29 {
+            margin-left: 16.66667%;
+        }
+
+        .\-1u\28medium\29 {
+            margin-left: 8.33333%;
+        }
+
+    }
+
+    @media screen and (max-width: 736px) {
+
+        .row > * {
+            padding: 0 0 0 2em;
+        }
+
+        .row {
+            margin: 0 0 -1px -2em;
+        }
+
+        .row.uniform > * {
+            padding: 2em 0 0 2em;
+        }
+
+        .row.uniform {
+            margin: -2em 0 -1px -2em;
+        }
+
+        .row.\32 00\25 > * {
+            padding: 0 0 0 4em;
+        }
+
+        .row.\32 00\25 {
+            margin: 0 0 -1px -4em;
+        }
+
+        .row.uniform.\32 00\25 > * {
+            padding: 4em 0 0 4em;
+        }
+
+        .row.uniform.\32 00\25 {
+            margin: -4em 0 -1px -4em;
+        }
+
+        .row.\31 50\25 > * {
+            padding: 0 0 0 3em;
+        }
+
+        .row.\31 50\25 {
+            margin: 0 0 -1px -3em;
+        }
+
+        .row.uniform.\31 50\25 > * {
+            padding: 3em 0 0 3em;
+        }
+
+        .row.uniform.\31 50\25 {
+            margin: -3em 0 -1px -3em;
+        }
+
+        .row.\35 0\25 > * {
+            padding: 0 0 0 1em;
+        }
+
+        .row.\35 0\25 {
+            margin: 0 0 -1px -1em;
+        }
+
+        .row.uniform.\35 0\25 > * {
+            padding: 1em 0 0 1em;
+        }
+
+        .row.uniform.\35 0\25 {
+            margin: -1em 0 -1px -1em;
+        }
+
+        .row.\32 5\25 > * {
+            padding: 0 0 0 0.5em;
+        }
+
+        .row.\32 5\25 {
+            margin: 0 0 -1px -0.5em;
+        }
+
+        .row.uniform.\32 5\25 > * {
+            padding: 0.5em 0 0 0.5em;
+        }
+
+        .row.uniform.\32 5\25 {
+            margin: -0.5em 0 -1px -0.5em;
+        }
+
+        .\31 2u\28small\29, .\31 2u\24\28small\29 {
+            width: 100%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 1u\28small\29, .\31 1u\24\28small\29 {
+            width: 91.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 0u\28small\29, .\31 0u\24\28small\29 {
+            width: 83.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\39 u\28small\29, .\39 u\24\28small\29 {
+            width: 75%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\38 u\28small\29, .\38 u\24\28small\29 {
+            width: 66.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\37 u\28small\29, .\37 u\24\28small\29 {
+            width: 58.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\36 u\28small\29, .\36 u\24\28small\29 {
+            width: 50%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\35 u\28small\29, .\35 u\24\28small\29 {
+            width: 41.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\34 u\28small\29, .\34 u\24\28small\29 {
+            width: 33.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\33 u\28small\29, .\33 u\24\28small\29 {
+            width: 25%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\32 u\28small\29, .\32 u\24\28small\29 {
+            width: 16.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 u\28small\29, .\31 u\24\28small\29 {
+            width: 8.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 2u\24\28small\29 + *,
+        .\31 1u\24\28small\29 + *,
+        .\31 0u\24\28small\29 + *,
+        .\39 u\24\28small\29 + *,
+        .\38 u\24\28small\29 + *,
+        .\37 u\24\28small\29 + *,
+        .\36 u\24\28small\29 + *,
+        .\35 u\24\28small\29 + *,
+        .\34 u\24\28small\29 + *,
+        .\33 u\24\28small\29 + *,
+        .\32 u\24\28small\29 + *,
+        .\31 u\24\28small\29 + * {
+            clear: left;
+        }
+
+        .\-11u\28small\29 {
+            margin-left: 91.66667%;
+        }
+
+        .\-10u\28small\29 {
+            margin-left: 83.33333%;
+        }
+
+        .\-9u\28small\29 {
+            margin-left: 75%;
+        }
+
+        .\-8u\28small\29 {
+            margin-left: 66.66667%;
+        }
+
+        .\-7u\28small\29 {
+            margin-left: 58.33333%;
+        }
+
+        .\-6u\28small\29 {
+            margin-left: 50%;
+        }
+
+        .\-5u\28small\29 {
+            margin-left: 41.66667%;
+        }
+
+        .\-4u\28small\29 {
+            margin-left: 33.33333%;
+        }
+
+        .\-3u\28small\29 {
+            margin-left: 25%;
+        }
+
+        .\-2u\28small\29 {
+            margin-left: 16.66667%;
+        }
+
+        .\-1u\28small\29 {
+            margin-left: 8.33333%;
+        }
+
+    }
+
+    @media screen and (max-width: 480px) {
+
+        .row > * {
+            padding: 0 0 0 2em;
+        }
+
+        .row {
+            margin: 0 0 -1px -2em;
+        }
+
+        .row.uniform > * {
+            padding: 2em 0 0 2em;
+        }
+
+        .row.uniform {
+            margin: -2em 0 -1px -2em;
+        }
+
+        .row.\32 00\25 > * {
+            padding: 0 0 0 4em;
+        }
+
+        .row.\32 00\25 {
+            margin: 0 0 -1px -4em;
+        }
+
+        .row.uniform.\32 00\25 > * {
+            padding: 4em 0 0 4em;
+        }
+
+        .row.uniform.\32 00\25 {
+            margin: -4em 0 -1px -4em;
+        }
+
+        .row.\31 50\25 > * {
+            padding: 0 0 0 3em;
+        }
+
+        .row.\31 50\25 {
+            margin: 0 0 -1px -3em;
+        }
+
+        .row.uniform.\31 50\25 > * {
+            padding: 3em 0 0 3em;
+        }
+
+        .row.uniform.\31 50\25 {
+            margin: -3em 0 -1px -3em;
+        }
+
+        .row.\35 0\25 > * {
+            padding: 0 0 0 1em;
+        }
+
+        .row.\35 0\25 {
+            margin: 0 0 -1px -1em;
+        }
+
+        .row.uniform.\35 0\25 > * {
+            padding: 1em 0 0 1em;
+        }
+
+        .row.uniform.\35 0\25 {
+            margin: -1em 0 -1px -1em;
+        }
+
+        .row.\32 5\25 > * {
+            padding: 0 0 0 0.5em;
+        }
+
+        .row.\32 5\25 {
+            margin: 0 0 -1px -0.5em;
+        }
+
+        .row.uniform.\32 5\25 > * {
+            padding: 0.5em 0 0 0.5em;
+        }
+
+        .row.uniform.\32 5\25 {
+            margin: -0.5em 0 -1px -0.5em;
+        }
+
+        .\31 2u\28xsmall\29, .\31 2u\24\28xsmall\29 {
+            width: 100%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 1u\28xsmall\29, .\31 1u\24\28xsmall\29 {
+            width: 91.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 0u\28xsmall\29, .\31 0u\24\28xsmall\29 {
+            width: 83.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\39 u\28xsmall\29, .\39 u\24\28xsmall\29 {
+            width: 75%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\38 u\28xsmall\29, .\38 u\24\28xsmall\29 {
+            width: 66.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\37 u\28xsmall\29, .\37 u\24\28xsmall\29 {
+            width: 58.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\36 u\28xsmall\29, .\36 u\24\28xsmall\29 {
+            width: 50%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\35 u\28xsmall\29, .\35 u\24\28xsmall\29 {
+            width: 41.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\34 u\28xsmall\29, .\34 u\24\28xsmall\29 {
+            width: 33.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\33 u\28xsmall\29, .\33 u\24\28xsmall\29 {
+            width: 25%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\32 u\28xsmall\29, .\32 u\24\28xsmall\29 {
+            width: 16.6666666667%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 u\28xsmall\29, .\31 u\24\28xsmall\29 {
+            width: 8.3333333333%;
+            clear: none;
+            margin-left: 0;
+        }
+
+        .\31 2u\24\28xsmall\29 + *,
+        .\31 1u\24\28xsmall\29 + *,
+        .\31 0u\24\28xsmall\29 + *,
+        .\39 u\24\28xsmall\29 + *,
+        .\38 u\24\28xsmall\29 + *,
+        .\37 u\24\28xsmall\29 + *,
+        .\36 u\24\28xsmall\29 + *,
+        .\35 u\24\28xsmall\29 + *,
+        .\34 u\24\28xsmall\29 + *,
+        .\33 u\24\28xsmall\29 + *,
+        .\32 u\24\28xsmall\29 + *,
+        .\31 u\24\28xsmall\29 + * {
+            clear: left;
+        }
+
+        .\-11u\28xsmall\29 {
+            margin-left: 91.66667%;
+        }
+
+        .\-10u\28xsmall\29 {
+            margin-left: 83.33333%;
+        }
+
+        .\-9u\28xsmall\29 {
+            margin-left: 75%;
+        }
+
+        .\-8u\28xsmall\29 {
+            margin-left: 66.66667%;
+        }
+
+        .\-7u\28xsmall\29 {
+            margin-left: 58.33333%;
+        }
+
+        .\-6u\28xsmall\29 {
+            margin-left: 50%;
+        }
+
+        .\-5u\28xsmall\29 {
+            margin-left: 41.66667%;
+        }
+
+        .\-4u\28xsmall\29 {
+            margin-left: 33.33333%;
+        }
+
+        .\-3u\28xsmall\29 {
+            margin-left: 25%;
+        }
+
+        .\-2u\28xsmall\29 {
+            margin-left: 16.66667%;
+        }
+
+        .\-1u\28xsmall\29 {
+            margin-left: 8.33333%;
+        }
+
+    }
+
+/* Basic */
+
+    @-ms-viewport {
+        width: device-width;
+    }
+
+    body {
+        -ms-overflow-style: scrollbar;
+    }
+
+    @media screen and (max-width: 480px) {
+
+        html, body {
+            min-width: 320px;
+        }
+
+    }
+
+        body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+            -moz-animation: none !important;
+            -webkit-animation: none !important;
+            -ms-animation: none !important;
+            animation: none !important;
+            -moz-transition: none !important;
+            -webkit-transition: none !important;
+            -ms-transition: none !important;
+            transition: none !important;
+        }
+
+/* Type */
+
+    body, input, select, textarea {
+        color: rgba(255, 255, 255, 0.65);
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-size: 13pt;
+        font-weight: 200;
+        line-height: 1.65;
+    }
+
+        @media screen and (max-width: 1280px) {
+
+            body, input, select, textarea {
+                font-size: 12pt;
+            }
+
+        }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
+        -moz-transition: border-bottom-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        -webkit-transition: border-bottom-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        -ms-transition: border-bottom-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        transition: border-bottom-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    }
+
+
+    strong, b {
+        color: #ffffff;
+        font-weight: 200;
+    }
+
+    em, i {
+        font-style: italic;
+    }
+
+    p {
+        margin: 0 0 2em 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff;
+        font-weight: 200;
+        line-height: 1.5;
+        margin: 0 0 1em 0;
+    }
+
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 980px) {
+
+            h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
+                display: none;
+            }
+
+        }
+
+    h1 {
+        font-size: 1.75em;
+    }
+
+        @media screen and (max-width: 980px) {
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+        }
+
+        @media screen and (max-width: 736px) {
+
+            h1 {
+                font-size: 1.25em;
+            }
+
+        }
+
+    h2 {
+        font-size: 1.35em;
+    }
+
+        @media screen and (max-width: 736px) {
+
+            h2 {
+                font-size: 1em;
+            }
+
+        }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    h5 {
+        font-size: 0.9em;
+    }
+
+    h6 {
+        font-size: 0.7em;
+    }
+
+    sub {
+        font-size: 0.8em;
+        position: relative;
+        top: 0.5em;
+    }
+
+    sup {
+        font-size: 0.8em;
+        position: relative;
+        top: -0.5em;
+    }
+
+    blockquote {
+        border-left: solid 4px rgba(255, 255, 255, 0.25);
+        font-style: italic;
+        margin: 0 0 2em 0;
+        padding: 0.5em 0 0.5em 2em;
+    }
+
+    code {
+        background: rgba(255, 255, 255, 0.075);
+        border-radius: 4px;
+        border: solid 1px rgba(255, 255, 255, 0.25);
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        margin: 0 0.25em;
+        padding: 0.25em 0.65em;
+    }
+
+    pre {
+        -webkit-overflow-scrolling: touch;
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        margin: 0 0 2em 0;
+    }
+
+        pre code {
+            display: block;
+            line-height: 1.75;
+            padding: 1em 1.5em;
+            overflow-x: auto;
+        }
+
+    hr {
+        border: 0;
+        border-bottom: solid 1px rgba(255, 255, 255, 0.25);
+        margin: 2em 0;
+    }
+
+        hr.major {
+            margin: 3em 0;
+        }
+
+    .align-left {
+        text-align: left;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+
+    .align-right {
+        text-align: right;
+    }
+
+/* Section/Article */
+
+    section.special, article.special {
+        text-align: center;
+    }
+
+    header p {
+        color: rgba(255, 255, 255, 0.35);
+        position: relative;
+        margin: 0 0 1.5em 0;
+    }
+
+    header h2 + p {
+        font-size: 1.25em;
+        margin-top: -1em;
+    }
+
+    header h3 + p {
+        font-size: 1.1em;
+        margin-top: -0.8em;
+    }
+
+    header h4 + p,
+    header h5 + p,
+    header h6 + p {
+        font-size: 0.9em;
+        margin-top: -0.6em;
+    }
+
+/* Form */
+
+    form {
+        margin: 0 0 2em 0;
+    }
+
+    label {
+        color: #ffffff;
+        display: block;
+        font-size: 0.9em;
+        font-weight: 200;
+        margin: 0 0 1em 0;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        background: rgba(255, 255, 255, 0.075);
+        border-radius: 4px;
+        border: none;
+        border: solid 1px rgba(255, 255, 255, 0.25);
+        color: inherit;
+        display: block;
+        outline: 0;
+        padding: 0 1em;
+        text-decoration: none;
+        width: 100%;
+    }
+
+        input[type="text"]:invalid,
+        input[type="password"]:invalid,
+        input[type="email"]:invalid,
+        input[type="tel"]:invalid,
+        select:invalid,
+        textarea:invalid {
+            box-shadow: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #FF6382;
+            box-shadow: 0 0 0 1px #FF6382;
+        }
+
+    .select-wrapper {
+        text-decoration: none;
+        display: block;
+        position: relative;
+    }
+
+        .select-wrapper:before {
+            content: "";
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-transform: none !important;
+        }
+
+        .select-wrapper:before {
+            color: rgba(255, 255, 255, 0.25);
+            display: block;
+            height: 2.75em;
+            line-height: 2.75em;
+            pointer-events: none;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            top: 0;
+            width: 2.75em;
+        }
+
+        .select-wrapper select::-ms-expand {
+            display: none;
+        }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select {
+        height: 2.75em;
+    }
+
+    textarea {
+        padding: 0.75em 1em;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        display: block;
+        float: left;
+        margin-right: -2em;
+        opacity: 0;
+        width: 1em;
+        z-index: -1;
+    }
+
+        input[type="checkbox"] + label,
+        input[type="radio"] + label {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.65);
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1em;
+            font-weight: 200;
+            padding-left: 2.4em;
+            padding-right: 0.75em;
+            position: relative;
+        }
+
+            input[type="checkbox"] + label:before,
+            input[type="radio"] + label:before {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                font-family: FontAwesome;
+                font-style: normal;
+                font-weight: normal;
+                text-transform: none !important;
+            }
+
+            input[type="checkbox"] + label:before,
+            input[type="radio"] + label:before {
+                background: rgba(255, 255, 255, 0.075);
+                border-radius: 4px;
+                border: solid 1px rgba(255, 255, 255, 0.25);
+                content: '';
+                display: inline-block;
+                height: 1.65em;
+                left: 0;
+                line-height: 1.58125em;
+                position: absolute;
+                text-align: center;
+                top: 0;
+                width: 1.65em;
+            }
+
+        input[type="checkbox"]:checked + label:before,
+        input[type="radio"]:checked + label:before {
+            background: #FF6382;
+            border-color: #FF6382;
+            color: #ffffff;
+            content: '\f00c';
+        }
+
+        input[type="checkbox"]:focus + label:before,
+        input[type="radio"]:focus + label:before {
+            border-color: #FF6382;
+            box-shadow: 0 0 0 1px #FF6382;
+        }
+
+    input[type="checkbox"] + label:before {
+        border-radius: 4px;
+    }
+
+    input[type="radio"] + label:before {
+        border-radius: 100%;
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.35) !important;
+        opacity: 1.0;
+    }
+
+    :-moz-placeholder {
+        color: rgba(255, 255, 255, 0.35) !important;
+        opacity: 1.0;
+    }
+
+    ::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.35) !important;
+        opacity: 1.0;
+    }
+
+    :-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.35) !important;
+        opacity: 1.0;
+    }
+
+    .formerize-placeholder {
+        color: rgba(255, 255, 255, 0.35) !important;
+        opacity: 1.0;
+    }
+
+/* Box */
+
+    .box {
+        border-radius: 4px;
+        border: solid 1px rgba(255, 255, 255, 0.25);
+        margin-bottom: 2em;
+        padding: 1.5em;
+    }
+
+        .box > :last-child,
+        .box > :last-child > :last-child,
+        .box > :last-child > :last-child > :last-child {
+            margin-bottom: 0;
+        }
+
+        .box.alt {
+            border: 0;
+            border-radius: 0;
+            padding: 0;
+        }
+
+/* Icon */
+
+    .icon {
+        text-decoration: none;
+        border-bottom: none;
+        position: relative;
+    }
+
+        .icon:before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-transform: none !important;
+        }
+
+        .icon > .label {
+            display: none;
+        }
+
+        .icon.style2 {
+            -moz-transition: all 0.2s ease;
+            -webkit-transition: all 0.2s ease;
+            -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            border-radius: 100%;
+            display: inline-block;
+            padding: 0.5em;
+            border: solid 1px rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.075);
+        }
+
+            .icon.style2:before {
+                display: block;
+                width: 1.25em;
+                height: 1.25em;
+                line-height: 1.25em;
+                font-size: 1.35em;
+            }
+
+            .icon.style2:hover {
+                background-color: rgba(255, 255, 255, 0.25);
+            }
+
+            @media screen and (max-width: 736px) {
+
+                .icon.style2:before {
+                    font-size: 1em;
+                }
+
+            }
+
+/* Image */
+
+    .image {
+        border-radius: 4px;
+        border: 0;
+        display: inline-block;
+        position: relative;
+    }
+
+        .image img {
+            border-radius: 4px;
+            display: block;
+        }
+
+        .image.left, .image.right {
+            max-width: 40%;
+        }
+
+            .image.left img, .image.right img {
+                width: 100%;
+            }
+
+        .image.left {
+            float: left;
+            padding: 0 1.5em 1em 0;
+            top: 0.25em;
+        }
+
+        .image.right {
+            float: right;
+            padding: 0 0 1em 1.5em;
+            top: 0.25em;
+        }
+
+        .image.fit {
+            display: block;
+            margin: 0 0 2em 0;
+            width: 100%;
+        }
+
+            .image.fit img {
+                width: 100%;
+            }
+
+        .image.main {
+            display: block;
+            margin: 0 0 3em 0;
+            width: 100%;
+        }
+
+            .image.main img {
+                width: 100%;
+            }
+
+/* List */
+
+    ol {
+        list-style: decimal;
+        margin: 0 0 2em 0;
+        padding-left: 1.25em;
+    }
+
+        ol li {
+            padding-left: 0.25em;
+        }
+
+    ul {
+        list-style: disc;
+        margin: 0 0 2em 0;
+        padding-left: 1em;
+    }
+
+        ul li {
+            padding-left: 0.5em;
+        }
+
+        ul.alt {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            ul.alt li {
+                border-top: solid 1px rgba(255, 255, 255, 0.25);
+                padding: 0.5em 0;
+            }
+
+                ul.alt li:first-child {
+                    border-top: 0;
+                    padding-top: 0;
+                }
+
+        ul.icons {
+            cursor: default;
+            list-style: none;
+            padding-left: 0;
+        }
+
+            ul.icons li {
+                display: inline-block;
+                padding: 0 1em 0 0;
+            }
+
+                ul.icons li:last-child {
+                    padding-right: 0;
+                }
+
+        ul.actions {
+            cursor: default;
+            list-style: none;
+            padding-left: 0;
+        }
+
+            ul.actions li {
+                display: inline-block;
+                padding: 0 1em 0 0;
+                vertical-align: middle;
+            }
+
+                ul.actions li:last-child {
+                    padding-right: 0;
+                }
+
+            ul.actions.small li {
+                padding: 0 0.5em 0 0;
+            }
+
+            ul.actions.vertical li {
+                display: block;
+                padding: 1em 0 0 0;
+            }
+
+                ul.actions.vertical li:first-child {
+                    padding-top: 0;
+                }
+
+                ul.actions.vertical li > * {
+                    margin-bottom: 0;
+                }
+
+            ul.actions.vertical.small li {
+                padding: 0.5em 0 0 0;
+            }
+
+                ul.actions.vertical.small li:first-child {
+                    padding-top: 0;
+                }
+
+            ul.actions.fit {
+                display: table;
+                margin-left: -1em;
+                padding: 0;
+                table-layout: fixed;
+                width: calc(100% + 1em);
+            }
+
+                ul.actions.fit li {
+                    display: table-cell;
+                    padding: 0 0 0 1em;
+                }
+
+                    ul.actions.fit li > * {
+                        margin-bottom: 0;
+                    }
+
+                ul.actions.fit.small {
+                    margin-left: -0.5em;
+                    width: calc(100% + 0.5em);
+                }
+
+                    ul.actions.fit.small li {
+                        padding: 0 0 0 0.5em;
+                    }
+
+            @media screen and (max-width: 480px) {
+
+                ul.actions {
+                    margin: 0 0 2em 0;
+                }
+
+                    ul.actions li {
+                        padding: 1em 0 0 0;
+                        display: block;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                        ul.actions li:first-child {
+                            padding-top: 0;
+                        }
+
+                        ul.actions li > * {
+                            width: 100%;
+                            margin: 0 !important;
+                        }
+
+                            ul.actions li > *.icon:before {
+                                margin-left: -2em;
+                            }
+
+                    ul.actions.small li {
+                        padding: 0.5em 0 0 0;
+                    }
+
+                        ul.actions.small li:first-child {
+                            padding-top: 0;
+                        }
+
+            }
+
+    dl {
+        margin: 0 0 2em 0;
+    }
+
+        dl dt {
+            display: block;
+            font-weight: 200;
+            margin: 0 0 1em 0;
+        }
+
+        dl dd {
+            margin-left: 2em;
+        }
+
+/* Table */
+
+    .table-wrapper {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+    }
+
+    table {
+        margin: 0 0 2em 0;
+        width: 100%;
+    }
+
+        table tbody tr {
+            border: solid 1px rgba(255, 255, 255, 0.25);
+            border-left: 0;
+            border-right: 0;
+        }
+
+            table tbody tr:nth-child(2n + 1) {
+                background-color: rgba(255, 255, 255, 0.075);
+            }
+
+        table td {
+            padding: 0.75em 0.75em;
+        }
+
+        table th {
+            color: #ffffff;
+            font-size: 0.9em;
+            font-weight: 200;
+            padding: 0 0.75em 0.75em 0.75em;
+            text-align: left;
+        }
+
+        table thead {
+            border-bottom: solid 2px rgba(255, 255, 255, 0.25);
+        }
+
+        table tfoot {
+            border-top: solid 2px rgba(255, 255, 255, 0.25);
+        }
+
+        table.alt {
+            border-collapse: separate;
+        }
+
+            table.alt tbody tr td {
+                border: solid 1px rgba(255, 255, 255, 0.25);
+                border-left-width: 0;
+                border-top-width: 0;
+            }
+
+                table.alt tbody tr td:first-child {
+                    border-left-width: 1px;
+                }
+
+            table.alt tbody tr:first-child td {
+                border-top-width: 1px;
+            }
+
+            table.alt thead {
+                border-bottom: 0;
+            }
+
+            table.alt tfoot {
+                border-top: 0;
+            }
+
+/* Button */
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        background-color: #FF6382;
+        border-radius: 4px;
+        border: 0;
+        color: !important;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 200;
+        height: 2.85em;
+        line-height: 2.95em;
+        padding: 0 1.5em;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover,
+        button:hover,
+        .button:hover {
+            background-color: #ff7c96;
+        }
+
+        input[type="submit"]:active,
+        input[type="reset"]:active,
+        input[type="button"]:active,
+        button:active,
+        .button:active {
+            background-color: #ff496e;
+        }
+
+        input[type="submit"].icon,
+        input[type="reset"].icon,
+        input[type="button"].icon,
+        button.icon,
+        .button.icon {
+            padding-left: 1.35em;
+        }
+
+            input[type="submit"].icon:before,
+            input[type="reset"].icon:before,
+            input[type="button"].icon:before,
+            button.icon:before,
+            .button.icon:before {
+                margin-right: 0.5em;
+            }
+
+        input[type="submit"].fit,
+        input[type="reset"].fit,
+        input[type="button"].fit,
+        button.fit,
+        .button.fit {
+            display: block;
+            margin: 0 0 1em 0;
+            width: 100%;
+        }
+
+        input[type="submit"].small,
+        input[type="reset"].small,
+        input[type="button"].small,
+        button.small,
+        .button.small {
+            font-size: 0.8em;
+        }
+
+        input[type="submit"].big,
+        input[type="reset"].big,
+        input[type="button"].big,
+        button.big,
+        .button.big {
+            font-size: 1.35em;
+        }
+
+        input[type="submit"].alt,
+        input[type="reset"].alt,
+        input[type="button"].alt,
+        button.alt,
+        .button.alt {
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+            color: #ffffff !important;
+        }
+
+            input[type="submit"].alt:hover,
+            input[type="reset"].alt:hover,
+            input[type="button"].alt:hover,
+            button.alt:hover,
+            .button.alt:hover {
+                background-color: rgba(255, 255, 255, 0.075);
+            }
+
+            input[type="submit"].alt:active,
+            input[type="reset"].alt:active,
+            input[type="button"].alt:active,
+            button.alt:active,
+            .button.alt:active {
+                background-color: rgba(255, 0, 0, 0.2);
+            }
+
+            input[type="submit"].alt.icon:before,
+            input[type="reset"].alt.icon:before,
+            input[type="button"].alt.icon:before,
+            button.alt.icon:before,
+            .button.alt.icon:before {
+                color: rgba(255, 255, 255, 0.35);
+            }
+
+        input[type="submit"].special,
+        input[type="reset"].special,
+        input[type="button"].special,
+        button.special,
+        .button.special {
+            background-color: #FF6382;
+            color: !important;
+        }
+
+            input[type="submit"].special:hover,
+            input[type="reset"].special:hover,
+            input[type="button"].special:hover,
+            button.special:hover,
+            .button.special:hover {
+                background-color: #ff7c96;
+            }
+
+            input[type="submit"].special:active,
+            input[type="reset"].special:active,
+            input[type="button"].special:active,
+            button.special:active,
+            .button.special:active {
+                background-color: #ff496e;
+            }
+
+        input[type="submit"].disabled, input[type="submit"]:disabled,
+        input[type="reset"].disabled,
+        input[type="reset"]:disabled,
+        input[type="button"].disabled,
+        input[type="button"]:disabled,
+        button.disabled,
+        button:disabled,
+        .button.disabled,
+        .button:disabled {
+            background-color: rgba(255, 255, 255, 0.65) !important;
+            box-shadow: inset 0 -0.15em 0 0 rgba(0, 0, 0, 0.15);
+            color: #000 !important;
+            cursor: default;
+            opacity: 0.25;
+        }
+
+        @media screen and (max-width: 480px) {
+
+            input[type="submit"],
+            input[type="reset"],
+            input[type="button"],
+            button,
+            .button {
+                padding: 0;
+            }
+
+        }
+
+/* Thumbnails */
+
+    .thumbnails {
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        -moz-flex-direction: row;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        position: relative;
+        margin: 0 0 2em -2em;
+    }
+
+        .thumbnails a {
+            transition: all 0.2s ease;
+            border-bottom: none;
+            display: block;
+            width: 100%;
+            margin: 0 0 2em 0;
+            text-align: left;
+            border-radius: 4px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+            background-color: rgba(0, 0, 0, 0.85);
+            cursor: pointer;
+            outline: 0;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+        .thumbnails a p {
+            margin: 0;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 15pt;
+        }
+        .thumbnails a h1 {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .thumbnails a strong {
+            font-weight: bold;
+        }
+
+            .thumbnails a img {
+                display: block;
+                width: 100%;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+            }
+
+            .thumbnails a h3 {
+                margin: 1em;
+            }
+
+            .thumbnails a:hover {
+                box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 0.5em 0 #FF6382;
+            }
+
+        .thumbnails > div {
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            -moz-flex-direction: column;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            width: calc(100% / 3);
+            padding-left: 2em;
+        }
+
+            .thumbnails > div > :last-child {
+                margin-bottom: 0;
+            }
+
+        @media screen and (max-width: 1280px) {
+
+            .thumbnails {
+                margin: 0 0 2em -1.5em;
+            }
+
+                .thumbnails a {
+                    margin: 0 0 1.5em 0;
+                }
+
+                .thumbnails > div {
+                    padding-left: 1.5em;
+                }
+
+        }
+
+        @media screen and (max-width: 980px) {
+
+            .thumbnails h3 {
+                font-size: 0.8em;
+            }
+
+        }
+
+        @media screen and (max-width: 480px) {
+
+            .thumbnails {
+                display: block;
+            }
+
+                .thumbnails a {
+                    margin: 0 0 2em 0 !important;
+                }
+
+                .thumbnails > div {
+                    display: block;
+                    width: 100%;
+                }
+
+                    .thumbnails > div:last-child > :last-child {
+                        margin-bottom: 0 !important;
+                    }
+
+                .thumbnails h3 {
+                    font-size: 1em;
+                }
+
+        }
+
+/* Poptrox */
+
+    .poptrox-popup {
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        -ms-box-sizing: content-box;
+        box-sizing: content-box;
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 0.5em 3em 0 rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+        .poptrox-popup .closer {
+            -moz-transition: opacity 0.2s ease-in-out;
+            -webkit-transition: opacity 0.2s ease-in-out;
+            -ms-transition: opacity 0.2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
+            text-decoration: none;
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            z-index: 2;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            white-space: nowrap;
+            text-indent: 2.5em;
+            overflow: hidden;
+            width: 2.5em;
+            height: 2.5em;
+            display: block;
+        }
+
+            .poptrox-popup .closer:before {
+                content: "";
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                font-family: FontAwesome;
+                font-style: normal;
+                font-weight: normal;
+                text-transform: none !important;
+            }
+
+            .poptrox-popup .closer:before {
+                display: block;
+                position: relative;
+                text-indent: 0;
+                border-radius: 100%;
+                box-shadow: inset 0 0 0 1px #ffffff;
+                color: #ffffff !important;
+                width: 2.5em;
+                height: 2.5em;
+                line-height: 2.5em;
+            }
+
+        .poptrox-popup:hover .closer {
+            opacity: 0.5;
+        }
+
+            .poptrox-popup:hover .closer:hover {
+                opacity: 1.0;
+            }
+
+/* Wrapper */
+
+    #wrapper {
+        max-width: 68em;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2em;
+        opacity: 1;
+        filter: none;
+        -moz-transition: opacity 1s ease, -moz-filter 1s ease;
+        -webkit-transition: opacity 1s ease, -webkit-filter 1s ease;
+        -ms-transition: opacity 1s ease, -ms-filter 1s ease;
+        transition: opacity 1s ease, filter 1s ease;
+    }
+
+    body.is-loading #wrapper {
+        opacity: 0;
+        -moz-filter: blur(1px);
+        -webkit-filter: blur(1px);
+        -ms-filter: blur(1px);
+        filter: blur(1px);
+    }
+
+    body.is-covered #wrapper {
+        -moz-filter: blur(3px);
+        -webkit-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);
+    }
+
+/* Header */
+
+    #header {
+        text-align: center;
+        padding: 6em 0 4em 0;
+    }
+
+        #header h1 {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        #header .avatar {
+            border-radius: 100%;
+            display: inline-block;
+            margin: 0 0 2em 0;
+            padding: 0.5em;
+            border: solid 1px rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.075);
+        }
+
+            #header .avatar img {
+                border-radius: 100%;
+                display: block;
+                width: 10em;
+            }
+
+        @media screen and (max-width: 1280px) {
+
+            #header {
+                padding: 4em 0 2em 0;
+            }
+
+        }
+
+/* Footer */
+
+    #footer {
+        text-align: center;
+        padding: 4em 0 4em 0;
+    }
+
+        #footer:before {
+            content: '';
+            border-top: solid 1px rgba(255, 255, 255, 0.25);
+            width: 10em;
+            display: block;
+            margin: 0 auto 3em auto;
+        }
+
+        @media screen and (max-width: 1280px) {
+
+            #footer {
+                padding: 2em 0 2em 0;
+            }
+
+        }
+/*
+
+Creative Commons Attribution 3.0 Unported
+http://creativecommons.org/licenses/by/3.0/
+
+License
+
+THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+
+BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
+
+1. Definitions
+
+   1. "Adaptation" means a work based upon the Work, or upon the Work and other pre-existing works, such as a translation, adaptation, derivative work, arrangement of music or other alterations of a literary or artistic work, or phonogram or performance and includes cinematographic adaptations or any other form in which the Work may be recast, transformed, or adapted including in any form recognizably derived from the original, except that a work that constitutes a Collection will not be considered an Adaptation for the purpose of this License. For the avoidance of doubt, where the Work is a musical work, performance or phonogram, the synchronization of the Work in timed-relation with a moving image ("synching") will be considered an Adaptation for the purpose of this License.
+   2. "Collection" means a collection of literary or artistic works, such as encyclopedias and anthologies, or performances, phonograms or broadcasts, or other works or subject matter other than works listed in Section 1(f) below, which, by reason of the selection and arrangement of their contents, constitute intellectual creations, in which the Work is included in its entirety in unmodified form along with one or more other contributions, each constituting separate and independent works in themselves, which together are assembled into a collective whole. A work that constitutes a Collection will not be considered an Adaptation (as defined above) for the purposes of this License.
+   3. "Distribute" means to make available to the public the original and copies of the Work or Adaptation, as appropriate, through sale or other transfer of ownership.
+   4. "Licensor" means the individual, individuals, entity or entities that offer(s) the Work under the terms of this License.
+   5. "Original Author" means, in the case of a literary or artistic work, the individual, individuals, entity or entities who created the Work or if no individual or entity can be identified, the publisher; and in addition (i) in the case of a performance the actors, singers, musicians, dancers, and other persons who act, sing, deliver, declaim, play in, interpret or otherwise perform literary or artistic works or expressions of folklore; (ii) in the case of a phonogram the producer being the person or legal entity who first fixes the sounds of a performance or other sounds; and, (iii) in the case of broadcasts, the organization that transmits the broadcast.
+   6. "Work" means the literary and/or artistic work offered under the terms of this License including without limitation any production in the literary, scientific and artistic domain, whatever may be the mode or form of its expression including digital form, such as a book, pamphlet and other writing; a lecture, address, sermon or other work of the same nature; a dramatic or dramatico-musical work; a choreographic work or entertainment in dumb show; a musical composition with or without words; a cinematographic work to which are assimilated works expressed by a process analogous to cinematography; a work of drawing, painting, architecture, sculpture, engraving or lithography; a photographic work to which are assimilated works expressed by a process analogous to photography; a work of applied art; an illustration, map, plan, sketch or three-dimensional work relative to geography, topography, architecture or science; a performance; a broadcast; a phonogram; a compilation of data to the extent it is protected as a copyrightable work; or a work performed by a variety or circus performer to the extent it is not otherwise considered a literary or artistic work.
+   7. "You" means an individual or entity exercising rights under this License who has not previously violated the terms of this License with respect to the Work, or who has received express permission from the Licensor to exercise rights under this License despite a previous violation.
+   8. "Publicly Perform" means to perform public recitations of the Work and to communicate to the public those public recitations, by any means or process, including by wire or wireless means or public digital performances; to make available to the public Works in such a way that members of the public may access these Works from a place and at a place individually chosen by them; to perform the Work to the public by any means or process and the communication to the public of the performances of the Work, including by public digital performance; to broadcast and rebroadcast the Work by any means including signs, sounds or images.
+   9. "Reproduce" means to make copies of the Work by any means including without limitation by sound or visual recordings and the right of fixation and reproducing fixations of the Work, including storage of a protected performance or phonogram in digital form or other electronic medium.
+
+2. Fair Dealing Rights. Nothing in this License is intended to reduce, limit, or restrict any uses free from copyright or rights arising from limitations or exceptions that are provided for in connection with the copyright protection under copyright law or other applicable laws.
+
+3. License Grant. Subject to the terms and conditions of this License, Licensor hereby grants You a worldwide, royalty-free, non-exclusive, perpetual (for the duration of the applicable copyright) license to exercise the rights in the Work as stated below:
+
+   1. to Reproduce the Work, to incorporate the Work into one or more Collections, and to Reproduce the Work as incorporated in the Collections;
+   2. to create and Reproduce Adaptations provided that any such Adaptation, including any translation in any medium, takes reasonable steps to clearly label, demarcate or otherwise identify that changes were made to the original Work. For example, a translation could be marked "The original work was translated from English to Spanish," or a modification could indicate "The original work has been modified.";
+   3. to Distribute and Publicly Perform the Work including as incorporated in Collections; and,
+   4. to Distribute and Publicly Perform Adaptations.
+   5.
+
+      For the avoidance of doubt:
+         1. Non-waivable Compulsory License Schemes. In those jurisdictions in which the right to collect royalties through any statutory or compulsory licensing scheme cannot be waived, the Licensor reserves the exclusive right to collect such royalties for any exercise by You of the rights granted under this License;
+         2. Waivable Compulsory License Schemes. In those jurisdictions in which the right to collect royalties through any statutory or compulsory licensing scheme can be waived, the Licensor waives the exclusive right to collect such royalties for any exercise by You of the rights granted under this License; and,
+         3. Voluntary License Schemes. The Licensor waives the right to collect royalties, whether individually or, in the event that the Licensor is a member of a collecting society that administers voluntary licensing schemes, via that society, from any exercise by You of the rights granted under this License.
+
+The above rights may be exercised in all media and formats whether now known or hereafter devised. The above rights include the right to make such modifications as are technically necessary to exercise the rights in other media and formats. Subject to Section 8(f), all rights not expressly granted by Licensor are hereby reserved.
+
+4. Restrictions. The license granted in Section 3 above is expressly made subject to and limited by the following restrictions:
+
+   1. You may Distribute or Publicly Perform the Work only under the terms of this License. You must include a copy of, or the Uniform Resource Identifier (URI) for, this License with every copy of the Work You Distribute or Publicly Perform. You may not offer or impose any terms on the Work that restrict the terms of this License or the ability of the recipient of the Work to exercise the rights granted to that recipient under the terms of the License. You may not sublicense the Work. You must keep intact all notices that refer to this License and to the disclaimer of warranties with every copy of the Work You Distribute or Publicly Perform. When You Distribute or Publicly Perform the Work, You may not impose any effective technological measures on the Work that restrict the ability of a recipient of the Work from You to exercise the rights granted to that recipient under the terms of the License. This Section 4(a) applies to the Work as incorporated in a Collection, but this does not require the Collection apart from the Work itself to be made subject to the terms of this License. If You create a Collection, upon notice from any Licensor You must, to the extent practicable, remove from the Collection any credit as required by Section 4(b), as requested. If You create an Adaptation, upon notice from any Licensor You must, to the extent practicable, remove from the Adaptation any credit as required by Section 4(b), as requested.
+   2. If You Distribute, or Publicly Perform the Work or any Adaptations or Collections, You must, unless a request has been made pursuant to Section 4(a), keep intact all copyright notices for the Work and provide, reasonable to the medium or means You are utilizing: (i) the name of the Original Author (or pseudonym, if applicable) if supplied, and/or if the Original Author and/or Licensor designate another party or parties (e.g., a sponsor institute, publishing entity, journal) for attribution ("Attribution Parties") in Licensor's copyright notice, terms of service or by other reasonable means, the name of such party or parties; (ii) the title of the Work if supplied; (iii) to the extent reasonably practicable, the URI, if any, that Licensor specifies to be associated with the Work, unless such URI does not refer to the copyright notice or licensing information for the Work; and (iv) , consistent with Section 3(b), in the case of an Adaptation, a credit identifying the use of the Work in the Adaptation (e.g., "French translation of the Work by Original Author," or "Screenplay based on original Work by Original Author"). The credit required by this Section 4 (b) may be implemented in any reasonable manner; provided, however, that in the case of a Adaptation or Collection, at a minimum such credit will appear, if a credit for all contributing authors of the Adaptation or Collection appears, then as part of these credits and in a manner at least as prominent as the credits for the other contributing authors. For the avoidance of doubt, You may only use the credit required by this Section for the purpose of attribution in the manner set out above and, by exercising Your rights under this License, You may not implicitly or explicitly assert or imply any connection with, sponsorship or endorsement by the Original Author, Licensor and/or Attribution Parties, as appropriate, of You or Your use of the Work, without the separate, express prior written permission of the Original Author, Licensor and/or Attribution Parties.
+   3. Except as otherwise agreed in writing by the Licensor or as may be otherwise permitted by applicable law, if You Reproduce, Distribute or Publicly Perform the Work either by itself or as part of any Adaptations or Collections, You must not distort, mutilate, modify or take other derogatory action in relation to the Work which would be prejudicial to the Original Author's honor or reputation. Licensor agrees that in those jurisdictions (e.g. Japan), in which any exercise of the right granted in Section 3(b) of this License (the right to make Adaptations) would be deemed to be a distortion, mutilation, modification or other derogatory action prejudicial to the Original Author's honor and reputation, the Licensor will waive or not assert, as appropriate, this Section, to the fullest extent permitted by the applicable national law, to enable You to reasonably exercise Your right under Section 3(b) of this License (right to make Adaptations) but not otherwise.
+
+5. Representations, Warranties and Disclaimer
+
+UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
+
+6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+7. Termination
+
+   1. This License and the rights granted hereunder will terminate automatically upon any breach by You of the terms of this License. Individuals or entities who have received Adaptations or Collections from You under this License, however, will not have their licenses terminated provided such individuals or entities remain in full compliance with those licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this License.
+   2. Subject to the above terms and conditions, the license granted here is perpetual (for the duration of the applicable copyright in the Work). Notwithstanding the above, Licensor reserves the right to release the Work under different license terms or to stop distributing the Work at any time; provided, however that any such election will not serve to withdraw this License (or any other license that has been, or is required to be, granted under the terms of this License), and this License will continue in full force and effect unless terminated as stated above.
+
+8. Miscellaneous
+
+   1. Each time You Distribute or Publicly Perform the Work or a Collection, the Licensor offers to the recipient a license to the Work on the same terms and conditions as the license granted to You under this License.
+   2. Each time You Distribute or Publicly Perform an Adaptation, Licensor offers to the recipient a license to the original Work on the same terms and conditions as the license granted to You under this License.
+   3. If any provision of this License is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this License, and without further action by the parties to this agreement, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
+   4. No term or provision of this License shall be deemed waived and no breach consented to unless such waiver or consent shall be in writing and signed by the party to be charged with such waiver or consent.
+   5. This License constitutes the entire agreement between the parties with respect to the Work licensed here. There are no understandings, agreements or representations with respect to the Work not specified here. Licensor shall not be bound by any additional provisions that may appear in any communication from You. This License may not be modified without the mutual written agreement of the Licensor and You.
+   6. The rights granted under, and the subject matter referenced, in this License were drafted utilizing the terminology of the Berne Convention for the Protection of Literary and Artistic Works (as amended on September 28, 1979), the Rome Convention of 1961, the WIPO Copyright Treaty of 1996, the WIPO Performances and Phonograms Treaty of 1996 and the Universal Copyright Convention (as revised on July 24, 1971). These rights and subject matter take effect in the relevant jurisdiction in which the License terms are sought to be enforced according to the corresponding provisions of the implementation of those treaty provisions in the applicable national law. If the standard suite of rights granted under applicable copyright law includes additional rights not granted under this License, such additional rights are deemed to be included in the License; this License is not intended to restrict the license of any rights under applicable law.
+
+*/
