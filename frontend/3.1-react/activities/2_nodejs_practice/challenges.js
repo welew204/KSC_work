@@ -3,8 +3,7 @@
     node.js, and give you more practice with JavaScript syntax.
 */
 
-
-console.log('Challenge 1 --------------------------');
+console.log("Challenge 1 --------------------------");
 /*
     Right now, this for..of loop will loop through every letter of the song
     lyrics. Rewrite the code to replace the string with an array of strings, so
@@ -14,13 +13,12 @@ console.log('Challenge 1 --------------------------');
     Hint 2: const is the same as let, but it prohibits re-assignment
 */
 
-const lyrics = "Hey now, you're an all-star, get your game on, go play";
-for (const lyric of lyrics) {
-    //console.log(lyric);
+let lyrics = "Hey now, you're an all-star, get your game on, go play";
+for (let lyric of lyrics.split(" ")) {
+  console.log(lyric);
 }
 
-
-console.log('Challenge 2 --------------------------');
+console.log("Challenge 2 --------------------------");
 /*
     Write an if statement that checks both that ableToTouchThis is false, AND
     that the "time" variable is equal to "hammer".
@@ -28,18 +26,14 @@ console.log('Challenge 2 --------------------------');
     Hint: Example code is provided as a hint, but lacking the condition
 */
 const ableToTouchThis = false;
-const time = 'hammer';
+const time = "hammer";
 
-/*
-if (????) {
-    console.log("Can't touch this.");
-    console.log("Stop! Hammer time.");
+if (ableToTouchThis && time === "hammer") {
+  console.log("Can't touch this.");
+  console.log("Stop! Hammer time.");
 }
-*/
 
-
-
-console.log('Challenge 3 --------------------------');
+console.log("Challenge 3 --------------------------");
 /*
     Modify the object called barbieGirl such that the if statement prints "Come
     on Barbie, let's go party!".
@@ -47,31 +41,35 @@ console.log('Challenge 3 --------------------------');
     Hint: ONLY modify the object that barbieGirl is being assigned to.
 */
 const barbieGirl = {
+  world: "barbie",
+  life: "plastic",
+  canBrushHair: true,
 };
 
-if (barbieGirl.world === 'barbie' &&
-        barbieGirl.life === 'plastic' &&
-        barbieGirl.canBrushHair) {
-    console.log("Come on Barbie, let's go party!");
+if (
+  barbieGirl.world === "barbie" &&
+  barbieGirl.life === "plastic" &&
+  barbieGirl.canBrushHair
+) {
+  console.log("Come on Barbie, let's go party!");
 } else {
-    console.log("Challenge 3 broken...");
+  console.log("Challenge 3 broken...");
 }
 
-
-
-
-console.log('Challenge 4 --------------------------');
+console.log("Challenge 4 --------------------------");
 /*
   The following is a while loop. Modify it so that it repeats 5 times.
 */
 let timesHit = 0;
-while (false) { // <-- change this line
-    console.log("Hit me baby one more time");
-    // <-- add code here
+while (true) {
+  if (timesHit === 5) {
+    break;
+  }
+  console.log("Hit me baby one more time");
+  timesHit += 1; // <-- add code here
 }
 
-
-console.log('Challenge 5 --------------------------');
+console.log("Challenge 5 --------------------------");
 /*
   Context: Node uses the "CommonJS" JavaScript variant to import other code.
   This is done via invoking a function named "require".
@@ -80,15 +78,14 @@ console.log('Challenge 5 --------------------------');
     1. Look up the node documentation for "os": https://nodejs.org/api/os.html
     2. Write code to console.log the name of the first CPU on your computer
 
-  NOTE: ComonJS might be switched in future versions to the "ESM" import
+  NOTE: CommonJS might be switched in future versions to the "ESM" import
   syntax, similar to the JSX-variant syntax used in React and others.
   See: https://nodejs.org/api/esm.html for more information.
 */
-const os = require('os');
+const os = require("os");
+console.log(os.cpus()[0]);
 
-
-
-console.log('Challenge 6 --------------------------');
+console.log("Challenge 6 --------------------------");
 /*
   Context: A "callback" is what we call a function that is passed as an
   argument while invoking another function, to be invoked when that other
@@ -104,14 +101,20 @@ console.log('Challenge 6 --------------------------');
 
   HINT 2: fs.readFile is how we access data in the harddrive.
 */
-const fs = require('fs');
+const fs = require("fs");
 function callback(err, data) {
-    console.log('Baby got (call) back');
+  console.log("Baby got (call) back");
+  console.log(err);
+  console.log(data);
 }
-fs.readFile('c6.txt', 'utf-8', callback);
+//fs.readFile("c6.txt", "utf-8", callback);
+fs.readFile("c6.txt", "utf-8", (err, data) => {
+  console.log("Baby got (call) back");
+  console.log(err);
+  console.log(data);
+});
 
-
-console.log('Challenge 7 --------------------------');
+console.log("Challenge 7 --------------------------");
 /*
   Context: Modern JavaScript has a class syntax for Object Oriented Programming
    
@@ -123,21 +126,21 @@ console.log('Challenge 7 --------------------------');
     it is working
 */
 class User {
-    constructor(username) {
-        this.username = username;
-        this.isLoggedIn = false;
-    }
-    logIn() {
-        this.isLoggedIn = true;
-    }
+  constructor(username, email) {
+    this.username = username;
+    this.email = email;
+    this.isLoggedIn = false;
+  }
+  logIn() {
+    this.isLoggedIn = true;
+  }
 }
 
-const user = new User('alanis');
-// console.log('Alanis's username is:', user.username);
+const user = new User("alanis", "ironic@dontchathink.com");
+console.log("Alanis's username is: ", user.username);
+console.log("Alanis's email is: ", user.email);
 
-
-
-console.log('Challenge 8 --------------------------');
+console.log("Challenge 8 --------------------------");
 /*
   Rewrite Challenge 6 using lambda function syntax (aka "arrow function"):
       (a, b, c) => {              function (a, b, c) {
@@ -147,4 +150,3 @@ console.log('Challenge 8 --------------------------');
   Stuck? See node documentation on FS for clues, as all their examples use this:
   https://nodejs.org/api/fs.html
 */
-
