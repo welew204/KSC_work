@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.9bb1f995.chunk.css",
+    "main.js": "./static/js/main.b2fe9b79.chunk.js",
+    "main.js.map": "./static/js/main.b2fe9b79.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.a512fdcb.js",
+    "runtime-main.js.map": "./static/js/runtime-main.a512fdcb.js.map",
+    "static/js/2.d3a2c9ee.chunk.js": "./static/js/2.d3a2c9ee.chunk.js",
+    "static/js/2.d3a2c9ee.chunk.js.map": "./static/js/2.d3a2c9ee.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.b5d435e2dbec1abcc4b0654e8bf30f19.js": "./precache-manifest.b5d435e2dbec1abcc4b0654e8bf30f19.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.9bb1f995.chunk.css.map": "./static/css/main.9bb1f995.chunk.css.map",
+    "static/js/2.d3a2c9ee.chunk.js.LICENSE.txt": "./static/js/2.d3a2c9ee.chunk.js.LICENSE.txt",
+    "static/media/App.css": "./static/media/winterfell-1.1c51014a.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a512fdcb.js",
+    "static/js/2.d3a2c9ee.chunk.js",
+    "static/css/main.9bb1f995.chunk.css",
+    "static/js/main.b2fe9b79.chunk.js"
+  ]
+}

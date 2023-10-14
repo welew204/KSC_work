@@ -1,0 +1,28 @@
+body {
+  background: url('https://i.imgur.com/CpGpwK3.jpg') fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.App {
+  padding-left: 30vw;
+  padding-right: 30vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 420px;
+  color: white;
+}
+
+.App-title {
+  font-size: 2.5em;
+}
+
+.App input,
+.App textarea,
+.App button {
+  font-size: 1.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px ridge white;
+  color: black;
+  padding: 20px;
+  margin: 20px;
+}

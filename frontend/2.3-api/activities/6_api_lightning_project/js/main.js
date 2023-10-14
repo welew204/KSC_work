@@ -23,9 +23,8 @@ function gifGrab() {
   )
     .then((result) => result.json())
     .then((data) => {
-      console.log(data.data[0].url);
-      current_gif_url = data.data[0].url;
-      render();
+      console.log(data);
+      current_gif_url = data.data[0].embed_url;
     });
 }
 
@@ -33,7 +32,9 @@ function render() {
   let quote_container = document.querySelector("#quote-container");
   let quote_block = document.createElement("h3");
   let gif_block = document.createElement("img");
+  console.log(current_gif_url);
   gif_block.src = current_gif_url;
+  gif_block.alt = "can;'t load it...";
   quote_block.textContent = current_quote;
   quote_container.appendChild(quote_block);
   quote_container.appendChild(gif_block);

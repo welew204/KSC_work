@@ -1,0 +1,81 @@
+body {
+  background: url('https://i.imgur.com/8KZTeIQ.jpg') fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.App {
+}
+
+.App-header img {
+  float: right;
+  width: 200px;
+}
+
+.App-header {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 120px;
+  padding: 40px;
+  color: white;
+}
+
+.App-title {
+  font-size: 2.5em;
+}
+
+.Form {
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+
+.Form input,
+.Form textarea,
+.Form button {
+  font-size: 1.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px ridge white;
+  color: black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.Form button {
+  padding: 10px;
+  display: block;
+  font-weight: bold;
+}
+
+.Form textarea {
+  font-size: 1.3em;
+}
+
+.Form label {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.Form label input[type=checkbox] {
+  display: inline-block;
+  width: 60px;
+  margin-top: -10px;
+}
+.Form label input[type=checkbox]:before {
+  content: '☐';
+  background: gray;
+  padding: 10px;
+  font-size: 30pt;
+  font-weight: bold;
+}
+.Form label input[type=checkbox]:checked:before {
+  content: '☑';
+}
+
+label > input:not([type=checkbox]) {
+    width: 80px;
+    padding: 1px;
+}
+

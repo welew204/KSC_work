@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./legacycss.css" />
+    </head>
+    <body>
+
+        <div class="MainContent">
+            <img src="./knight.jpg" style="width: 400px">
+            <hr>
+            <h1 class="Counter" id="count">0</h1>
+            <button class="Button" onClick="increment()">Click me</button>
+            <br>
+            <br>
+            <button class="Button" onClick="alert('hi')">Greetings</button>
+        </div>
+
+        <script>
+            let count = 0;
+            function increment() {
+                count = count + 1;
+                let button = document.getElementById('count');
+                button.textContent = count;
+            }
+        </script>
+
+    </body>
+</html>
