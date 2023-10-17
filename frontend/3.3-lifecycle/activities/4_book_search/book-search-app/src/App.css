@@ -54,6 +54,8 @@ body {
   background: white;
   box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.3);
   grid-template-columns: 200px 1fr;
+  border-style: solid;
+  border-color: black;
 }
 
 .Books-bookTitle {
