@@ -1,0 +1,42 @@
+{
+  "coord":{
+    "lon":-122.27,
+    "lat":37.8
+  },
+  "weather":[
+    {
+      "id":711,
+      "main":"Clear skies",
+      "description":"Clear",
+      "icon":"50d"
+    }
+  ],
+  "base":"stations",
+  "main":{
+    "temp":295.09,
+    "pressure":1017,
+    "humidity":72,
+    "temp_min":287.15,
+    "temp_max":301.15
+  },
+  "visibility":16093,
+  "wind":{
+    "speed":4.1,
+    "deg":300
+  },
+  "clouds":{
+    "all":20
+  },
+  "dt":1532631600,
+  "sys":{
+    "type":1,
+    "id":439,
+    "message":0.0051,
+    "country":"US",
+    "sunrise":1532610500,
+    "sunset":1532661743
+  },
+  "id":5378538,
+  "name":"Oakland",
+  "cod":200
+}
