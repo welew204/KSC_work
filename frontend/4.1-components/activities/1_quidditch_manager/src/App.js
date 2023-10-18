@@ -22,6 +22,7 @@ function App() {
   // Define which ones we'll be using for this team
   const [chosenChasers, setChosenChasers] = useState([]);
   const [chosenBeaters, setChosenBeaters] = useState([]);
+  console.log(chosenChasers.length);
 
   // There is only one keeper and one seeker per team
   const [chosenKeeper, setChosenKeeper] = useState(null);
@@ -30,14 +31,32 @@ function App() {
   function onChoosePlayer(position, index) {
     // When they click on a "chosen" player, get the player type array, and the index that we want
     // to use with the index provided, then do a setState
+    //console.log(position, index);
+    let desiredPlayer;
     let positionArray;
     let setFunction;
     if (position === "Chaser") {
       positionArray = chaserPlayers;
-      setFunction = setChosenChasers;
+      desiredPlayer = positionArray[index];
+      let availInd = availableChasers.indexOf(desiredPlayer);
+      let newAvailableChasers = [...availableChasers];
+
+      newAvailableChasers.splice(availInd, 1);
+      console.log(newAvailableChasers);
+      setChosenChasers([...chosenChasers, desiredPlayer]);
+      setAvailableChasers(newAvailableChasers);
+      return;
     } else if (position === "Beater") {
       positionArray = beaterPlayers;
-      setFunction = setChosenBeaters;
+      desiredPlayer = positionArray[index];
+      let availInd = availableBeaters.indexOf(desiredPlayer);
+      let newAvailableBeaters = [...availableBeaters];
+
+      newAvailableBeaters.splice(availInd, 1);
+      console.log(newAvailableBeaters);
+      setChosenBeaters([...chosenBeaters, desiredPlayer]);
+      setAvailableBeaters(newAvailableBeaters);
+      return;
     } else if (position === "Keeper") {
       positionArray = keeperPlayers;
       setFunction = setChosenKeeper;
@@ -45,16 +64,33 @@ function App() {
       positionArray = seekerPlayers;
       setFunction = setChosenSeeker;
     }
-    const desiredPlayer = positionArray[index];
+    desiredPlayer = positionArray[index];
     setFunction(desiredPlayer);
   }
 
-  function removePlayer(position) {
+  function removePlayer(position, index = null) {
     // Clear the chosen keeper
     let setFunction;
     if (position === "Chaser") {
-      setFunction = setChosenChasers;
+      let desiredPlayer = chaserPlayers[index];
+      let desiredInd = chosenChasers.indexOf(desiredPlayer);
+      let newChosen = [...chosenChasers];
+      newChosen.splice(desiredInd, 1);
+      let newAvail = [...availableChasers];
+      newAvail.push(desiredPlayer);
+      setChosenChasers(newChosen);
+      setAvailableChasers(newAvail);
+      return;
     } else if (position === "Beater") {
+      let desiredPlayer = beaterPlayers[index];
+      let desiredInd = chosenBeaters.indexOf(desiredPlayer);
+      let newChosen = [...chosenBeaters];
+      newChosen.splice(desiredInd, 1);
+      let newAvail = [...availableBeaters];
+      newAvail.push(desiredPlayer);
+      setChosenBeaters(newChosen);
+      setAvailableBeaters(newAvail);
+      return;
       setFunction = setChosenBeaters;
     } else if (position === "Keeper") {
       setFunction = setChosenKeeper;
@@ -125,22 +161,76 @@ function App() {
 
         <div className='TeamManager-position'>
           <h2>Starting Chasers</h2>
-          <p>TODO</p>
+          {0 < chosenChasers.length ? (
+            chosenChasers.map((character) => (
+              <div className='TeamManager-character'>
+                <h3>{character.name}</h3>
+                <h4>{character.house}</h4>
+                <button
+                  onClick={() =>
+                    removePlayer("Chaser", chaserPlayers.indexOf(character))
+                  }>
+                  Remove
+                </button>
+              </div>
+            ))
+          ) : (
+            <em>None selected</em>
+          )}
         </div>
 
         <div className='TeamManager-position'>
           <h2>Roster (Chasers)</h2>
-          <p>TODO</p>
+          {availableChasers.map((character) => (
+            <div className='TeamManager-character'>
+              <h3>{character.name}</h3>
+              <h4>{character.house}</h4>
+              <button
+                disabled={chosenChasers.length === 3}
+                onClick={() =>
+                  onChoosePlayer("Chaser", chaserPlayers.indexOf(character))
+                }>
+                Choose
+              </button>
+            </div>
+          ))}
         </div>
 
         <div className='TeamManager-position'>
           <h2>Starting Beaters</h2>
-          <p>TODO</p>
+          {0 < chosenBeaters.length < 3 ? (
+            chosenBeaters.map((character) => (
+              <div className='TeamManager-character'>
+                <h3>{character.name}</h3>
+                <h4>{character.house}</h4>
+                <button
+                  onClick={() =>
+                    removePlayer("Beater", beaterPlayers.indexOf(character))
+                  }>
+                  Remove
+                </button>
+              </div>
+            ))
+          ) : (
+            <em>None selected</em>
+          )}
         </div>
 
         <div className='TeamManager-position'>
           <h2>Roster (Beaters)</h2>
-          <p>TODO</p>
+          {availableBeaters.map((character) => (
+            <div className='TeamManager-character'>
+              <h3>{character.name}</h3>
+              <h4>{character.house}</h4>
+              <button
+                disabled={chosenBeaters.length === 2}
+                onClick={() =>
+                  onChoosePlayer("Beater", beaterPlayers.indexOf(character))
+                }>
+                Choose
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>
