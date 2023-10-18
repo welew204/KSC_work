@@ -1,0 +1,29 @@
+.StatuePanel {
+  font-family: sans-serif;
+  margin-left: 15px;
+  padding: 2px;
+  display: grid;
+  background: #9da1aa;
+  border: 4px outset gray;
+  grid-template-columns: 130px 1fr;
+  grid-gap: 5px;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+.StatuePanel-title {
+  font-size: 20pt;
+  font-weight: 200;
+  grid-column: 1 / span 2;
+  padding: 5px;
+  border: 4px outset gray;
+}
+
+.StatuePanel img {
+  border: 4px outset gray;
+}
+
+.StatuePanel-info {
+  padding: 10px;
+  border: 4px outset gray;
+}
