@@ -1,11 +1,13 @@
-import React from 'react';
-import './Button.css';
+import React from "react";
+import "./Button.css";
 
 function Button(props) {
-  let className = 'Button';
+  let className = "Button";
 
-  if (props.type === 'gray') {
-    className = 'Button Button--gray';
+  if (props.type === "gray") {
+    className = "Button Button--gray";
+  } else if (props.type === "primary") {
+    className = "Button Button--primary";
   }
 
   return (
