@@ -10,8 +10,13 @@ Challenge #1: Plan some components
 
 1. Can you identify some repetitive elements on the screen? What could you
 transform into components?
+>>>>> player cards
+>>>>> sections
+>>>>> buttons on cards
 
 2. Sketch this out, and formulate this plan in pseudocode
+>>>> build section, card, button components
+
 
 
 

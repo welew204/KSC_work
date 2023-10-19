@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Nav from "./components/Nav/Nav";
 
 // Pull in player data from the players JSON file
-import players from './players.json';
+import players from "./players.json";
+import Character from "./components/Character/Character";
 
 // Uses filter to narrow down array into 4 individual player arrays, one for
 // each of the 4 Quidditch positions
-const chaserPlayers = players.filter(p => p.position === 'Chaser');
-const beaterPlayers = players.filter(p => p.position === 'Beater');
-const keeperPlayers = players.filter(p => p.position === 'Keeper');
-const seekerPlayers = players.filter(p => p.position === 'Seeker');
+const chaserPlayers = players.filter((p) => p.position === "Chaser");
+const beaterPlayers = players.filter((p) => p.position === "Beater");
+const keeperPlayers = players.filter((p) => p.position === "Keeper");
+const seekerPlayers = players.filter((p) => p.position === "Seeker");
 
 function App() {
-
   // Define "pool" of available characters
   const [availableChasers, setAvailableChasers] = useState(chaserPlayers);
   const [availableBeaters, setAvailableBeaters] = useState(beaterPlayers);
@@ -74,28 +75,27 @@ function App() {
     const character = chosenChasers[index];
     setAvailableChasers([
       ...availableChasers, // include existing characters
-      character,           // and the new one
+      character, // and the new one
     ]);
 
     // Remove the item at index from the array
     setChosenChasers([
-      ...chosenChasers.slice(0, index),  // include up to index
+      ...chosenChasers.slice(0, index), // include up to index
       ...chosenChasers.slice(index + 1), // and after index
     ]);
   }
-
 
   function onChooseBeater(index) {
     // Get the chosen chaser, and add to the end
     const character = availableBeaters[index];
     setChosenBeaters([
       ...chosenBeaters, // include existing chasers
-      character,        // and the new one
+      character, // and the new one
     ]);
 
     // Remove the item at index from the array
     setAvailableBeaters([
-      ...availableBeaters.slice(0, index),  // include up to index
+      ...availableBeaters.slice(0, index), // include up to index
       ...availableBeaters.slice(index + 1), // and after index
     ]);
   }
@@ -105,129 +105,119 @@ function App() {
     const character = chosenBeaters[index];
     setAvailableBeaters([
       ...availableBeaters, // include existing characters
-      character,           // and the new one
+      character, // and the new one
     ]);
 
     // Remove the item at index from the array
     setChosenBeaters([
-      ...chosenBeaters.slice(0, index),  // include up to index
+      ...chosenBeaters.slice(0, index), // include up to index
       ...chosenBeaters.slice(index + 1), // and after index
     ]);
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="https://i.imgur.com/NrJQBLb.png" alt="snitch" />
-        <h1 className="App-title">Quidditch Manager</h1>
-      </header>
-      <div className="TeamManager">
-        <div className="TeamManager-position">
+    <div className='App'>
+      <Nav />
+      <div className='TeamManager'>
+        <div className='TeamManager-position'>
           <h2>Starting Keeper</h2>
-          {
-            chosenKeeper ? (
-              <div className="TeamManager-character">
-                <h3>{chosenKeeper.name}</h3>
-                <h4>{chosenKeeper.house}</h4>
-                <button onClick={removeKeeper}>Remove</button>
-              </div>
-            ) : (
-              <em>None selected</em>
-            )
-          }
+          {chosenKeeper ? (
+            <Character
+              buttonText={"Remove"}
+              name={chosenKeeper.name}
+              house={chosenKeeper.house}
+              onChooseCharacter={removeKeeper}
+            />
+          ) : (
+            <em>None selected</em>
+          )}
         </div>
 
-        <div className="TeamManager-position">
+        <div className='TeamManager-position'>
           <h2>Roster (Keepers)</h2>
-          {
-            availableKeepers.map((character, index) => (
-              <div className="TeamManager-character" key={index}>
-                <h3>{character.name}</h3>
-                <h4>{character.house}</h4>
-                <button onClick={() => onChooseKeeper(index)}>Choose</button>
-              </div>
-            ))
-          }
+          {availableKeepers.map((character, index) => (
+            <Character
+              buttonText={"Choose"}
+              name={character.name}
+              house={character.house}
+              index={index}
+              onChooseCharacter={() => onChooseKeeper(index)}
+            />
+          ))}
         </div>
 
-        <div className="TeamManager-position">
+        <div className='TeamManager-position'>
           <h2>Starting Seeker</h2>
-          {
-            chosenSeeker ? (
-              <div className="TeamManager-character">
-                <h3>{chosenSeeker.name}</h3>
-                <h4>{chosenSeeker.house}</h4>
-                <button onClick={removeSeeker}>Remove</button>
-              </div>
-            ) : (
-              <em>None selected</em>
-            )
-          }
+          {chosenSeeker ? (
+            <Character
+              buttonText={"Remove"}
+              name={chosenSeeker.name}
+              house={chosenSeeker.house}
+              onChooseCharacter={removeSeeker}
+            />
+          ) : (
+            <em>None selected</em>
+          )}
         </div>
 
-        <div className="TeamManager-position">
+        <div className='TeamManager-position'>
           <h2>Roster (Seekers)</h2>
-          {
-            availableSeekers.map((character, index) => (
-              <div className="TeamManager-character" key={index}>
-                <h3>{character.name}</h3>
-                <h4>{character.house}</h4>
-                <button onClick={() => onChooseSeeker(index)}>Choose</button>
-              </div>
-            ))
-          }
+          {availableSeekers.map((character, index) => (
+            <Character
+              buttonText={"Choose"}
+              name={character.name}
+              house={character.house}
+              onChooseCharacter={() => onChooseSeeker(index)}
+            />
+          ))}
         </div>
 
-        <div className="TeamManager-position">
+        <div className='TeamManager-position'>
           <h2>Starting Chasers</h2>
-          {
-            chosenChasers.map((character, index) => (
-              <div className="TeamManager-character" key={index}>
-                <h3>{character.name}</h3>
-                <h4>{character.house}</h4>
-                <button onClick={() => removeChaser(index)}>Remove</button>
-              </div>
-            ))
-          }
+          {chosenChasers.map((character, index) => (
+            <Character
+              buttonText={"Remove"}
+              name={character.name}
+              house={character.house}
+              onChooseCharacter={() => removeChaser(index)}
+            />
+          ))}
         </div>
 
-        <div className="TeamManager-position">
+        <div className='TeamManager-position'>
           <h2>Roster (Chasers)</h2>
-          {
-            availableChasers.map((character, index) => (
-              <div className="TeamManager-character" key={index}>
-                <h3>{character.name}</h3>
-                <h4>{character.house}</h4>
-                <button onClick={() => onChooseChaser(index)}>Choose</button>
-              </div>
-            ))
-          }
+          {availableChasers.map((character, index) => (
+            <Character
+              buttonText={"Choose"}
+              name={character.name}
+              house={character.house}
+              onChooseCharacter={() => onChooseChaser(index)}
+            />
+          ))}
         </div>
 
-        <div className="TeamManager-position">
+        <div className='TeamManager-position'>
           <h2>Starting Beaters</h2>
-          {
-            chosenBeaters.map((character, index) => (
-              <div className="TeamManager-character" key={index}>
-                <h3>{character.name}</h3>
-                <h4>{character.house}</h4>
-                <button onClick={() => removeBeater(index)}>Remove</button>
-              </div>
-            ))
-          }
+          {chosenBeaters.map((character, index) => (
+            <Character
+              buttonText={"Remove"}
+              name={character.name}
+              house={character.house}
+              onChooseCharacter={() => removeBeater(index)}
+            />
+          ))}
         </div>
 
-        <div className="TeamManager-position">
+        <div className='TeamManager-position'>
           <h2>Roster (Beaters)</h2>
-          {
-            availableBeaters.map((character, index) => (
-              <div className="TeamManager-character" key={index}>
-                <h3>{character.name}</h3>
-                <h4>{character.house}</h4>
-                <button onClick={() => onChooseBeater(index)}>Choose</button>
-              </div>
-            ))
-          }
+          {availableBeaters.map((character, index) => (
+            <Character
+              buttonText={"Choose"}
+              name={character.name}
+              house={character.house}
+              onChooseCharacter={() => onChooseBeater(index)}
+            />
+          ))}
         </div>
       </div>
     </div>
