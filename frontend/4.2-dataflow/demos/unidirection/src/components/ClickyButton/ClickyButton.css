@@ -1,0 +1,15 @@
+.ClickyButton {
+  font-family: serif;
+  background: #9da1aa;
+  border: 4px outset gray;
+  letter-spacing: 3px;
+  padding: 5px;
+  display: inline-block;
+  cursor: default;
+  margin: 5px;
+  user-select: none;
+}
+
+.ClickyButton:active {
+  border-style: inset;
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.9fb5aeee.chunk.css",
+    "main.js": "./static/js/main.2e5d4a0b.chunk.js",
+    "main.js.map": "./static/js/main.2e5d4a0b.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.be3978ad.js",
+    "runtime-main.js.map": "./static/js/runtime-main.be3978ad.js.map",
+    "static/js/2.4b9d06bc.chunk.js": "./static/js/2.4b9d06bc.chunk.js",
+    "static/js/2.4b9d06bc.chunk.js.map": "./static/js/2.4b9d06bc.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.87470fd8df56c2f4971470dafbe6f5c0.js": "./precache-manifest.87470fd8df56c2f4971470dafbe6f5c0.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.9fb5aeee.chunk.css.map": "./static/css/main.9fb5aeee.chunk.css.map",
+    "static/js/2.4b9d06bc.chunk.js.LICENSE.txt": "./static/js/2.4b9d06bc.chunk.js.LICENSE.txt",
+    "static/media/arwen.jpg": "./static/media/arwen.946c9921.jpg",
+    "static/media/frodo.jpg": "./static/media/frodo.ed460071.jpg",
+    "static/media/gandalf.jpg": "./static/media/gandalf.cfccab8f.jpg",
+    "static/media/legolas.png": "./static/media/legolas.47d0d8ce.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.be3978ad.js",
+    "static/js/2.4b9d06bc.chunk.js",
+    "static/css/main.9fb5aeee.chunk.css",
+    "static/js/main.2e5d4a0b.chunk.js"
+  ]
+}

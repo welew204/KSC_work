@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('https://i.imgur.com/oX7S2FX.png') fixed;
+  color: white;
+}
+
+.App {
+  max-width: 68em;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2em;
+  opacity: 1;
+  filter: none;
+}

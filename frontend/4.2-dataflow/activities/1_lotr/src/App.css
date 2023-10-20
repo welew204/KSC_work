@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('https://i.imgur.com/oX7S2FX.png') fixed;
+  color: white;
+}
+
+.App {
+  max-width: 68em;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2em;
+  opacity: 1;
+  filter: none;
+}
+
+.CharacterCardGroup {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: 0 0 2em -2em;
+}
+
+.CharacterCard {
+  transition: all 0.2s ease;
+  border-bottom: none;
+  display: block;
+  margin: 0 0 2em 0;
+  text-align: left;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.85);
+  outline: 0;
+  overflow: hidden;
+  margin-top: 50px;
+  width: calc(100% / 3);
+
+  /*
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+  */
+}
+
+.CharacterCard p {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 15pt;
+}
+
+.CharacterCard h1 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.CharacterCard strong {
+  font-weight: bold;
+}
+
+.CharacterCard img {
+  display: block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.CharacterCard h3 {
+  margin: 1em;
+}
+
+.CharacterCard:hover {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 0.5em 0 #FF6382;
+}
+
+.CharacterCard > :last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1280px) {
+  .CharacterCardGroup {
+    margin: 0 0 2em -1.5em;
+  }
+
+  .CharacterCard {
+    margin: 0 0 1.5em 0;
+    padding-left: 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .CharacterCardGroup {
+    display: block;
+  }
+
+  .CharacterCard h3 {
+    font-size: 0.8em;
+  }
+
+  .CharacterCard {
+    margin: 0 0 2em 0 !important;
+    display: block;
+    width: 100%;
+  }
+
+  .CharacterCard:last-child > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .CharacterCard h3 {
+    font-size: 1em;
+  }
+}

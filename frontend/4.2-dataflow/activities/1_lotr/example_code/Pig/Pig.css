@@ -1,0 +1,10 @@
+.Pig {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.Pig img {
+  display: block;
+}
+
