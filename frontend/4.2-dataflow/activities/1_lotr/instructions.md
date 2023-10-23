@@ -15,8 +15,10 @@ Challenge #1: console.log, and observe likely component
 
 - Look closely at the code. Explain in your own words the following:
     - Do you see repetition? What is the repeated unit?
+    >>>>>> Character Card!
     - What properties or content change for each repetition?
         - e.g. Are their "slots" that need content that change each time?
+        >>>>> img, bio, birth year, species, ring of power (opt), Title
         - Whatever changes gives you a clue as to what "props" you will need to
           write for your component
 

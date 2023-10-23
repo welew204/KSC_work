@@ -1,0 +1,6 @@
+.CharacterCardGroup {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 0 0 2em -2em;
+  }
