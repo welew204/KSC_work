@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import './BoxSelector.css';
+import "./BoxSelector.css";
 
 function BoxSelector(props) {
-
   function squareGotClicked(choice) {
     // Only trigger an "onSelectionChange" event if its different than what is
     // currently selected
@@ -20,26 +19,19 @@ function BoxSelector(props) {
   // "BoxSelector--selected", which causes the "filled in look" and the
   // animation of selecting it.
   return (
-    <div className="BoxSelector">
-
-      {
-        props.choices.map(choice => (
-          <div
-            className={
-              choice === props.selectedValue ?
-                "BoxSelector-square BoxSelector--selected" :
-                "BoxSelector-square"
-            }
-            title={choice}
-            key={choice}
-            onClick={() => squareGotClicked(choice)}
-          >
-          </div>
-        ))
-      }
-      <div className="BoxSelector-caption">
-        {props.selectedValue}
-      </div>
+    <div className='BoxSelector'>
+      {props.choices.map((choice) => (
+        <div
+          className={
+            choice === props.selectedValue
+              ? "BoxSelector-square BoxSelector--selected"
+              : "BoxSelector-square"
+          }
+          title={choice}
+          key={choice}
+          onClick={() => squareGotClicked(choice)}></div>
+      ))}
+      <div className='BoxSelector-caption'>{props.selectedValue}</div>
     </div>
   );
 }
