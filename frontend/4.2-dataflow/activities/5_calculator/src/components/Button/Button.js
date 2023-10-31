@@ -1,24 +1,24 @@
-import React from 'react';
-import './Button.css';
+import React from "react";
+import "./Button.css";
 
 function Button(props) {
-  let className = 'Button';
+  let className = "Button";
 
-  if (props.type === 'red') {
-    className = 'Button Button--red';
+  if (props.type === "red") {
+    className = "Button Button--red";
   }
-  if (props.type === 'green') {
-    className = 'Button Button--green';
+  if (props.type === "green") {
+    className = "Button Button--green";
   }
-  if (props.type === 'blue') {
-    className = 'Button Button--blue';
+  if (props.type === "blue") {
+    className = "Button Button--blue";
   }
-  if (props.type === 'yellow') {
-    className = 'Button Button--yellow';
+  if (props.type === "yellow") {
+    className = "Button Button--yellow";
   }
 
   return (
-    <div className={className} onClick={props.onClick}>
+    <div className={className} onClick={(e) => props.onClick(e)}>
       {props.children}
     </div>
   );
