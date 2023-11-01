@@ -1,0 +1,17 @@
+.Paginator {
+  grid-column: 2;
+  grid-row: 2;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Paginator button {
+  padding: 0;
+  background: orange;
+  color: white;
+  border: 0;
+  font-size: 23pt;
+  margin: 20px;
+}

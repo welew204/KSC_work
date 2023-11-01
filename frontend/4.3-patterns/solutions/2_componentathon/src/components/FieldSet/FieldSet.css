@@ -1,0 +1,96 @@
+.FieldSet {
+  padding-top: 10px;
+  padding-left: 10px;
+	width: 345px;
+	border-bottom-color: rgb(208, 208, 208);
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-image-outset: 0px;
+	border-image-repeat: stretch;
+	border-image-slice: 100%;
+	border-image-source: none;
+	border-image-width: 1;
+	border-left-color: rgb(208, 208, 208);
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-right-color: rgb(208, 208, 208);
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-top-color: rgb(208, 208, 208);
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-top-style: solid;
+	border-top-width: 2px;
+  background: rgb(228, 228, 228);
+  color: black;
+}
+
+.FieldSet > input {
+	background-color: rgb(255, 255, 255);
+	border-bottom-color: rgb(208, 208, 208);
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-image-outset: 0px;
+	border-image-repeat: stretch;
+	border-image-slice: 100%;
+	border-image-source: none;
+	border-image-width: 1;
+	border-left-color: rgb(208, 208, 208);
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-right-color: rgb(208, 208, 208);
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-top-color: rgb(208, 208, 208);
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-top-style: solid;
+	border-top-width: 2px;
+	box-sizing: border-box;
+	color: rgb(0, 0, 0);
+	cursor: auto;
+	display: inline-block;
+	font-size: 15px;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant-caps: normal;
+	font-variant-ligatures: normal;
+	font-variant-numeric: normal;
+	font-weight: normal;
+	height: 32px;
+	letter-spacing: normal;
+	line-height: 18px;
+	margin-bottom: 24px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	max-width: 100%;
+	min-height: 32px;
+	min-width: 50px;
+	padding-bottom: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 0px;
+	text-align: start;
+	text-indent: 0px;
+	text-rendering: auto;
+	text-shadow: none;
+	text-size-adjust: 100%;
+	text-transform: none;
+	user-select: text;
+	vertical-align: middle;
+	width: 335px;
+	word-spacing: 0px;
+}
+
+.FieldSet-legend {
+  font-weight: bold;
+}
+
+.FieldSet-label {
+  font-style: italic;
+}

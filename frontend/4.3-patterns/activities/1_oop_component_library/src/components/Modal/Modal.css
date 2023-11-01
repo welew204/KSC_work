@@ -1,0 +1,41 @@
+.Modal {
+  position: relative;
+}
+
+.Modal-body {
+  font-size: 16pt;
+  color: black;
+  background: white;
+  height: 40vh;
+  width: 40vw;
+  top: 30vh;
+  left: 30vw;
+  position: fixed;
+  z-index: 3000;
+}
+
+.Modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  background: gray;
+  color: white;
+  height: 50px;
+}
+
+.Modal-content {
+  padding: 10px;
+}
+
+.Modal-backdrop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+

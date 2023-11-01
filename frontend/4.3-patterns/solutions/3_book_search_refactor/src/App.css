@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background: url('https://i.imgur.com/USYn4vT.png');
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 800px) 1fr;
+  grid-template-rows: 100px 100px 1fr 100px;
+}
+
+.BookSearcher {
+  /* "display: contents" ---  This allows the BookSearcher div to be "skipped"
+  ** as a child by the parent grid, so the parent grid will affect
+  ** "grandchildren" instead of just children */
+  display: contents;
+}
+

@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('https://i.imgur.com/SqSxpmz.jpg') fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.App-header {
+  height: 14vh;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 3vh;
+  box-sizing: border-box;
+}
+
+.App-library {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border: 2px black ridge;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  min-height: 86vh;
+  padding: 20px;
+  box-sizing: border-box;
+}

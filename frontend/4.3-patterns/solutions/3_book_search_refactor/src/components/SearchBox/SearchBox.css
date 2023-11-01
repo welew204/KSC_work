@@ -1,0 +1,36 @@
+.SearchBox {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 150px;
+}
+
+.SearchBox input {
+  font-size: 24pt;
+  background: none;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  color: orange;
+  font-weight: bolder;
+}
+
+.SearchBox button {
+  font-size: 24pt;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: white;
+  border: 1px solid gray;
+  border-radius: 40px;
+  transition: 0.1s;
+  box-shadow: inset -3px -3px 1px 1px rgba(100, 100, 100, 0.3);
+  padding-right: 3px;
+  padding-bottom: 3px;
+}
+
+.SearchBox button:active {
+  box-shadow: inset 3px 3px 1px 1px rgba(100, 100, 100, 0.3);
+  padding-top: 3px;
+  padding-left: 3px;
+}
+
