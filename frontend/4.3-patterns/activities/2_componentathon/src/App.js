@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-import Button from './components/Button/Button.js';
-import FieldSet from './components/FieldSet/FieldSet.js';
-import Tabs from './components/Tabs/Tabs.js';
-import TagList from './components/TagList/TagList.js';
+import Button from "./components/Button/Button.js";
+import FieldSet from "./components/FieldSet/FieldSet.js";
+import Tabs from "./components/Tabs/Tabs.js";
+import TagList from "./components/TagList/TagList.js";
+import LengthSelector from "./components/LengthSelector/LengthSelector";
 
 function App() {
-
   const [dropdownShowing, setDropdownShowing] = useState(false);
   const [firstname, setFirstName] = useState("");
-  const [allTabs, setAllTabs] = useState(['John Lennon', 'Paul McCartney', 'George Harrison', 'Ringo Starr']);
-  const [currentTab, setCurrentTabs] = useState('Paul McCartney');
+  const [allTabs, setAllTabs] = useState([
+    "John Lennon",
+    "Paul McCartney",
+    "George Harrison",
+    "Ringo Starr",
+  ]);
+  const [currentTab, setCurrentTabs] = useState("Paul McCartney");
   const [currentTab2, setCurrentTabs2] = useState("");
-  const [allTags, setAllTags] = useState(['backgrounds', 'abstract', 'generated', 'cgi']);
+  const [allTags, setAllTags] = useState([
+    "backgrounds",
+    "abstract",
+    "generated",
+    "cgi",
+  ]);
   const [buttonPresses, setButtonPresses] = useState(0);
 
   function incrementButtonPresses() {
@@ -29,6 +39,7 @@ function App() {
   }
 
   function setCurrentTab(tabName) {
+    //console.log(tabName);
     setCurrentTabs(tabName);
   }
 
@@ -37,45 +48,41 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">Component Style Library</h1>
+    <div className='App'>
+      <header className='App-header'>
+        <h1 className='App-title'>Component Style Library</h1>
       </header>
-      <div className="App-library">
+      <div className='App-library'>
         <h1>Button</h1>
-        <Button onClick={incrementButtonPresses}>
-            Hello! {buttonPresses}
-        </Button>
+        <Button onClick={incrementButtonPresses}>Hello! {buttonPresses}</Button>
 
         <h1>FieldSet</h1>
         <p>Name entered: {firstname}</p>
         <FieldSet
           onChange={onFirstnameChange}
           value={firstname}
-          legend="Personal Information"
-          label="First Name"
-          placeholder="Please enter your real first name" />
+          legend='Personal Information'
+          label='First Name'
+          placeholder='Please enter your real first name'
+        />
 
         <h1>Tabs</h1>
-        <Tabs
-          tabs={allTabs}
-          currentTab={currentTab}
-          onChange={setCurrentTab} />
+        <Tabs tabs={allTabs} currentTab={currentTab} onChange={setCurrentTab} />
         <p>{currentTab} is the best Beatle.</p>
 
         <br />
+        <LengthSelector />
         <br />
         <br />
         <h1>TagList (Bonus)</h1>
-        <TagList
-          tags={allTags}
-          onChange={setTags} />
+        <TagList tags={allTags} onChange={setTags} />
 
         <h1>Tabs from TagList (Bonus)</h1>
         <Tabs
           tabs={allTags}
           currentTab={currentTab2}
-          onChange={setCurrentTab2} />
+          onChange={setCurrentTab2}
+        />
       </div>
     </div>
   );
