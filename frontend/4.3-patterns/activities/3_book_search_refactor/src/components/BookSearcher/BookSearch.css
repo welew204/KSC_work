@@ -1,0 +1,9 @@
+
+.BookSearcher {
+    /* "display: contents" ---  This allows the BookSearcher div to be "skipped"
+    ** as a child by the parent grid, so the parent grid will affect
+    ** "grandchildren" instead of just children */
+    display: contents;
+  }
+  
+  
