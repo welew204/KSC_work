@@ -1,27 +1,26 @@
-import React from 'react';
-import './MovieDetails.css';
+import React from "react";
+import "./MovieDetails.css";
 
-const MovieDetails = props => (
-  <div className="MovieDetails">
+const MovieDetails = (props) => (
+  <div className='MovieDetails'>
     <strong>Name</strong>
     <p>{props.name}</p>
 
     <strong>Details</strong>
-    <p>{props.details}</p>
+    <p>{props.description}</p>
 
     <strong>Rating</strong>
-    <p></p>
+    <p>{props.rating}</p>
 
     <strong>Year</strong>
-    <p></p>
+    <p>{props.year}</p>
 
     <strong>Director</strong>
-    <p></p>
+    <p>{props.director}</p>
 
     <strong>Length</strong>
-    <p>minutes</p>
+    <p>{props.length}</p>
   </div>
 );
-
 
 export default MovieDetails;

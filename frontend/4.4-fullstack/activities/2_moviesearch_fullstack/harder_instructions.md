@@ -11,7 +11,7 @@ we won't. Instead you'll have to plan those.
 
 The final product should do the following:
 
-- Show all movies and the information about them when you first load the page
+DONE - Show all movies and the information about them when you first load the page
 - Search box functionality: When you hit search, it should use the search API
   to filter which movies are available
 - Add movie: Develop a form on the bottom of the page to add movies by using a
