@@ -29,8 +29,11 @@ Once you have it running, answer the following comprehension questions:
 
 2. Examine the source code for client/src/App.js:
     - Can you identify where it retrieves data from the server?
+    >>>>> line 14
     - Can you identify where it sends data to the server?
+    >>>>> line 36
     - How does the "Loading" message work?
+    >>>>> checks for (null) messages, line 61
 
 
 
@@ -98,9 +101,11 @@ longer if the server is on another continent).
 
 - What are changes to the frontend that could improve the *apparent* speed of
   the application?
+  >>>> change the FE immediately on click, then refresh as needed (react should only redraw DOM if diff)
 
 - What are changes to the backend that could be made to allow for fewer
   requests?
+  >>>>> check for same/repeated requrest on BE to filter out extra clickies
 
 
 
