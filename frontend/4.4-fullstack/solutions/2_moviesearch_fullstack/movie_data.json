@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "name": "The Shawshank Redemption",
+        "desc": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "rate": 9.3,
+        "year": 1994,
+        "director": "Frank Darabont",
+        "length": 142
+    },
+    {
+        "id": 2,
+        "name": "The Dark Knight",
+        "desc": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+        "rate": 9.0,
+        "year": 2008,
+        "director": "Christopher Nolan",
+        "length": 152
+    },
+    {
+        "id": 3,
+        "name": "Wonderwoman",
+        "desc": "When a pilot crashes and tells of conflict in the outside world, Diana, an Amazonian warrior in training, leaves home to fight a war, discovering her full powers and true destiny.",
+        "rate": 8.8,
+        "year": 2017,
+        "director": "Patty Jenkins",
+        "length": 152
+    },
+    {
+        "id": 4,
+        "name": "The Godfather",
+        "desc": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+        "rate": 8.7,
+        "year": 1972,
+        "director": "Francis Ford Coppola",
+        "length": 175
+    },
+    {
+        "id": 5,
+        "name": "The Godfather: Part II",
+        "desc": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+        "rate": 8.7,
+        "year": 1974,
+        "director": "Francis Ford Coppola",
+        "length": 202
+    },
+    {
+        "id": 6,
+        "name": "Mean Girls",
+        "desc": "Cady Heron is a hit with The Plastics, the A-list girl clique at her new school, until she makes the mistake of falling for Aaron Samuels, the ex-boyfriend of alpha Plastic Regina George.",
+        "rate": 8.6,
+        "year": 2004,
+        "director": "Mark Waters",
+        "length": 97
+    },
+    {
+        "id": 7,
+        "name": "The Room",
+        "desc": "Johnny is torn apart, by Lisa. Oh hi doggy!",
+        "rate": 10.0,
+        "year": 2004,
+        "director": "Tommy Wiseau",
+        "length": 99
+    },
+    {
+        "id": 8,
+        "name": "Frozen",
+        "desc": "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.",
+        "rate": 8.4,
+        "year": 2013,
+        "director": "Chris Buck, Jennifer Lee",
+        "length": 102
+    },
+    {
+        "id": 9,
+        "name": "Titanic",
+        "desc": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+        "rate": 8.3,
+        "year": 1997,
+        "director": "James Cameron",
+        "length": 194
+    },
+    {
+        "id": 10,
+        "name": "Shrek",
+        "desc": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+        "rate": 9.5,
+        "year": 2001,
+        "director": "Andrew Adamson, Vicky Jenson",
+        "length": 90
+    },
+    {
+        "id": 11,
+        "name": "Shrek II",
+        "desc": "Shrek and Fiona travel to the Kingdom of Far Far Away, where Fiona's parents are King and Queen, to celebrate their marriage. When they arrive, they find they are not as welcome as they thought they would be.",
+        "rate": 9.3,
+        "year": 2004,
+        "director": "Andrew Adamson, Kelly Asbury",
+        "length": 93
+    }
+]

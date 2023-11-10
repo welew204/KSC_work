@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Zacharias Smith",
+        "position": "Chaser",
+        "house": "Hufflepuff"
+    },
+    {
+        "name": "Roger Davies",
+        "position": "Chaser",
+        "house": "Ravenclaw"
+    },
+    {
+        "name": "Maxine O'Flaherty",
+        "position": "Beater",
+        "house": "Hufflepuff"
+    },
+    {
+        "name": "Duncan Inglebee",
+        "position": "Beater",
+        "house": "Ravenclaw"
+    },
+    {
+        "name": "Herbert Fleet",
+        "position": "Keeper",
+        "house": "Hufflepuff"
+    },
+    {
+        "name": "Grant Page",
+        "position": "Keeper",
+        "house": "Ravenclaw"
+    },
+    {
+        "name": "Cedric Diggory",
+        "position": "Seeker",
+        "house": "Hufflepuff"
+    },
+    {
+        "name": "Cho Chang",
+        "position": "Seeker",
+        "house": "Ravenclaw"
+    }
+]
