@@ -1,0 +1,21 @@
+{
+  "name": "npmcomponents",
+  "version": "0.1.0",
+  "homepage": "./",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.8.0",
+    "react": "^16.4.1",
+    "react-color": "^2.14.1",
+    "react-date-picker": "^6.11.3",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "react-select": "^2.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
