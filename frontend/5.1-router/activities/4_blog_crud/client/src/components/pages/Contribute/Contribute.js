@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import './Contribute.css';
+import React, { useState } from "react";
+import "./Contribute.css";
 
 function Contribute() {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  //console.log(title);
+  //console.log(content);
 
   function onChangeContent(ev) {
     setContent(ev.target.value);
@@ -16,37 +18,39 @@ function Contribute() {
   function submit() {
     // TODO: finish ..
     const formData = {
-      title: 'test title',
-      content: 'test content',
+      title: title,
+      content: content,
     };
 
     const fetchOptions = {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(formData),
     };
 
-    fetch('/api/create/', fetchOptions)
-      .then(response => response.json())
-      .then(data => {
-        console.log('done!');
+    fetch("/api/create/", fetchOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("done!");
+        setContent("");
+        setTitle("");
       });
   }
 
   return (
-    <div className="Contribute">
+    <div className='Contribute'>
       <h1>Contribute</h1>
       <h2>Title</h2>
       <input
-        name="title"
-        placeholder="Title"
+        name='title'
+        placeholder='Title'
         value={title}
         onChange={onChangeTitle}
       />
 
       <h2>Content</h2>
       <textarea
-        name="content"
-        placeholder="Contents"
+        name='content'
+        placeholder='Contents'
         value={content}
         onChange={onChangeContent}
       />
@@ -55,7 +59,6 @@ function Contribute() {
 
       <button onClick={submit}>Add to blog</button>
     </div>
-
   );
 }
 
