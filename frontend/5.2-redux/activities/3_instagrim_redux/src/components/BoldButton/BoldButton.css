@@ -1,0 +1,39 @@
+/* Some nice button styling, with a purplish gradient and a hint of skeumorphic shading */
+.BoldButton {
+  padding: 20px;
+  margin-right: 5px;
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16pt;
+  background:
+    linear-gradient(135deg, hsla(345.85, 94.52%, 41.26%, 1) 0%, hsla(345.85, 94.52%, 41.26%, 0) 70%),
+    linear-gradient(25deg, hsla(331.05, 96.99%, 48.83%, 1) 10%, hsla(331.05, 96.99%, 48.83%, 0) 80%),
+    linear-gradient(315deg, hsla(15.52, 94.81%, 43.6%, 1) 15%, hsla(15.52, 94.81%, 43.6%, 0) 80%),
+    linear-gradient(245deg, hsla(236.15, 96.3%, 48.46%, 1) 100%, hsla(236.15, 96.3%, 48.46%, 0) 70%);
+  color: white;
+  transition:
+    box-shadow 0.1s,
+    color 0.1s;
+  user-select: none;
+  box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* "Click" effect */
+.BoldButton:active {
+  box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.6);
+  color: yellow;
+}
+
+/* Tweaks to styling the button and label */
+.BoldButton-icon {
+  margin-right: 10px;
+}
+
+.BoldButton-label {
+  display: inline-block;
+  top: -3px;
+  position: relative;
+  text-transform: uppercase;
+}
+

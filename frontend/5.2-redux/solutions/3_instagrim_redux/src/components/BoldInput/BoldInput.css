@@ -1,0 +1,20 @@
+.BoldInput-actualInput {
+  border: 2px solid rgba(200, 200, 200, 0.9);
+  margin: 20px;
+  border-radius: 5px;
+  font-size: 22pt;
+  background: transparent;
+  padding: 20px;
+  font-weight: bold;
+  width: 80%;
+}
+
+.BoldInput-label {
+  font-size: 22pt;
+}
+
+.BoldInput-error {
+  font-size: 20pt;
+  color: darkred;
+}
+

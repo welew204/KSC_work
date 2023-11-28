@@ -1,0 +1,13 @@
+.DashboardColumn {
+  background: var(--theme-light-gray);
+  min-height: 50vh;
+}
+
+.Dashboard h1 {
+  font-size: 16pt;
+  text-align: center;
+  background: var(--theme-turquoise);
+  padding: 5px;
+  color: white;
+}
+

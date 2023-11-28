@@ -1,0 +1,13 @@
+.DashboardColumn {
+  background: paleturquoise;
+  min-height: 50vh;
+}
+
+.Dashboard h1 {
+  font-size: 16pt;
+  text-align: center;
+  background: midnightblue;
+  padding: 5px;
+  color: paleturquoise;
+}
+

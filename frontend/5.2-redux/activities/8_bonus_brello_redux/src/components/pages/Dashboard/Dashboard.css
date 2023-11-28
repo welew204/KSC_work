@@ -1,0 +1,28 @@
+:root {
+  --theme-blue: #08A5E5;
+  --theme-turquoise: #2DB6EC;
+  --theme-red: #AE2925;
+  --theme-light-gray: #E2E9F1;
+  --theme-light-brown: #CF6E41;
+}
+
+
+.Dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+  grid-gap: 5px;
+}
+
+.Dashboard-column {
+  background: var(--theme-light-gray);
+  min-height: 50vh;
+}
+
+.Dashboard h1 {
+  font-size: 16pt;
+  text-align: center;
+  background: var(--theme-turquoise);
+  padding: 5px;
+  color: white;
+}

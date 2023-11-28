@@ -1,0 +1,50 @@
+.AvatarManagement {
+}
+
+.AvatarManagement-avatarList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.AvatarManagement-avatar {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(200, 200, 200, 0.9);
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.AvatarManagement-avatarWrapper {
+  position: relative;
+}
+
+.AvatarManagement-avatarWrapper > .BoldButton {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.AvatarManagement-avatarWrapper:hover > .BoldButton {
+  opacity: 0.5;
+}
+
+.AvatarManagement-input {
+  border: 2px solid rgba(200, 200, 200, 0.9);
+  margin: 20px;
+  border-radius: 5px;
+  font-size: 22pt;
+  background: transparent;
+  padding: 20px;
+  font-weight: bold;
+  width: 80%;
+}
+
+.AvatarManagement-label {
+  font-size: 22pt;
+}

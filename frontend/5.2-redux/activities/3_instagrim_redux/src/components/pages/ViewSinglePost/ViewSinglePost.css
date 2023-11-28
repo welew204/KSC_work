@@ -1,0 +1,13 @@
+.ViewSinglePost a {
+  padding-left: 20px;
+}
+
+.ViewSinglePost-buttonToolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ViewSinglePost-buttonToolbar .BoldButton {
+  margin-right: 10px;
+  cursor: pointer;
+}

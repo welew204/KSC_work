@@ -1,0 +1,37 @@
+.EditTask {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--theme-light-brown);
+}
+
+.EditTask label {
+  font-size: 24pt;
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--theme-light-brown);
+}
+
+
+.EditTask input,
+.EditTask textarea,
+.EditTask button {
+  background:  var(--theme-light-gray);
+  font-size: 24pt;
+  margin: 20px;
+  vertical-align: middle;
+  width: 300px;
+  padding: 5px;
+  border: 1px solid var(--theme-light-brown);
+  border-radius: 10px;
+  color: var(--theme-light-brown);
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.EditTask button:hover {
+  background: var(--theme-light-brown);
+  color: var(--theme-light-gray);
+}
