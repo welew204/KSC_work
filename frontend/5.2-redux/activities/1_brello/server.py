@@ -8,41 +8,43 @@ import io
 
 # tasks saved as list
 tasks = [
-  {
-    'title': 'Make nice React app',
-    'points': 8,
-    'phase': 0,
-    'id': 1,
-    'text': 'This React thing seems good for UI, lets use it',
-  },
-  {
-    'title': 'Create CRUD functionality',
-    'points': 5,
-    'phase': 0,
-    'id': 2,
-    'text': 'Work on Python bottle.py-based CRUD API',
-  },
-  {
-    'title': "Add in Redux",
-    'points': 10,
-    'phase': 0,
-    'id': 3,
-    'text': 'Refactor to add in this trendy thing called redux',
-  },
-  {
-    'title': "More abrasive",
-    'points': 5,
-    'phase': 0,
-    'id': 4,
-    'text': 'The color scheme is not abrasive enough',
-  },
+    {
+        'title': 'Make nice React app',
+        'points': 8,
+        'phase': 0,
+        'id': 1,
+        'text': 'This React thing seems good for UI, lets use it',
+    },
+    {
+        'title': 'Create CRUD functionality',
+        'points': 5,
+        'phase': 0,
+        'id': 2,
+        'text': 'Work on Python bottle.py-based CRUD API',
+    },
+    {
+        'title': "Add in Redux",
+        'points': 10,
+        'phase': 0,
+        'id': 3,
+        'text': 'Refactor to add in this trendy thing called redux',
+    },
+    {
+        'title': "More abrasive",
+        'points': 5,
+        'phase': 0,
+        'id': 4,
+        'text': 'The color scheme is not abrasive enough',
+    },
 ]
+
 
 @route('/api/all')
 def get_all_tasks():
     return {
         'tasks': tasks,
     }
+
 
 @route('/api/<id>')
 def get_one_task(id):
@@ -53,6 +55,7 @@ def get_one_task(id):
     return {
         'task': task,
     }
+
 
 @route('/api/create/', method='POST')
 def create_task():
@@ -69,6 +72,7 @@ def create_task():
         'success': True,
     }
 
+
 @route('/api/<id>/delete/', method='DELETE')
 def delete_task(id):
     task = [
@@ -79,6 +83,7 @@ def delete_task(id):
     return {
         'success': True,
     }
+
 
 @route('/api/<id>/update/', method='PUT')
 def update_task(id):
@@ -102,5 +107,6 @@ def index(search_term):
             if search_term in task.get('title', '').lower()
         ],
     }
+
 
 run(host='localhost', port=8080)

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './CreateTask.css';
+import React, { useState } from "react";
+import "./CreateTask.css";
 
 function CreateTask(props) {
   const [title, setTitle] = useState("");
@@ -19,35 +19,42 @@ function CreateTask(props) {
   }
 
   function submit() {
-    console.log('nothing happening yet...');
+    let post = {
+      title: title,
+      points: points,
+      text: text,
+    };
+    fetch("api/create/", { method: "POST", body: JSON.stringify(post) })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+    setPoints(5);
+    setTitle("");
+    setText("");
+    props.history.push("/");
   }
 
   return (
-    <div className="CreateTask">
+    <div className='CreateTask'>
       <h1>New Task</h1>
 
       <p>
-        <label>Title
-          <input
-            onChange={onChangeTitle}
-            value={title} />
+        <label>
+          Title
+          <input onChange={onChangeTitle} value={title} />
         </label>
       </p>
 
       <p>
-        <label>Points
-          <input
-            type="number"
-            onChange={onChangePoints}
-            value={points} />
+        <label>
+          Points
+          <input type='number' onChange={onChangePoints} value={points} />
         </label>
       </p>
 
       <p>
-        <label>Text
-          <textarea
-            onChange={onChangeText}
-            value={text} />
+        <label>
+          Text
+          <textarea onChange={onChangeText} value={text} />
         </label>
       </p>
 

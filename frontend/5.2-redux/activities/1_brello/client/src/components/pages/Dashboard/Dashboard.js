@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 
 import Task from "../../Task/Task.js";
@@ -35,7 +35,20 @@ function Dashboard(props) {
       .then((res) => res.json())
       .then((data) => setTasks(data.tasks));
   }
-  getTasks();
+
+  function updateTask(id) {
+    console.log("updating id: ", id);
+    const task = tasks.find((task) => task.id === id);
+
+    let fetchOptions = {
+      method: "PUT",
+      body: JSON.stringify(task),
+    };
+    fetch(`/api/${id}/update/`, fetchOptions)
+      .then((data) => data.json())
+      .then(getTasks());
+  }
+  //getTasks();
 
   function moveTask(taskId, newPhase) {
     // Duplicate the state to work with it
@@ -49,7 +62,24 @@ function Dashboard(props) {
 
     // Set the new state to rerender
     setTasks(tasksCopy);
+    updateTask(task.id);
   }
+
+  function deleteTask(taskId) {
+    const fetchOptions = {
+      method: "DELETE",
+    };
+    fetch(`/api/${taskId}/delete/`, fetchOptions)
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data);
+        getTasks();
+      });
+  }
+
+  useEffect(() => {
+    getTasks();
+  }, []);
 
   const tasksPhase0 = tasks.filter((task) => task.phase === 0);
   const tasksPhase1 = tasks.filter((task) => task.phase === 1);
@@ -68,6 +98,7 @@ function Dashboard(props) {
             points={task.points}
             key={task.id}
             onMoveForward={() => moveTask(task.id, 1)}
+            onDelete={() => deleteTask(task.id)}
           />
         ))}
       </div>
@@ -82,6 +113,7 @@ function Dashboard(props) {
             key={task.id}
             onMoveForward={() => moveTask(task.id, 2)}
             onMoveBackward={() => moveTask(task.id, 0)}
+            onDelete={() => deleteTask(task.id)}
           />
         ))}
       </div>
@@ -94,6 +126,7 @@ function Dashboard(props) {
             key={task.id}
             onMoveForward={() => moveTask(task.id, 3)}
             onMoveBackward={() => moveTask(task.id, 1)}
+            onDelete={() => deleteTask(task.id)}
           />
         ))}
       </div>
@@ -105,6 +138,7 @@ function Dashboard(props) {
             key={task.id}
             onMoveForward={() => moveTask(task.id, 3)}
             onMoveBackward={() => moveTask(task.id, 1)}
+            onDelete={() => deleteTask(task.id)}
           />
         ))}
       </div>
