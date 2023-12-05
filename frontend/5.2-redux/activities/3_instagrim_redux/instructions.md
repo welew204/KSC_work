@@ -23,11 +23,19 @@ Answer the following questions it in your own words by examining the code.
 Check the hints file for clues on how to solve these questions.
 
 1. How many "reducer store slices" are there? What are their names?
+>>>>> 2, altho only 1 in use/functional; they're called 'posts' and 'avatars' ; they each are "A function that accepts an initial state, an object full of reducer functions, and a "slice name", and automatically generates action creators and action types that correspond to the reducers and state."
+
 2. How do the "reducer store slices" get combined?
+>>>>> in the index.js step, which wraps the entire App.js (as well as the <BrowserRouter>)
+
 3. How are utility functions getting imported into "src/reducers/posts.js"?
+>>>>> uh just via relative import....?
+
 4. Open up the "ADD" modal while in the AVATARS page. Note the new URL.
     - How is this done?
+    >>>> via adding a Route, and then a Link to that Route, all within the AvatarManagement.js page
     - How does the "Route" in AvatarManagement create a sort of "subpage"?
+    >>>>> just via nested routing defined in the Route 'path='
 
 
 

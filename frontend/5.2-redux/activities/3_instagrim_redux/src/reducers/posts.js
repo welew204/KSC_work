@@ -1,33 +1,33 @@
 // Reducers for Posts "slice"
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 // Bring in some "helper" utility functions from miscutils.js
-import {chooseRandom, avatars, getNextID} from '../miscutils.js';
+import { getNextID } from "../miscutils.js";
 
 // Create our actions and reducer
-const {actions, reducer} = createSlice({
-  name: 'posts',
+const { actions, reducer } = createSlice({
+  name: "posts",
   initialState: [
     {
-      title: 'Do some spooky things',
-      avatar: 'https://i.imgur.com/OxASz9Q.png',
+      title: "Do some spooky things",
+      avatar: "https://i.imgur.com/OxASz9Q.png",
       id: 1,
     },
     {
-      title: 'Be spooky',
-      avatar: 'https://i.imgur.com/5X3mAjh.png',
+      title: "Be spooky",
+      avatar: "https://i.imgur.com/5X3mAjh.png",
       id: 2,
     },
 
     {
       title: "Dance like you're dead",
-      avatar: 'https://i.imgur.com/rkyzraE.png',
+      avatar: "https://i.imgur.com/rkyzraE.png",
       id: 3,
     },
 
     {
-      title: 'Have a ghoulish day',
-      avatar: 'https://i.imgur.com/PrVtCBL.png',
+      title: "Have a ghoulish day",
+      avatar: "https://i.imgur.com/PrVtCBL.png",
       id: 4,
     },
   ],
@@ -42,7 +42,7 @@ const {actions, reducer} = createSlice({
       const nextID = getNextID(state);
 
       // Here we get a random avatar from the list of avatars
-      const avatar = chooseRandom(avatars);
+      /* const avatar = chooseRandom(avatars); */
 
       // NOTE: In real life, reducers should never have random behavior! It
       // "breaks the rules" of Redux. This will be fixed by a challenge.
@@ -51,12 +51,24 @@ const {actions, reducer} = createSlice({
       state.push({
         id: nextID,
         title: action.payload.title,
-        avatar: avatar,
+        avatar: action.payload.avatar,
       });
+    },
+    editPost: (state, action) => {
+      const targ = state.findIndex((post) => post.id === action.payload.id);
+      let editedPost = { ...state[targ] };
+      editedPost.title = action.payload.newText;
+      console.log(editedPost);
+      state.splice(targ, 1, editedPost);
+    },
+    deletePost: (state, action) => {
+      const targ = state.findIndex((post) => post.id === action.payload.id);
+      //console.log(targ);
+      state.splice(targ, 1);
     },
 
     // Challenge 7 & 8 will go here
   },
 });
 
-export {actions, reducer};
+export { actions, reducer };
