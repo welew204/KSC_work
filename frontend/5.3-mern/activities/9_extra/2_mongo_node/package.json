@@ -1,0 +1,10 @@
+{
+  "name": "mongo_node",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.1.1"
+  }
+}

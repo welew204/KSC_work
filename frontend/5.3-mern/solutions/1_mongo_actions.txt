@@ -1,0 +1,193 @@
+############### Challenge 1
+
+use classactivity
+switched to db classactivity
+
+############### Challenge 2
+
+> db.osmascots.insertOne({ type: "penguin", name: "tux" })
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("5b6e35a25b124e758c0e4868")
+}
+> db.osmascots.insertOne({ type: "platypus", name: "hexley" })
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("5b6e35ae5b124e758c0e4869")
+}
+> db.osmascots.insertOne({ type: "wildebeast", name: "gnu" })
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("5b6e35bd5b124e758c0e486a")
+}
+
+
+############### Challenge 3
+
+> db.osmascots.find({})
+{ "_id" : ObjectId("5b6e35a25b124e758c0e4868"), "type" : "penguin", "name" : "tux" }
+{ "_id" : ObjectId("5b6e35ae5b124e758c0e4869"), "type" : "platypus", "name" : "hexley" }
+{ "_id" : ObjectId("5b6e35bd5b124e758c0e486a"), "type" : "wildebeast", "name" : "gnu" }
+> db.osmascots.find({type: "platypus"})
+{ "_id" : ObjectId("5b6e35ae5b124e758c0e4869"), "type" : "platypus", "name" : "hexley" }
+> db.osmascots.find({type: "penguin"})
+{ "_id" : ObjectId("5b6e35a25b124e758c0e4868"), "type" : "penguin", "name" : "tux" }
+> db.osmascots.find({name: "gnu"})
+{ "_id" : ObjectId("5b6e35bd5b124e758c0e486a"), "type" : "wildebeast", "name" : "gnu" }
+
+
+
+############### Challenge 4
+
+> db.osmascots.update({type: "penguin"}, {$set: {mascotOf: "Linux"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.osmascots.update({type: "platypus"}, {$set: {mascotOf: "Darwin"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.osmascots.update({type: "wildebeast"}, {$set: {mascotOf: "GNU Project"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.osmascots.find({})
+{ "_id" : ObjectId("5b6e35a25b124e758c0e4868"), "type" : "penguin", "name" : "tux", "mascotOf" : "Linux" }
+{ "_id" : ObjectId("5b6e35ae5b124e758c0e4869"), "type" : "platypus", "name" : "hexley", "mascotOf" : "Darwin" }
+{ "_id" : ObjectId("5b6e35bd5b124e758c0e486a"), "type" : "wildebeast", "name" : "gnu", "mascotOf" : "GNU Project" }
+
+
+############### Challenge 5
+> db.osmascots.deleteOne({"name": "gnu"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.osmascots.find({})
+{ "_id" : ObjectId("5b6e35a25b124e758c0e4868"), "type" : "penguin", "name" : "tux", "mascotOf" : "Linux" }
+{ "_id" : ObjectId("5b6e35ae5b124e758c0e4869"), "type" : "platypus", "name" : "hexley", "mascotOf" : "Darwin" }
+> db.osmascots.deleteOne({"name": "hexley"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.osmascots.find({})
+{ "_id" : ObjectId("5b6e35a25b124e758c0e4868"), "type" : "penguin", "name" : "tux", "mascotOf" : "Linux" }
+> db.osmascots.deleteOne({"name": "tux"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.osmascots.find({})
+> 
+
+############### Challenge 6
+> db.collection.insertMany([
+...   {
+...     "name": "Frodo Baggins",
+...     "bio": "Frodo comes from the Shire. He inherits the One Ring from his cousin (referred to as his uncle) Bilbo Baggins and undertakes the quest to destroy it in the fires of Mount Doom.",
+...     "portrayed": "Elijah Wood",
+...     "title": [
+...     "Deputy Mayor of Michel Delving",
+...     "Ring-bearer",
+...     "Elf-friend",
+...     ]
+...   },
+...   {
+...     "name": "Gandalf",
+...     "bIO": "He is a member of the Istari order, as well as leader of the Fellowship of the Ring and the army of the West.",
+...     "portrayed": "Ian McKellen",
+...     "title": [
+...       "Servant of the Secret Fire",
+...       "Elf-friend",
+...       "Istar (Wizard)",
+...       "Wielder of the Flame of Anor",
+...       "Ring-bearer",
+...     ]
+...   },
+...   {
+...     "name": "Aragorn",
+...     "bio": "He was a Ranger of the North, first introduced with the name Strider at Bree. He was eventually revealed to be the heir of Isildur and rightful claimant to the thrones of Arnor and Gondor.",
+...     "portrayed": "Viggo Mortensen",
+...     "title": [
+...       "Chieftain of the Dúnedain",
+...       "King of the Reunited Kingdom",
+...       "Hunter",
+...       "Elf-friend",
+...     ]
+...   },
+...   {
+...     "name": "Legolas",
+...     "bio": "They're taking the hobbits to Isengard!",
+...     "portrayed": "Orlando Bloom",
+...     "title": [
+...       "Prince of the Woodland Realm",
+...       "Hunter",
+...     ],
+...   }
+... ])
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("5b6e3a225b124e758c0e486b"),
+		ObjectId("5b6e3a225b124e758c0e486c"),
+		ObjectId("5b6e3a225b124e758c0e486d"),
+		ObjectId("5b6e3a225b124e758c0e486e")
+	]
+}
+
+
+############### Challenge 7
+> db.characters.find({}).sort({"portrayed": 1})
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486b"), "name" : "Frodo Baggins", "bio" : "Frodo comes from the Shire. He inherits the One Ring from his cousin (referred to as his uncle) Bilbo Baggins and undertakes the quest to destroy it in the fires of Mount Doom.", "portrayed" : "Elijah Wood", "title" : [ "Deputy Mayor of Michel Delving", "Ring-bearer", "Elf-friend" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486c"), "name" : "Gandalf", "bIO" : "He is a member of the Istari order, as well as leader of the Fellowship of the Ring and the army of the West.", "portrayed" : "Ian McKellen", "title" : [ "Servant of the Secret Fire", "Elf-friend", "Istar (Wizard)", "Wielder of the Flame of Anor", "Ring-bearer" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486e"), "name" : "Legolas", "bio" : "They're taking the hobbits to Isengard!", "portrayed" : "Orlando Bloom", "title" : [ "Prince of the Woodland Realm", "Hunter" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486d"), "name" : "Aragorn", "bio" : "He was a Ranger of the North, first introduced with the name Strider at Bree. He was eventually revealed to be the heir of Isildur and rightful claimant to the thrones of Arnor and Gondor.", "portrayed" : "Viggo Mortensen", "title" : [ "Chieftain of the Dúnedain", "King of the Reunited Kingdom", "Hunter", "Elf-friend" ] }
+
+
+> db.characters.find({}).sort({"name": -1})
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486e"), "name" : "Legolas", "bio" : "They're taking the hobbits to Isengard!", "portrayed" : "Orlando Bloom", "title" : [ "Prince of the Woodland Realm", "Hunter" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486c"), "name" : "Gandalf", "bIO" : "He is a member of the Istari order, as well as leader of the Fellowship of the Ring and the army of the West.", "portrayed" : "Ian McKellen", "title" : [ "Servant of the Secret Fire", "Elf-friend", "Istar (Wizard)", "Wielder of the Flame of Anor", "Ring-bearer" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486b"), "name" : "Frodo Baggins", "bio" : "Frodo comes from the Shire. He inherits the One Ring from his cousin (referred to as his uncle) Bilbo Baggins and undertakes the quest to destroy it in the fires of Mount Doom.", "portrayed" : "Elijah Wood", "title" : [ "Deputy Mayor of Michel Delving", "Ring-bearer", "Elf-friend" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486d"), "name" : "Aragorn", "bio" : "He was a Ranger of the North, first introduced with the name Strider at Bree. He was eventually revealed to be the heir of Isildur and rightful claimant to the thrones of Arnor and Gondor.", "portrayed" : "Viggo Mortensen", "title" : [ "Chieftain of the Dúnedain", "King of the Reunited Kingdom", "Hunter", "Elf-friend" ] }
+
+
+> db.characters.find({title: "Ring-bearer"})
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486b"), "name" : "Frodo Baggins", "bio" : "Frodo comes from the Shire. He inherits the One Ring from his cousin (referred to as his uncle) Bilbo Baggins and undertakes the quest to destroy it in the fires of Mount Doom.", "portrayed" : "Elijah Wood", "title" : [ "Deputy Mayor of Michel Delving", "Ring-bearer", "Elf-friend" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486c"), "name" : "Gandalf", "bIO" : "He is a member of the Istari order, as well as leader of the Fellowship of the Ring and the army of the West.", "portrayed" : "Ian McKellen", "title" : [ "Servant of the Secret Fire", "Elf-friend", "Istar (Wizard)", "Wielder of the Flame of Anor", "Ring-bearer" ] }
+
+
+> db.characters.find({title: "Elf-friend"})
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486b"), "name" : "Frodo Baggins", "bio" : "Frodo comes from the Shire. He inherits the One Ring from his cousin (referred to as his uncle) Bilbo Baggins and undertakes the quest to destroy it in the fires of Mount Doom.", "portrayed" : "Elijah Wood", "title" : [ "Deputy Mayor of Michel Delving", "Ring-bearer", "Elf-friend" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486c"), "name" : "Gandalf", "bIO" : "He is a member of the Istari order, as well as leader of the Fellowship of the Ring and the army of the West.", "portrayed" : "Ian McKellen", "title" : [ "Servant of the Secret Fire", "Elf-friend", "Istar (Wizard)", "Wielder of the Flame of Anor", "Ring-bearer" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486d"), "name" : "Aragorn", "bio" : "He was a Ranger of the North, first introduced with the name Strider at Bree. He was eventually revealed to be the heir of Isildur and rightful claimant to the thrones of Arnor and Gondor.", "portrayed" : "Viggo Mortensen", "title" : [ "Chieftain of the Dúnedain", "King of the Reunited Kingdom", "Hunter", "Elf-friend" ] }
+
+
+############### Challenge 8
+
+> db.characters.update({}, {$push: {title: "Member of the Fellowship"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.characters.update({}, {$push: {title: "Member of the Fellowship"}},
+> {multi: true})
+WriteResult({ "nMatched" : 4, "nUpserted" : 0, "nModified" : 4 })
+> db.characters.find({})
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486b"), "name" : "Frodo
+Baggins", "bio" : "Frodo comes from the Shire. He inherits the One Ring
+from his cousin (referred to as his uncle) Bilbo Baggins and undertakes
+the quest to destroy it in the fires of Mount Doom.", "portrayed" :
+"Elijah Wood", "title" : [ "Deputy Mayor of Michel Delving",
+"Ring-bearer", "Elf-friend", "Member of the Fellowship", "Member of the
+Fellowship" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486c"), "name" : "Gandalf",
+"bIO" : "He is a member of the Istari order, as well as leader of the
+Fellowship of the Ring and the army of the West.", "portrayed" : "Ian
+McKellen", "title" : [ "Servant of the Secret Fire", "Elf-friend",
+"Istar (Wizard)", "Wielder of the Flame of Anor", "Ring-bearer", "Member
+of the Fellowship" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486d"), "name" : "Aragorn",
+"bio" : "He was a Ranger of the North, first introduced with the name
+Strider at Bree. He was eventually revealed to be the heir of Isildur
+and rightful claimant to the thrones of Arnor and Gondor.", "portrayed"
+: "Viggo Mortensen", "title" : [ "Chieftain of the Dúnedain", "King of
+the Reunited Kingdom", "Hunter", "Elf-friend", "Member of the
+Fellowship" ] }
+{ "_id" : ObjectId("5b6e3a225b124e758c0e486e"), "name" : "Legolas",
+"bio" : "They're taking the hobbits to Isengard!", "portrayed" :
+"Orlando Bloom", "title" : [ "Prince of the Woodland Realm", "Hunter",
+"Member of the Fellowship" ] }
+
+> db.characters.update({title: "Hunter"}, {$push: {title: "Member of the
+> Fellowship"}}, {multi: true})
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+> db.characters.update({name: "Frodo Baggins"}, {$pull: {title:
+> "Elf-friend"}}, {multi: true})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+
+

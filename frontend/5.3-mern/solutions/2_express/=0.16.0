@@ -1,0 +1,4 @@
++ axios@0.18.0
+added 5 packages from 8 contributors and audited 132 packages in 3.092s
+found 1 low severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details

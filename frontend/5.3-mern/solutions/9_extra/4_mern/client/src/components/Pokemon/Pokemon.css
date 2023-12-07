@@ -1,0 +1,27 @@
+.Pokemon {
+  text-align: center;
+}
+
+.Pokemon-image {
+  transition: 1s;
+}
+
+.Pokemon--active {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+  width: 200px;
+}
+
+.Pokemon--fainted {
+  transform: rotate(90deg) scaleX(-1);
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
